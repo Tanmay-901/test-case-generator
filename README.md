@@ -1,9 +1,9 @@
 # Test-case-generator  
-#### Generate test cases for Testing projects or for Competitive Coding.
+#### Generate test cases for Competitive Coding.
 ------------------------
 ## Pre-requisites:  
 * 'tkinter' must be installed.  
-* For the script of adding new test cases format, only gmail account cis supported for now(others will be added soon).  
+* For the script 'new_format.py' (adding new test cases format) only gmail account is supported for now(others will be added soon).  
 * Gmail account must have **two-step-authentication and App password enabled**.  
 -------------------------
 ## To be kept in mind:
