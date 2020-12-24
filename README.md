@@ -2,7 +2,7 @@
 #### Generate test cases for Competitive Coding.
 ------------------------
 ## Pre-requisites:  
-* 'tkinter' must be installed.  
+* After first release, 'tkinter' must be installed.  
 * For the script 'new_format.py' (adding new test cases format) only gmail account is supported for now(others will be added soon).  
 * Gmail account must have **two-step-authentication and App password enabled**.  
 -------------------------
