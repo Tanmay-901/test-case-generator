@@ -1,6 +1,9 @@
 # Test-case-generator  
 #### Generate test cases for Competitive Coding.
 ------------------------
+## About Project  
+* This project is a combined application of Object Oriented Programming, Competitive coding and Tkinter toolkit.
+------------------------
 ## Pre-requisites:  
 * After first release, 'tkinter' must be installed.  
 * For the script 'new_format.py' (adding new test cases format) only gmail account is supported for now(others will be added soon).  
