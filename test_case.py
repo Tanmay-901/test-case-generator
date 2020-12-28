@@ -88,13 +88,13 @@ class Type1(Case):
         self.maximum_value_of_ai.grid(row=2, column=2)
         self.sub_btn.grid(row=3, column=1)
 
-    def regenerate(self):
+    def generate(self):
         print('1')
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
         self.output.insert(END, '\n')
         for i in range(self.t):
-            n = randint(self.n_min, self.n_max)
+            self.n = randint(self.n_min, self.n_max)
             self.output.insert(END, self.n)
             self.output.insert(END, '\n')
             self.a = [0] * self.n
@@ -123,16 +123,20 @@ class Type1(Case):
         self.n_max = int(self.maximum_value_of_n.get())
         self.a_min = int(self.minimum_value_of_ai.get())
         self.a_max = int(self.maximum_value_of_ai.get())
-        self.forget_type1()
 
+        self.forget_type1()
+        self.display()
+        self.generate()
+
+    def display(self):
         self.output = Text(gui, height=5, bg="light cyan")
         self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.regenerate_button = Button(gui, text='Re-generate', fg='black',
-                                        command=lambda: self.regenerate())  # , height=1, width=7)
-        self.regenerate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
+        self.generate_button = Button(gui, text='Re-generate', fg='black',
+                                        command=lambda: self.generate())  # , height=1, width=7)
+        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
         self.change_values_button = Button(gui, text='Change Constraints', fg='black',
                                            command=lambda: self.change_values)  # , height=1, width=7)
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
@@ -140,17 +144,17 @@ class Type1(Case):
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
         self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
 
-        self.output.insert(END, self.t)
-        self.output.insert(END, '\n')
-        for i in range(self.t):
-            self.n = randint(self.n_min, self.n_max)
-            self.output.insert(END, self.n)
-            self.output.insert(END, '\n')
-            self.a = [0] * self.n
-            for j in range(self.n):
-                self.a[j] = randint(self.a_min, self.a_max)
-            self.output.insert(END, self.a)
-            self.output.insert(END, '\n')
+        # self.output.insert(END, self.t)
+        # self.output.insert(END, '\n')
+        # for i in range(self.t):
+        #     self.n = randint(self.n_min, self.n_max)
+        #     self.output.insert(END, self.n)
+        #     self.output.insert(END, '\n')
+        #     self.a = [0] * self.n
+        #     for j in range(self.n):
+        #         self.a[j] = randint(self.a_min, self.a_max)
+        #     self.output.insert(END, self.a)
+        #     self.output.insert(END, '\n')
 
 
 class Type2(Case):
