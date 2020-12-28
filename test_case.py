@@ -1,5 +1,6 @@
 from tkinter import *
 from random import randint
+import webbrowser
 
 gui = Tk()
 gui.title('Test Case generator')
@@ -30,8 +31,12 @@ class Case:
         self.button3.grid(row=1, column=2, ipady=10, pady=10, padx=5)
 
         self.button4 = Button(gui, text=' Another type ', fg='black',
-                         command=lambda: NewFormat(gui))  # , height=1, width=7)
+                         command=lambda: self.NewFormat(self))  # , height=1, width=7)
         self.button4.grid(row=2, column=1, ipady=10, pady=10, padx=5)
+
+    def NewFormat(self):
+        url = "https://forms.gle/UVdo6QMAwBNxa9Ln7"
+        webbrowser.open_new_tab(url)
 
     def forget_home(self):
         self.button1.grid_forget()
@@ -206,29 +211,28 @@ class Type3(Case):
         self.sub_btn.grid(row=3, column=1)
 
 
-class NewFormat(Case):
-
-    def __init__(self, master):
-        super(NewFormat, self).__init__(master)
-        self.test_case_count_label = Label(master, text='T: ', font=('calibre', 10, 'bold'))
-        self.test_case_count = Entry(master, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_n = Entry(master, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(master, text='<= n <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(master, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(master, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(master, text='<= Ai <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(master, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(master, text='Submit', command=self.submit)
-        self.test_case_count_label.grid(row=0, column=0)
-
-        self.test_case_count.grid(row=0, column=1)
-        self.minimum_value_of_n.grid(row=1, column=0)
-        self.min_max_values_of_n_label.grid(row=1, column=1)
-        self.maximum_value_of_n.grid(row=1, column=2)
-        self.minimum_value_of_ai.grid(row=2, column=0)
-        self.min_max_values_of_ai_label.grid(row=2, column=1)
-        self.maximum_value_of_ai.grid(row=2, column=2)
-        self.sub_btn.grid(row=3, column=1)
+# class NewFormat(Case):
+#     def __init__(self, master):
+#         super(NewFormat, self).__init__(master)
+#         self.test_case_count_label = Label(master, text='T: ', font=('calibre', 10, 'bold'))
+#         self.test_case_count = Entry(master, textvariable=t, font=('calibre', 10, 'normal'))
+#         self.minimum_value_of_n = Entry(master, textvariable=n_min, font=('calibre', 10, 'normal'))
+#         self.min_max_values_of_n_label = Label(master, text='<= n <=', font=('calibre', 10, 'bold'))
+#         self.maximum_value_of_n = Entry(master, textvariable=n_max, font=('calibre', 10, 'normal'))
+#         self.minimum_value_of_ai = Entry(master, textvariable=a_min, font=('calibre', 10, 'normal'))
+#         self.min_max_values_of_ai_label = Label(master, text='<= Ai <=', font=('calibre', 10, 'bold'))
+#         self.maximum_value_of_ai = Entry(master, textvariable=a_max, font=('calibre', 10, 'normal'))
+#         self.sub_btn = Button(master, text='Submit', command=self.submit)
+#         self.test_case_count_label.grid(row=0, column=0)
+#
+#         self.test_case_count.grid(row=0, column=1)
+#         self.minimum_value_of_n.grid(row=1, column=0)
+#         self.min_max_values_of_n_label.grid(row=1, column=1)
+#         self.maximum_value_of_n.grid(row=1, column=2)
+#         self.minimum_value_of_ai.grid(row=2, column=0)
+#         self.min_max_values_of_ai_label.grid(row=2, column=1)
+#         self.maximum_value_of_ai.grid(row=2, column=2)
+#         self.sub_btn.grid(row=3, column=1)
 
 
 t = IntVar()
