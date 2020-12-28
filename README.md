@@ -5,10 +5,12 @@
 * This project is a combined application of Object Oriented Programming, Competitive coding and Tkinter toolkit.
 ------------------------
 ## Pre-requisites:  
-* After first release, 'tkinter' must be installed.  
-* For the script 'new_format.py' (adding new test cases format) only gmail account is supported for now(others will be added soon).  
-* Gmail account must have **two-step-authentication and App password enabled**.  
+* To use codes apart from first release, 'tkinter' must be installed.  
 -------------------------
 ## To be kept in mind:
 * The script 'new_format.py' is under development and will be released with full features soon.  
-* Further releases will have input support in the GUI window itself instead of the terminal.  
+* ~~Further releases will have input support in the GUI window itself instead of the terminal.  ~~
+-------------------------
+## Updates:
+* Snapshots of the application will be uploaded soon.
+* GUI is working properly in `test_case.py` for the test case type 1, other types won't take long to implement now.
