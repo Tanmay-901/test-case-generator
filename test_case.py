@@ -50,7 +50,7 @@ class Case:
     def done(self, output):
         self.output.grid_forget()
         self.copy_button.grid_forget()
-        self.regenerate_button.grid_forget()
+        self.generate_button.grid_forget()
         self.change_values_button.grid_forget()
         self.done_button.grid_forget()
         self.retrieve_home()
@@ -68,17 +68,28 @@ class Type1(Case):
     def __init__(self, master):
         super(Type1, self).__init__(master)
         Case.forget_home(self=Case)
-        self.test_case_count_label = Label(master, text='T: ', font=('calibre', 10, 'bold'))
-        self.test_case_count = Entry(master, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_n = Entry(master, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(master, text='<= n <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(master, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(master, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(master, text='<= Ai <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(master, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(master, text='Submit', command=self.submit)
-        self.test_case_count_label.grid(row=0, column=0)
+        self.take_input()
 
+    def take_input(self):
+        try:
+            self.output.grid_forget()
+            self.copy_button.grid_forget()
+            self.generate_button.grid_forget()
+            self.change_values_button.grid_forget()
+            self.done_button.grid_forget()
+        except AttributeError:
+            pass
+        self.test_case_count_label = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
+        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
+        self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
+        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
+        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
+        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
+        self.sub_btn = Button(gui, text='Submit', command=self.submit)
+
+        self.test_case_count_label.grid(row=0, column=0)
         self.test_case_count.grid(row=0, column=1)
         self.minimum_value_of_n.grid(row=1, column=0)
         self.min_max_values_of_n_label.grid(row=1, column=1)
@@ -88,8 +99,24 @@ class Type1(Case):
         self.maximum_value_of_ai.grid(row=2, column=2)
         self.sub_btn.grid(row=3, column=1)
 
+    def display(self):
+        self.output = Text(gui, height=5, bg="light cyan")
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.copy_button = Button(gui, text='copy', fg='black',
+                                  command=self.cpy)  # , height=1, width=7)
+        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
+        self.generate_button = Button(gui, text='Re-generate', fg='black',
+                                        command=lambda: self.generate())  # , height=1, width=7)
+        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
+        self.change_values_button = Button(gui, text='Change Constraints', fg='black',
+                                           command=lambda: self.take_input())  # , height=1, width=7)
+        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
+        self.done_button = Button(gui, text='done', fg='black',
+                                  command=lambda: self.done(self.output))  # , height=1, width=7)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+
     def generate(self):
-        print('1')
+        # print('generated new')
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
         self.output.insert(END, '\n')
@@ -127,34 +154,6 @@ class Type1(Case):
         self.forget_type1()
         self.display()
         self.generate()
-
-    def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
-        self.copy_button = Button(gui, text='copy', fg='black',
-                                  command=self.cpy)  # , height=1, width=7)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='Re-generate', fg='black',
-                                        command=lambda: self.generate())  # , height=1, width=7)
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='Change Constraints', fg='black',
-                                           command=lambda: self.change_values)  # , height=1, width=7)
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='done', fg='black',
-                                  command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
-
-        # self.output.insert(END, self.t)
-        # self.output.insert(END, '\n')
-        # for i in range(self.t):
-        #     self.n = randint(self.n_min, self.n_max)
-        #     self.output.insert(END, self.n)
-        #     self.output.insert(END, '\n')
-        #     self.a = [0] * self.n
-        #     for j in range(self.n):
-        #         self.a[j] = randint(self.a_min, self.a_max)
-        #     self.output.insert(END, self.a)
-        #     self.output.insert(END, '\n')
 
 
 class Type2(Case):
