@@ -1,5 +1,5 @@
 # Test-case-generator  
-#### Generate test cases for Competitive Coding.
+#### Generate test cases for Competitive Coding. 
 ------------------------
 ## About Project  
 * This project is a combined application of Object Oriented Programming, Competitive coding and Tkinter toolkit.
