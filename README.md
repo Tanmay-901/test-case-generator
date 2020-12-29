@@ -13,4 +13,4 @@
 -------------------------
 ## Updates:
 * Snapshots of the application will be uploaded soon.
-* GUI is working properly in `test_case.py` for the test case type 1, other types won't take long to implement now.
+* GUI is working properly in `test_case.py` for the all the current test case types.
