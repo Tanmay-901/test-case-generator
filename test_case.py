@@ -19,24 +19,33 @@ class Case:
 
     def home(self):
         self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
-        self.button1 = Button(gui, justify=LEFT, text='T\nn1   \nA1 A2 A3...\nn2   \nA1 A2 A3... ', fg='black',
-                         command=lambda: Type1(gui))  # , height=1, width=7)
+        self.button1 = Button(gui, justify=LEFT, text='T\nn   \nA1 A2 A3...An\nn   \nA1 A2 A3...An', fg='black',
+                         command=lambda: Type1(gui), width=10)  # , height=1, width=7)
         self.button1.grid(row=0, column=0, ipady=10, pady=10, padx=5)
-        self.button2 = Button(gui, justify=LEFT, text='T\nm1 n1  \nA1 A2 A3...\nm2 n2\nA1 A2 A3... ', fg='black',
-                         command=lambda: Type2(gui))  # , height=1, width=7)
+        self.button2 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2 A3...An\nn  m\nA1 A2 A3...An', fg='black',
+                         command=lambda: Type2(gui), width=10)  # , height=1, width=7)
         self.button2.grid(row=0, column=1, ipady=10, pady=10, padx=5)
-        self.button3 = Button(gui, justify=LEFT, text='T\nA1 B1\nA2 B2\nA3 B3\n.    .', fg='black',
-                         command=lambda: Type3(gui), width=7)
+        self.button3 = Button(gui, justify=LEFT, text='T\nA1  B1\nA2  B2\n...   ...\nAt  Bt', fg='black',
+                         command=lambda: Type3(gui), width=10)
         self.button3.grid(row=0, column=2, ipady=10, pady=10, padx=5)
-        self.button4 = Button(gui, justify=LEFT, text='T\nn1 m1  \nA1 A2 A3...\nB1 B2 B3...\nn2 m2', fg='black',
-                              command=lambda: Type4(gui))  # , height=1, width=7)
+        self.button4 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2...An\nB1 B2...Bm\n...  ...', fg='black',
+                              command=lambda: Type4(gui), width=10)  # , height=1, width=7)
         self.button4.grid(row=0, column=3, ipady=10, pady=10, padx=5)
-        self.button5 = Button(gui, justify=LEFT, text='n  m\nA11 A12...A1m\nA21 A22...A2m\n.   .     .\nAn1 An2...Anm', fg='black',
-                              command=lambda: Type5(gui))  # , height=1, width=7)
+        self.button5 = Button(gui, justify=LEFT, text='n  m\nA11 A12...A1m\nA21 A22...A2m\n__    __  ... __\n'
+                                                      'An1 An2...Anm'
+                              , fg='black', command=lambda: Type5(gui), width=11)  # , height=1, width=7)
         self.button5.grid(row=1, column=0, ipady=10, pady=10, padx=5)
-        self.button6 = Button(gui, text=' Another type ', fg='black',
+        self.button6 = Button(gui, justify=LEFT, text='n  m\nA11 A12...A1m\nA21 A22...A2m\n__    __  ... __\n'
+                                                      'An1 An2...Anm'
+                              , fg='black', command=lambda: Type5(gui), width=11)  # , height=1, width=7)
+        self.button6.grid(row=1, column=1, ipady=10, pady=10, padx=5)
+        self.button7 = Button(gui, justify=LEFT, text='T\nn  m\nA1  B1\n...   ...\nAm  Bm'
+                              , fg='black', command=lambda: Type5(gui), width=11)  # , height=1, width=7)
+        self.button7.grid(row=1, column=2, ipady=10, pady=10, padx=5)
+        self.button10 = Button(gui, text=' Another type ', fg='black',
                          command=lambda: self.NewFormat(self))  # , height=1, width=7)
-        self.button6.grid(row=2, column=1, ipady=10, pady=10, padx=5)
+        self.button10.grid(row=2
+                           , column=1, ipady=10, pady=10, padx=5)
 
     def NewFormat(self):
         url = "https://forms.gle/UVdo6QMAwBNxa9Ln7"
@@ -49,6 +58,9 @@ class Case:
         self.button4.grid_forget()
         self.button5.grid_forget()
         self.button6.grid_forget()
+        self.button7.grid_forget()
+        self.button10.grid_forget()
+
 
     def cpy(self):
         txt = self.output.get('1.0', END)
@@ -72,6 +84,8 @@ class Case:
         self.button4.grid(row=0, column=3, ipady=10, pady=10, padx=5)
         self.button5.grid(row=1, column=0, ipady=10, pady=10, padx=5)
         self.button6.grid(row=2, column=2, ipady=10, pady=10, padx=5)
+        self.button7.grid(row=2, column=2, ipady=10, pady=10, padx=5)
+        self.button10.grid(row=2, column=2, ipady=10, pady=10, padx=5)
 
 class Type1(Case):
 
