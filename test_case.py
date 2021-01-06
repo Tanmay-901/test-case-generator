@@ -61,7 +61,7 @@ class Case:
         self.button9.grid(row=1, column=3, ipady=10, pady=10, padx=10)
         self.button9.configure(background='grey20')
         self.button10 = Button(gui, text=' Another type ', fg='black',
-                             command=lambda: self.NewFormat(self))
+                             command=lambda: self.NewFormat(self=Case))
         self.button10.grid(row=2, column=2, ipady=10, pady=10, padx=10)
         # self.button10.configure(background='grey20')
 
@@ -341,8 +341,8 @@ class Type3(Case):
         self.sub_btn.grid(row=3, column=1)
 
     def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15,25), padx=7 )
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
@@ -354,7 +354,7 @@ class Type3(Case):
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
         self.done_button = Button(gui, text='done', fg='black',
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10,18), padx=5)
 
     def generate(self):
         # print('generated new')
@@ -441,8 +441,8 @@ class Type4(Case):
         self.sub_btn.grid(row=5, column=1)
 
     def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7 )
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
@@ -454,7 +454,7 @@ class Type4(Case):
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
         self.done_button = Button(gui, text='done', fg='black',
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):
         # print('generated new')
@@ -512,6 +512,13 @@ class Type4(Case):
         self.generate()
 
 
+#  ------------------------------------------------- ###
+#  ------------------------------------------------- ###
+#  ### Developed by TANMAY KHANDELWAL (aka Dude901). ###
+#  _________________________________________________ ###
+#  _________________________________________________ ###
+
+
 class Type5(Case):
 
     def __init__(self, master):
@@ -555,8 +562,8 @@ class Type5(Case):
         self.sub_btn.grid(row=4, column=1)
 
     def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15,25), padx=7)
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
@@ -568,7 +575,7 @@ class Type5(Case):
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
         self.done_button = Button(gui, text='done', fg='black',
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10,18), padx=5)
 
     def generate(self):
         # print('generated new')
@@ -653,8 +660,8 @@ class Type6(Case):
         self.sub_btn.grid(row=3, column=1)
 
     def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
@@ -666,7 +673,7 @@ class Type6(Case):
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
         self.done_button = Button(gui, text='done', fg='black',
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):
         # print('generated new')
@@ -744,8 +751,8 @@ class Type7(Case):
         self.sub_btn.grid(row=3, column=1)
 
     def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15,25), padx=7)
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
@@ -757,7 +764,7 @@ class Type7(Case):
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
         self.done_button = Button(gui, text='done', fg='black',
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):
         # print('generated new')
@@ -843,8 +850,8 @@ class Type8(Case):
         self.sub_btn.grid(row=5, column=1)
 
     def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
@@ -856,7 +863,7 @@ class Type8(Case):
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
         self.done_button = Button(gui, text='done', fg='black',
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10,18), padx=5)
 
     def generate(self):
         # print('generated new')
@@ -947,8 +954,8 @@ class Type9(Case):
         self.sub_btn.grid(row=3, column=1)
 
     def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
@@ -960,7 +967,7 @@ class Type9(Case):
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
         self.done_button = Button(gui, text='done', fg='black',
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):
         # print('generated new')
@@ -1036,4 +1043,8 @@ Case.home(self=Case)
 gui.mainloop()
 # e = Case(gui)
 gui.mainloop()
+#  ------------------------------------------------- ###
+#  ------------------------------------------------- ###
 #  ### Developed by TANMAY KHANDELWAL (aka Dude901). ###
+#  _________________________________________________ ###
+#  _________________________________________________ ###
