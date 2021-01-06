@@ -1,3 +1,9 @@
+#  ------------------------------------------------- ###
+#  ------------------------------------------------- ###
+#  ### Developed by TANMAY KHANDELWAL (aka Dude901). ###
+#  _________________________________________________ ###
+#  _________________________________________________ ###
+
 from tkinter import *
 from random import randint, choices
 import webbrowser
@@ -14,10 +20,6 @@ class Case:
         gen_frame = Frame(master)
         gen_frame.grid()
         self.test_case_counter = None
-        # self.button1 = None
-        # self.button2 = None
-        # self.button3 = None
-        # self.button4 = None
 
     def home(self):
         self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
@@ -59,7 +61,7 @@ class Case:
         self.button9.grid(row=1, column=3, ipady=10, pady=10, padx=10)
         self.button9.configure(background='grey20')
         self.button10 = Button(gui, text=' Another type ', fg='black',
-                         command=lambda: self.NewFormat(self))  # , height=1, width=7)
+                             command=lambda: self.NewFormat(self))
         self.button10.grid(row=2, column=2, ipady=10, pady=10, padx=10)
         # self.button10.configure(background='grey20')
 
@@ -78,7 +80,6 @@ class Case:
         self.button8.grid_forget()
         self.button9.grid_forget()
         self.button10.grid_forget()
-
 
     def cpy(self):
         txt = self.output.get('1.0', END)
@@ -107,6 +108,7 @@ class Case:
         self.button9.grid(row=1, column=3, ipady=10, pady=10, padx=10)
         self.button10.grid(row=2, column=2, ipady=10, pady=10, padx=10)
 
+
 class Type1(Case):
 
     def __init__(self, master):
@@ -114,7 +116,6 @@ class Type1(Case):
         Case.forget_home(self=Case)
         # gui.geometry()
         self.take_input()
-
 
     def take_input(self):
         try:
@@ -146,8 +147,8 @@ class Type1(Case):
         self.sub_btn.grid(row=3, column=1,pady=20)
 
     def display(self):
-        self.output = Text(gui, height=5, bg="light cyan")
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=10, padx=5, )
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
         self.copy_button = Button(gui, text='copy', fg='black',
                                   command=self.cpy)  # , height=1, width=7)
         self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
@@ -159,7 +160,7 @@ class Type1(Case):
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
         self.done_button = Button(gui, text='done', fg='black',
                                   command=lambda: self.done(self.output))  # , height=1, width=7)
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=10, padx=5)
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10,18), padx=5)
 
     def generate(self):
         # print('generated new')
@@ -1035,3 +1036,4 @@ Case.home(self=Case)
 gui.mainloop()
 # e = Case(gui)
 gui.mainloop()
+#  ### Developed by TANMAY KHANDELWAL (aka Dude901). ###
