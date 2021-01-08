@@ -20,6 +20,18 @@ class Case:
         gen_frame = Frame(master)
         gen_frame.grid()
         self.test_case_counter = None
+        # self.button1 = Button()
+        # self.button2 = Button()
+        # self.button3 = Button()
+        # self.button4 = Button()
+        # self.button5 = Button()
+        # self.button6 = Button()
+        # self.button7 = Button()
+        # self.button8 = Button()
+        # self.button9 = Button()
+        # self.button10 = Button()
+        # self.button_new = Button()
+        # self.button_exit = Button()
 
     def home(self):
         self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
@@ -69,7 +81,6 @@ class Case:
         self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11
                                  , command=lambda: gui.destroy())
         self.button_exit.grid(row=2, column=3, ipady=10, pady=10, padx=10)
-
 
     def newformat(self):
         url = "https://forms.gle/UVdo6QMAwBNxa9Ln7"
@@ -130,6 +141,13 @@ class Case:
         self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
         self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 20), padx=5)
 
+    def try_forget(self):
+        self.output.grid_forget()
+        self.copy_button.grid_forget()
+        self.generate_button.grid_forget()
+        self.change_values_button.grid_forget()
+        self.done_button.grid_forget()
+
 
 class Type1(Case):
 
@@ -140,11 +158,7 @@ class Type1(Case):
 
     def take_input(self):
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))  # Type 1
@@ -213,11 +227,7 @@ class Type2(Case):
 
     def take_input(self):              # Type 2
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))  # Type 2
@@ -299,11 +309,7 @@ class Type3(Case):
 
     def take_input(self):                   # Type 3
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))    # Type 3
@@ -370,11 +376,7 @@ class Type4(Case):
 
     def take_input(self):                                   # Type 4
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))     # Type 4
@@ -480,11 +482,7 @@ class Type5(Case):
 
     def take_input(self):                       # Type 5
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))       # Type 5
@@ -565,11 +563,7 @@ class Type6(Case):
 
     def take_input(self):                           # Type 6
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
         except AttributeError:
             pass                                # Type 6
         self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
@@ -643,11 +637,7 @@ class Type7(Case):
 
     def take_input(self):                                     # Type 7
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
             self.char_list.delete(0, 'end')
         except AttributeError:
             pass
@@ -714,11 +704,7 @@ class Type8(Case):
 
     def take_input(self):
         try:                                                # Type 8
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))       # Type 8
@@ -814,11 +800,7 @@ class Type9(Case):
 
     def take_input(self):                       # Type 9
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()                                 # Type 9
-            self.done_button.grid_forget()
+            self.try_forget()
             self.char_list.delete('0', 'end')
         except AttributeError:
             pass
@@ -882,11 +864,7 @@ class Type10(Case):
 
     def take_input(self):                               # Type 10
         try:
-            self.output.grid_forget()
-            self.copy_button.grid_forget()
-            self.generate_button.grid_forget()
-            self.change_values_button.grid_forget()
-            self.done_button.grid_forget()
+            self.try_forget()
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))        # Type 10
