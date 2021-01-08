@@ -52,7 +52,7 @@ class Case:
         self.button7.grid(row=1, column=1, ipady=10, pady=10, padx=10)
         self.button7.configure(background='grey20')
         self.button8 = Button(gui, justify=LEFT, text='T\nn  m\nA1  B1\n...   ...\nAm  Bm'
-                              , fg='white', command=lambda: Type7(gui), width=11)
+                              , fg='white', command=lambda: Type8(gui), width=11)
         self.button8.grid(row=1, column=2, ipady=10, pady=10, padx=10)
         self.button8.configure(background='grey20')
         self.button9 = Button(gui, justify=LEFT, text='T\nCustom string\n(without "n")\n(ex: 0 1)\n(ex: + / -)'
@@ -785,7 +785,7 @@ class Type8(Case):
         self.take_input()
 
     def take_input(self):
-        try:
+        try:                                                # Type 8
             self.output.grid_forget()
             self.copy_button.grid_forget()
             self.generate_button.grid_forget()
@@ -793,7 +793,7 @@ class Type8(Case):
             self.done_button.grid_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
+        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))       # Type 8
         self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
         self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
         self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
