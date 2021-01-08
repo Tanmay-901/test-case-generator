@@ -36,11 +36,11 @@ class Case:
         self.button3.grid(row=0, column=2, ipady=10, pady=10, padx=10, ipadx=4)
         self.button3.configure(background='grey20')
         self.button4 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2...An\nB1 B2...Bm\n...  ...', fg='white'
-                              , command=lambda: Type4(gui), width=10)  # , height=1, width=7)
+                              , command=lambda: Type4(gui), width=10)
         self.button4.grid(row=0, column=3, ipady=10, pady=10, padx=10, ipadx=4)
         self.button4.configure(background='grey20')
         self.button5 = Button(gui, justify=LEFT, text='T\nn  m  k\nn  m  k\n(t rows of)\n(n m k  pair)', fg='white'
-                              , command=lambda: Type5(gui), width=10)  # , height=1, width=7)
+                              , command=lambda: Type5(gui), width=10)
         self.button5.grid(row=0, column=4, ipady=10, pady=10, padx=10, ipadx=4)
         self.button5.configure(background='grey20')
         self.button6 = Button(gui, justify=LEFT, text='n * m (matrix)\nA1  A2...Am\nA1  A2...Am\n__   __ ... __\n'
@@ -138,35 +138,64 @@ class Case:
     def submit(self):
         try:
             self.t = int(self.test_case_count.get())
+            if self.t == 0:
+                return
+        except ValueError:
+            return
         except AttributeError:
             pass
         try:
             self.n_min = int(self.minimum_value_of_n.get())
             self.n_max = int(self.maximum_value_of_n.get())
+            if self.n_min > self.n_max or self.n_max == 0:
+                return
+        except ValueError:
+            return
         except AttributeError:
             pass
         try:
             self.m_min = int(self.minimum_value_of_m.get())
             self.m_max = int(self.maximum_value_of_m.get())
+            if self.m_min > self.m_max or self.m_max == 0:
+                return
+        except ValueError:
+            return
         except AttributeError:
             pass
         try:
             self.k_min = int(self.minimum_value_of_k.get())
             self.k_max = int(self.maximum_value_of_k.get())
+            if self.k_min > self.k_max or self.k_max == 0:
+                return
+        except ValueError:
+            return
         except AttributeError:
             pass
         try:
             self.a_min = int(self.minimum_value_of_ai.get())
             self.a_max = int(self.maximum_value_of_ai.get())
+            if self.a_min > self.a_max or self.a_max == 0:
+                return
+        except ValueError:
+            return
         except AttributeError:
             pass
         try:
             self.b_min = int(self.minimum_value_of_bi.get())
             self.b_max = int(self.maximum_value_of_bi.get())
+            if self.b_min > self.b_max or self.b_max == 0:
+                return
+        except ValueError:
+            return
         except AttributeError:
             pass
         try:
             self.char_lis = list(self.char_list.get().split())
+            print(self.char_lis[0])
+        except IndexError:
+            return
+        except ValueError:
+            return
         except AttributeError:
             pass
         finally:
@@ -221,7 +250,6 @@ class Case:
 
 
 class Type1(Case):
-
     def __init__(self, master):
         super(Type1, self).__init__(master)
         self.forget_home()
@@ -253,6 +281,7 @@ class Type1(Case):
         self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
 
     def generate(self):                                         # Type 1
+        self.forget_testcase_take_input_screen()
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
         self.output.insert(END, '\n')
@@ -267,14 +296,14 @@ class Type1(Case):
             self.output.insert(END, '\n')
 
 
-class Type2(Case):
+class Type2(Case):                                      # Type 2
 
     def __init__(self, master):
         super(Type2, self).__init__(master)
         self.forget_home()
         self.take_input()
 
-    def take_input(self):              # Type 2
+    def take_input(self):                              # Type 2
         try:
             self.try_forget()
         except AttributeError:
