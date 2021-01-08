@@ -24,7 +24,7 @@ class Case:
     def home(self):
         self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
         self.button1 = Button(gui, justify=LEFT, text='T\nn   \nA1 A2 A3...An\nn   \nA1 A2 A3...An',
-                              fg='white', command=lambda: Type1(gui))  # , height=1, width=7)
+                              fg='white', command=lambda: Type1(gui))
         self.button1.grid(row=0, column=0, ipady=10, pady=10, padx=10)
         self.button1.configure(background='grey20')
         self.button2 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2 A3...An\nn  m\nA1 A2 A3...An', fg='white'
@@ -135,6 +135,45 @@ class Case:
         self.change_values_button.grid_forget()
         self.done_button.grid_forget()
 
+    def submit(self):
+        try:
+            self.t = int(self.test_case_count.get())
+        except AttributeError:
+            pass
+        try:
+            self.n_min = int(self.minimum_value_of_n.get())
+            self.n_max = int(self.maximum_value_of_n.get())
+        except AttributeError:
+            pass
+        try:
+            self.m_min = int(self.minimum_value_of_m.get())
+            self.m_max = int(self.maximum_value_of_m.get())
+        except AttributeError:
+            pass
+        try:
+            self.k_min = int(self.minimum_value_of_k.get())
+            self.k_max = int(self.maximum_value_of_k.get())
+        except AttributeError:
+            pass
+        try:
+            self.a_min = int(self.minimum_value_of_ai.get())
+            self.a_max = int(self.maximum_value_of_ai.get())
+        except AttributeError:
+            pass
+        try:
+            self.b_min = int(self.minimum_value_of_bi.get())
+            self.b_max = int(self.maximum_value_of_bi.get())
+        except AttributeError:
+            pass
+        try:
+            self.char_lis = list(self.char_list.get().split())
+        except AttributeError:
+            pass
+        finally:
+            self.forget_testcase_take_input_screen()
+            self.display()
+            self.generate()
+
     def forget_testcase_take_input_screen(self):
         try:
             self.test_case_count_label.grid_forget()
@@ -173,6 +212,7 @@ class Case:
             pass
         try:
             self.char_list_label.grid_forget()
+            self.char_list.delete('0', 'end')
             self.char_list.grid_forget()
         except AttributeError:
             pass
@@ -225,17 +265,6 @@ class Type1(Case):
                 self.a[j] = randint(self.a_min, self.a_max)
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
-
-    def submit(self):                                          # Type 1
-        self.t = int(self.test_case_count.get())
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.a_min = int(self.minimum_value_of_ai.get())
-        self.a_max = int(self.maximum_value_of_ai.get())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
 
 
 class Type2(Case):
@@ -292,19 +321,6 @@ class Type2(Case):
                 self.a[j] = randint(self.a_min, self.a_max)
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
-
-    def submit(self):                                 # Type 2
-        self.t = int(self.test_case_count.get())
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.m_min = int(self.minimum_value_of_m.get())
-        self.m_max = int(self.maximum_value_of_m.get())
-        self.a_min = int(self.minimum_value_of_ai.get())
-        self.a_max = int(self.maximum_value_of_ai.get())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
 
 
 class Type3(Case):
@@ -428,22 +444,6 @@ class Type4(Case):
             self.output.insert(END, self.b)
             self.output.insert(END, '\n')
 
-    def submit(self):                                           # Type 4
-        self.t = int(self.test_case_count.get())
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.m_min = int(self.minimum_value_of_m.get())
-        self.m_max = int(self.maximum_value_of_m.get())
-        self.a_min = int(self.minimum_value_of_ai.get())
-        self.a_max = int(self.maximum_value_of_ai.get())
-        self.b_min = int(self.minimum_value_of_bi.get())
-        self.b_max = int(self.maximum_value_of_bi.get())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
-
-
 #  ------------------------------------------------- ###
 #  ------------------------------------------------- ###
 #  ### Developed by TANMAY KHANDELWAL (aka Dude901). ###
@@ -504,19 +504,6 @@ class Type5(Case):
             self.output.insert(END, self.k)
             self.output.insert(END, '\n')
 
-    def submit(self):                                       # Type 5
-        self.t = int(self.test_case_count.get())
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.m_min = int(self.minimum_value_of_m.get())
-        self.m_max = int(self.maximum_value_of_m.get())
-        self.k_min = int(self.minimum_value_of_k.get())
-        self.k_max = int(self.maximum_value_of_k.get())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
-
 
 class Type6(Case):
 
@@ -567,18 +554,6 @@ class Type6(Case):
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
 
-    def submit(self):                                          # Type 6
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.m_min = int(self.minimum_value_of_m.get())
-        self.m_max = int(self.maximum_value_of_m.get())
-        self.a_min = int(self.minimum_value_of_ai.get())
-        self.a_max = int(self.maximum_value_of_ai.get())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
-
 
 class Type7(Case):
 
@@ -590,7 +565,6 @@ class Type7(Case):
     def take_input(self):                                     # Type 7
         try:
             self.try_forget()
-            self.char_list.delete(0, 'end')
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))      # Type 7
@@ -624,16 +598,6 @@ class Type7(Case):
             self.a = choices(self.char_lis, k=self.n)
             self.output.insert(END, ''.join(self.a))
             self.output.insert(END, '\n')
-
-    def submit(self):                                       # Type 7
-        self.t = int(self.test_case_count.get())
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.char_lis = list(self.char_list.get().split())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
 
 
 class Type8(Case):
@@ -700,21 +664,6 @@ class Type8(Case):
                 self.output.insert(END, self.b)
                 self.output.insert(END, '\n')
 
-    def submit(self):                                          # Type 8
-        self.t = int(self.test_case_count.get())
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.m_min = int(self.minimum_value_of_m.get())
-        self.m_max = int(self.maximum_value_of_m.get())
-        self.a_min = int(self.minimum_value_of_ai.get())
-        self.a_max = int(self.maximum_value_of_ai.get())
-        self.b_min = int(self.minimum_value_of_bi.get())
-        self.b_max = int(self.maximum_value_of_bi.get())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
-
 
 class Type9(Case):
     def __init__(self, master):
@@ -725,7 +674,6 @@ class Type9(Case):
     def take_input(self):                       # Type 9
         try:
             self.try_forget()
-            self.char_list.delete('0', 'end')
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))        # Type 9
@@ -757,16 +705,6 @@ class Type9(Case):
             self.a = choices(self.char_lis, k=self.n)
             self.output.insert(END, ''.join(self.a))
             self.output.insert(END, '\n')
-
-    def submit(self):                                           # Type 9
-        self.t = int(self.test_case_count.get())
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.char_lis = list(self.char_list.get().split())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
 
 
 class Type10(Case):
@@ -813,8 +751,7 @@ class Type10(Case):
         self.maximum_value_of_ai.grid(row=4, column=2, padx=(10, 10))
         self.sub_btn.grid(row=5, column=1, pady=(10, 20))
 
-    def generate(self):
-        # print('generated new')
+    def generate(self):                             # Type 10
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
         self.output.insert(END, '\n')
@@ -825,7 +762,7 @@ class Type10(Case):
             self.output.insert(END, self.n)
             self.output.insert(END, ' ')
             self.output.insert(END, self.k)
-            self.output.insert(END, ' ')
+            self.output.insert(END, ' ')            # Type 10
             self.output.insert(END, self.m)
             self.output.insert(END, '\n')
             self.a = [0] * self.n
@@ -833,21 +770,6 @@ class Type10(Case):
                 self.a[j] = randint(self.a_min, self.a_max)
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
-
-    def submit(self):
-        self.t = int(self.test_case_count.get())
-        self.n_min = int(self.minimum_value_of_n.get())
-        self.n_max = int(self.maximum_value_of_n.get())
-        self.k_min = int(self.minimum_value_of_k.get())
-        self.k_max = int(self.maximum_value_of_k.get())
-        self.m_min = int(self.minimum_value_of_m.get())
-        self.m_max = int(self.maximum_value_of_m.get())
-        self.a_min = int(self.minimum_value_of_ai.get())
-        self.a_max = int(self.maximum_value_of_ai.get())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
 
 
 t = IntVar()
