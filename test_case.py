@@ -29,19 +29,19 @@ class Case:
         self.button1.configure(background='grey20')
         self.button2 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2 A3...An\nn  m\nA1 A2 A3...An', fg='white'
                          , command=lambda: Type2(gui), width=10)
-        self.button2.grid(row=0, column=1, ipady=10, pady=10, padx=10)
+        self.button2.grid(row=0, column=1, ipady=10, pady=10, padx=10, ipadx=4)
         self.button2.configure(background='grey20')
         self.button3 = Button(gui, justify=LEFT, text='T\nA1  B1\nA2  B2\n(t rows of)\n(A, B pair)', fg='white'
                          , command=lambda: Type3(gui), width=10)
-        self.button3.grid(row=0, column=2, ipady=10, pady=10, padx=10)
+        self.button3.grid(row=0, column=2, ipady=10, pady=10, padx=10, ipadx=4)
         self.button3.configure(background='grey20')
         self.button4 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2...An\nB1 B2...Bm\n...  ...', fg='white'
                               , command=lambda: Type4(gui), width=10)  # , height=1, width=7)
-        self.button4.grid(row=0, column=3, ipady=10, pady=10, padx=10)
+        self.button4.grid(row=0, column=3, ipady=10, pady=10, padx=10, ipadx=4)
         self.button4.configure(background='grey20')
         self.button5 = Button(gui, justify=LEFT, text='T\nn  m  k\nn  m  k\n(t rows of)\n(n m k  pair)', fg='white'
                               , command=lambda: Type5(gui), width=10)  # , height=1, width=7)
-        self.button5.grid(row=0, column=4, ipady=10, pady=10, padx=10)
+        self.button5.grid(row=0, column=4, ipady=10, pady=10, padx=10, ipadx=4)
         self.button5.configure(background='grey20')
         self.button6 = Button(gui, justify=LEFT, text='n * m (matrix)\nA1  A2...Am\nA1  A2...Am\n__   __ ... __\n'
                               'A1  A2...Am', fg='white', command=lambda: Type6(gui), width=11)
@@ -63,10 +63,10 @@ class Case:
                               , fg='white', command=lambda: Type10(gui), width=11)
         self.button10.grid(row=1, column=4, ipady=10, pady=10, padx=10)
         self.button10.configure(background='grey20')
-        self.button_new = Button(gui, text=' Another type ', fg='black'
+        self.button_new = Button(gui, text='Another type', fg='black', width=11
                              , command=lambda: self.newformat(self=Case))
-        self.button_new.grid(row=2, column=2, ipady=10, pady=10, padx=10)
-        self.button_exit = Button(gui, text=' EXIT ', fg='black'
+        self.button_new.grid(row=2, column=1, ipady=10, pady=10, padx=10)
+        self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11
                                  , command=lambda: gui.destroy())
         self.button_exit.grid(row=2, column=3, ipady=10, pady=10, padx=10)
 
