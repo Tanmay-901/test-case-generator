@@ -66,6 +66,10 @@ class Case:
         self.button_new = Button(gui, text=' Another type ', fg='black'
                              , command=lambda: self.newformat(self=Case))
         self.button_new.grid(row=2, column=2, ipady=10, pady=10, padx=10)
+        self.button_exit = Button(gui, text=' EXIT ', fg='black'
+                                 , command=lambda: gui.destroy())
+        self.button_exit.grid(row=2, column=3, ipady=10, pady=10, padx=10)
+
 
     def newformat(self):
         url = "https://forms.gle/UVdo6QMAwBNxa9Ln7"
@@ -83,6 +87,7 @@ class Case:
         self.button9.grid_forget()
         self.button10.grid_forget()
         self.button_new.grid_forget()
+        self.button_exit.grid_forget()
 
     def cpy(self):
         txt = self.output.get('1.0', END)
@@ -110,6 +115,7 @@ class Case:
         self.button9.grid(row=1, column=3, ipady=10, pady=10, padx=10)
         self.button10.grid(row=1, column=4, ipady=10, pady=10, padx=10)
         self.button_new.grid(row=2, column=2, ipady=10, pady=10, padx=10)
+        self.button_exit.grid(row=2, column=3, ipady=10, pady=10, padx=10)
 
 
 class Type1(Case):
