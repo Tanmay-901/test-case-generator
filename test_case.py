@@ -135,7 +135,7 @@ class Type1(Case):
 
     def __init__(self, master):
         super(Type1, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):
@@ -208,7 +208,7 @@ class Type2(Case):
 
     def __init__(self, master):
         super(Type2, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):              # Type 2
@@ -294,10 +294,10 @@ class Type2(Case):
 class Type3(Case):
     def __init__(self, master):
         super(Type3, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
-    def take_input(self):
+    def take_input(self):                   # Type 3
         try:
             self.output.grid_forget()
             self.copy_button.grid_forget()
@@ -365,7 +365,7 @@ class Type4(Case):
 
     def __init__(self, master):
         super(Type4, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):                                   # Type 4
@@ -475,7 +475,7 @@ class Type5(Case):
 
     def __init__(self, master):
         super(Type5, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):                       # Type 5
@@ -560,7 +560,7 @@ class Type6(Case):
 
     def __init__(self, master):                     # Type 6
         super(Type6, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):                           # Type 6
@@ -638,7 +638,7 @@ class Type7(Case):
 
     def __init__(self, master):                               # Type 7
         super(Type7, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):                                     # Type 7
@@ -709,7 +709,7 @@ class Type8(Case):
 
     def __init__(self, master):                             # Type 8
         super(Type8, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):
@@ -809,7 +809,7 @@ class Type8(Case):
 class Type9(Case):
     def __init__(self, master):
         super(Type9, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):                       # Type 9
@@ -877,7 +877,7 @@ class Type10(Case):
 
     def __init__(self, master):
         super(Type10, self).__init__(master)
-        Case.forget_home(self=Case)
+        self.forget_home()
         self.take_input()
 
     def take_input(self):                               # Type 10
@@ -991,7 +991,6 @@ char_lis = StringVar()
 Case.home(self=Case)
 
 gui.mainloop()
-# e = Case(gui)
 gui.mainloop()
 
 #  ------------------------------------------------- ###
