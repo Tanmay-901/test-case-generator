@@ -117,6 +117,19 @@ class Case:
         self.button_new.grid(row=2, column=1, ipady=10, pady=10, padx=10)
         self.button_exit.grid(row=2, column=3, ipady=10, pady=10, padx=10)
 
+    def display(self):
+        self.output = Text(gui, height=12, bg="light cyan", width=82)
+        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
+        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
+        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=(10, 18), padx=5)
+        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
+        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=(10, 18), padx=5)
+        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
+                                           , command=lambda: self.take_input())
+        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=(10, 18), padx=5)
+        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
+        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 20), padx=5)
+
 
 class Type1(Case):
 
@@ -153,19 +166,6 @@ class Type1(Case):
         self.min_max_values_of_ai_label.grid(row=2, column=1, ipadx=2, ipady=1)
         self.maximum_value_of_ai.grid(row=2, column=2)
         self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
-
-    def display(self):
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10,18), padx=5)
 
     def generate(self):                                         # Type 1
         self.output.delete('1.0', END)
@@ -246,19 +246,6 @@ class Type2(Case):
         self.maximum_value_of_ai.grid(row=3, column=2, padx=(10, 10))
         self.sub_btn.grid(row=4, column=1, pady=(10, 20), ipady=1)
 
-    def display(self):
-        self.output = Text(gui, height=12, bg="light cyan", width=82)  # Type 2
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
-
     def generate(self):                                # Type 2
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
@@ -338,19 +325,6 @@ class Type3(Case):
         self.min_max_values_of_bi_label.grid(row=2, column=1, padx=10)
         self.maximum_value_of_bi.grid(row=2, column=2, padx=10)
         self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
-
-    def display(self):                                                # Type 3
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):                                              # Type 3
         self.output.delete('1.0', END)
@@ -434,19 +408,6 @@ class Type4(Case):
         self.min_max_values_of_bi_label.grid(row=4, column=1)
         self.maximum_value_of_bi.grid(row=4, column=2)
         self.sub_btn.grid(row=5, column=1, pady=(10, 20), ipady=1)
-
-    def display(self):                                                     # Type 4
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):                                     # Type 4
         self.output.delete('1.0', END)
@@ -552,19 +513,6 @@ class Type5(Case):
         self.maximum_value_of_k.grid(row=3, column=2)
         self.sub_btn.grid(row=4, column=1, pady=(10, 20), ipady=1)
 
-    def display(self):                                                       # Type 5
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
-
     def generate(self):                             # Type 5
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
@@ -646,19 +594,6 @@ class Type6(Case):
         self.maximum_value_of_ai.grid(row=2, column=2)
         self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
 
-    def display(self):                                                      # Type 6
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
-
     def generate(self):                                         # Type 6
         self.output.delete('1.0', END)
         self.n = randint(self.n_min, self.n_max)
@@ -735,19 +670,6 @@ class Type7(Case):
         self.min_max_values_of_n_label.grid(row=2, column=1)
         self.maximum_value_of_n.grid(row=2, column=2, padx=(10, 10))
         self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
-
-    def display(self):                                                      # Type 7
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):                                 # Type 7
         self.output.delete('1.0', END)
@@ -830,19 +752,6 @@ class Type8(Case):
         self.min_max_values_of_bi_label.grid(row=4, column=1, ipady=1)
         self.maximum_value_of_bi.grid(row=4, column=2)
         self.sub_btn.grid(row=5, column=1, pady=(10, 20), ipady=1)
-
-    def display(self):                                                      # Type 8
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):                                 # Type 8
         self.output.delete('1.0', END)
@@ -933,19 +842,6 @@ class Type9(Case):
         self.maximum_value_of_n.grid(row=2, column=2, padx=(10, 10))
         self.sub_btn.grid(row=3, column=1, pady=(10, 20))
 
-    def display(self):                                                          # Type 9
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
-
     def generate(self):                                         # Type 9
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
@@ -1024,19 +920,6 @@ class Type10(Case):
         self.min_max_values_of_ai_label.grid(row=4, column=1, ipadx=5)
         self.maximum_value_of_ai.grid(row=4, column=2, padx=(10, 10))
         self.sub_btn.grid(row=5, column=1, pady=(10, 20))
-
-    def display(self):
-        self.output = Text(gui, height=12, bg="light cyan", width=82)
-        self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, pady=(15, 25), padx=7)
-        self.copy_button = Button(gui, text='COPY', fg='black', command=self.cpy)
-        self.copy_button.grid(row=1, column=2, sticky='SW', ipady=10, pady=10, padx=5)
-        self.generate_button = Button(gui, text='RE-GENERATE', fg='black', command=lambda: self.generate())
-        self.generate_button.grid(row=1, column=4, sticky='S', ipady=10, pady=10, padx=5)
-        self.change_values_button = Button(gui, text='CHANGE CONSTRAINT', fg='black'
-                                           , command=lambda: self.take_input())
-        self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=10, padx=5)
-        self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
-        self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
     def generate(self):
         # print('generated new')
