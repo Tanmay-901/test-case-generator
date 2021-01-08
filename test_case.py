@@ -559,8 +559,7 @@ class Type5(Case):
         self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
         self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 18), padx=5)
 
-    def generate(self):
-        # print('generated new')
+    def generate(self):                             # Type 5
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
         self.output.insert(END, '\n')
@@ -575,7 +574,7 @@ class Type5(Case):
             self.output.insert(END, self.k)
             self.output.insert(END, '\n')
 
-    def forget_type5(self):
+    def forget_type5(self):                                 # Type 5
         self.test_case_count_label.grid_forget()
         self.test_case_count.grid_forget()
         self.minimum_value_of_n.grid_forget()
@@ -589,7 +588,7 @@ class Type5(Case):
         self.maximum_value_of_k.grid_forget()
         self.sub_btn.grid_forget()
 
-    def submit(self):
+    def submit(self):                                       # Type 5
         self.t = int(self.test_case_count.get())
         self.n_min = int(self.minimum_value_of_n.get())
         self.n_max = int(self.maximum_value_of_n.get())
@@ -605,12 +604,12 @@ class Type5(Case):
 
 class Type6(Case):
 
-    def __init__(self, master):
+    def __init__(self, master):                     # Type 6
         super(Type6, self).__init__(master)
         Case.forget_home(self=Case)
         self.take_input()
 
-    def take_input(self):
+    def take_input(self):                           # Type 6
         try:
             self.output.grid_forget()
             self.copy_button.grid_forget()
@@ -618,28 +617,28 @@ class Type6(Case):
             self.change_values_button.grid_forget()
             self.done_button.grid_forget()
         except AttributeError:
-            pass
+            pass                                # Type 6
         self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<= no. of rows <=', font=('calibre', 10, 'bold'))
+        self.min_max_values_of_n_label = Label(gui, text='   <= No. of rows <=  ', font=('calibre', 10, 'bold'))
         self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_m_label = Label(gui, text='<= no. of columns <=', font=('calibre', 10, 'bold'))
+        self.min_max_values_of_m_label = Label(gui, text='<= No. of columns <=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
+        self.min_max_values_of_ai_label = Label(gui, text='  <= Ai <=  ', font=('calibre', 10, 'bold'))
         self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='Submit', command=self.submit)
+        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
 
-        self.minimum_value_of_n.grid(row=0, column=0)
+        self.minimum_value_of_n.grid(row=0, column=0, padx=10, pady=20, ipady=1)               # Type 6
         self.min_max_values_of_n_label.grid(row=0, column=1)
         self.maximum_value_of_n.grid(row=0, column=2)
-        self.minimum_value_of_m.grid(row=1, column=0)
-        self.min_max_values_of_m_label.grid(row=1, column=1)
-        self.maximum_value_of_m.grid(row=1, column=2)
-        self.minimum_value_of_ai.grid(row=2, column=0)
+        self.minimum_value_of_m.grid(row=1, column=0, pady=10)
+        self.min_max_values_of_m_label.grid(row=1, column=1, padx=10, ipady=1)
+        self.maximum_value_of_m.grid(row=1, column=2, padx=(10, 10))
+        self.minimum_value_of_ai.grid(row=2, column=0, pady=10)
         self.min_max_values_of_ai_label.grid(row=2, column=1)
         self.maximum_value_of_ai.grid(row=2, column=2)
-        self.sub_btn.grid(row=3, column=1)
+        self.sub_btn.grid(row=3, column=1, pady=(10, 20))
 
     def display(self):
         self.output = Text(gui, height=12, bg="light cyan", width=82)
