@@ -152,7 +152,7 @@ class Type1(Case):
         self.minimum_value_of_ai.grid(row=2, column=0, padx=10)
         self.min_max_values_of_ai_label.grid(row=2, column=1, ipadx=2, ipady=1)
         self.maximum_value_of_ai.grid(row=2, column=2)
-        self.sub_btn.grid(row=3, column=1, pady=20)
+        self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
 
     def display(self):
         self.output = Text(gui, height=12, bg="light cyan", width=82)
@@ -244,7 +244,7 @@ class Type2(Case):
         self.minimum_value_of_ai.grid(row=3, column=0, padx=10, pady=10)
         self.min_max_values_of_ai_label.grid(row=3, column=1, ipadx=5, ipady=1)
         self.maximum_value_of_ai.grid(row=3, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=4, column=1, pady=10)
+        self.sub_btn.grid(row=4, column=1, pady=(10, 20), ipady=1)
 
     def display(self):
         self.output = Text(gui, height=12, bg="light cyan", width=82)  # Type 2
@@ -337,7 +337,7 @@ class Type3(Case):
         self.minimum_value_of_bi.grid(row=2, column=0, pady=10)
         self.min_max_values_of_bi_label.grid(row=2, column=1, padx=10)
         self.maximum_value_of_bi.grid(row=2, column=2, padx=10)
-        self.sub_btn.grid(row=3, column=1, pady=(10, 20))
+        self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
 
     def display(self):                                                # Type 3
         self.output = Text(gui, height=12, bg="light cyan", width=82)
@@ -433,7 +433,7 @@ class Type4(Case):
         self.minimum_value_of_bi.grid(row=4, column=0, pady=10)
         self.min_max_values_of_bi_label.grid(row=4, column=1)
         self.maximum_value_of_bi.grid(row=4, column=2)
-        self.sub_btn.grid(row=5, column=1, pady=(10, 20))
+        self.sub_btn.grid(row=5, column=1, pady=(10, 20), ipady=1)
 
     def display(self):                                                     # Type 4
         self.output = Text(gui, height=12, bg="light cyan", width=82)
@@ -550,7 +550,7 @@ class Type5(Case):
         self.minimum_value_of_k.grid(row=3, column=0, pady=10)
         self.min_max_values_of_k_label.grid(row=3, column=1)
         self.maximum_value_of_k.grid(row=3, column=2)
-        self.sub_btn.grid(row=4, column=1, pady=(10, 20))
+        self.sub_btn.grid(row=4, column=1, pady=(10, 20), ipady=1)
 
     def display(self):                                                       # Type 5
         self.output = Text(gui, height=12, bg="light cyan", width=82)
@@ -644,7 +644,7 @@ class Type6(Case):
         self.minimum_value_of_ai.grid(row=2, column=0, pady=10)
         self.min_max_values_of_ai_label.grid(row=2, column=1)
         self.maximum_value_of_ai.grid(row=2, column=2)
-        self.sub_btn.grid(row=3, column=1, pady=(10, 20))
+        self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
 
     def display(self):                                                      # Type 6
         self.output = Text(gui, height=12, bg="light cyan", width=82)
@@ -725,7 +725,7 @@ class Type7(Case):
         self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
         self.char_list.insert(END, '(Space separated characters)')
         self.char_list.bind("<FocusIn>", lambda args: self.char_list.delete('0', 'end'))
-        self.sub_btn = Button(gui, text='Submit', command=self.submit)
+        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
 
         self.test_case_count_label.grid(row=0, column=0, pady=10)               # Type 7
         self.test_case_count.grid(row=0, column=1, padx=10)
@@ -734,7 +734,7 @@ class Type7(Case):
         self.minimum_value_of_n.grid(row=2, column=0, pady=10, padx=10)
         self.min_max_values_of_n_label.grid(row=2, column=1)
         self.maximum_value_of_n.grid(row=2, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=3, column=1, pady=(10, 20))
+        self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
 
     def display(self):                                                      # Type 7
         self.output = Text(gui, height=12, bg="light cyan", width=82)
@@ -802,34 +802,34 @@ class Type8(Case):
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))       # Type 8
         self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
         self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
+        self.min_max_values_of_n_label = Label(gui, text=' <= n <= ', font=('calibre', 10, 'bold'))
         self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_m_label = Label(gui, text='<= m <=', font=('calibre', 10, 'bold'))
+        self.min_max_values_of_m_label = Label(gui, text=' <= m <= ', font=('calibre', 10, 'bold'))
         self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
+        self.min_max_values_of_ai_label = Label(gui, text=' <= Ai <= ', font=('calibre', 10, 'bold'))
         self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_bi = Entry(gui, textvariable=b_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_bi_label = Label(gui, text='<= Bi <=', font=('calibre', 10, 'bold'))
+        self.min_max_values_of_bi_label = Label(gui, text=' <= Bi <= ', font=('calibre', 10, 'bold'))
         self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='Submit', command=self.submit)
+        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
 
-        self.test_case_count_label.grid(row=0, column=0)
-        self.test_case_count.grid(row=0, column=1)
-        self.minimum_value_of_n.grid(row=1, column=0)
+        self.test_case_count_label.grid(row=0, column=0, pady=10)
+        self.test_case_count.grid(row=0, column=1, padx=10)
+        self.minimum_value_of_n.grid(row=1, column=0, padx=10, pady=10, ipadx=1,ipady=1)
         self.min_max_values_of_n_label.grid(row=1, column=1)
-        self.maximum_value_of_n.grid(row=1, column=2)
-        self.minimum_value_of_m.grid(row=2, column=0)
-        self.min_max_values_of_m_label.grid(row=2, column=1)
+        self.maximum_value_of_n.grid(row=1, column=2, padx=(10,10))
+        self.minimum_value_of_m.grid(row=2, column=0,pady=10)
+        self.min_max_values_of_m_label.grid(row=2, column=1, ipady=1)
         self.maximum_value_of_m.grid(row=2, column=2)
-        self.minimum_value_of_ai.grid(row=3, column=0)
-        self.min_max_values_of_ai_label.grid(row=3, column=1)
+        self.minimum_value_of_ai.grid(row=3, column=0, pady=10)
+        self.min_max_values_of_ai_label.grid(row=3, column=1, ipady=1)
         self.maximum_value_of_ai.grid(row=3, column=2)
-        self.minimum_value_of_bi.grid(row=4, column=0)
-        self.min_max_values_of_bi_label.grid(row=4, column=1)
+        self.minimum_value_of_bi.grid(row=4, column=0, pady=10)
+        self.min_max_values_of_bi_label.grid(row=4, column=1, ipady=1)
         self.maximum_value_of_bi.grid(row=4, column=2)
-        self.sub_btn.grid(row=5, column=1)
+        self.sub_btn.grid(row=5, column=1, pady=(10, 20), ipady=1)
 
     def display(self):
         self.output = Text(gui, height=12, bg="light cyan", width=82)
