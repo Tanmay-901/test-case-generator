@@ -20,18 +20,6 @@ class Case:
         gen_frame = Frame(master)
         gen_frame.grid()
         self.test_case_counter = None
-        # self.button1 = Button()
-        # self.button2 = Button()
-        # self.button3 = Button()
-        # self.button4 = Button()
-        # self.button5 = Button()
-        # self.button6 = Button()
-        # self.button7 = Button()
-        # self.button8 = Button()
-        # self.button9 = Button()
-        # self.button10 = Button()
-        # self.button_new = Button()
-        # self.button_exit = Button()
 
     def home(self):
         self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
@@ -78,27 +66,12 @@ class Case:
         self.button_new = Button(gui, text='Another type', fg='black', width=11
                              , command=lambda: self.newformat(self=Case))
         self.button_new.grid(row=2, column=1, ipady=10, pady=10, padx=10)
-        self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11
-                                 , command=lambda: gui.destroy())
+        self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11, command=lambda: gui.destroy())
         self.button_exit.grid(row=2, column=3, ipady=10, pady=10, padx=10)
 
     def newformat(self):
         url = "https://forms.gle/UVdo6QMAwBNxa9Ln7"
         webbrowser.open_new_tab(url)
-
-    def forget_home(self):
-        self.button1.grid_forget()
-        self.button2.grid_forget()
-        self.button3.grid_forget()
-        self.button4.grid_forget()
-        self.button5.grid_forget()
-        self.button6.grid_forget()
-        self.button7.grid_forget()
-        self.button8.grid_forget()
-        self.button9.grid_forget()
-        self.button10.grid_forget()
-        self.button_new.grid_forget()
-        self.button_exit.grid_forget()
 
     def cpy(self):
         txt = self.output.get('1.0', END)
@@ -113,6 +86,20 @@ class Case:
         self.done_button.grid_forget()
         self.retrieve_home()
         pass
+
+    def forget_home(self):
+        self.button1.grid_forget()
+        self.button2.grid_forget()
+        self.button3.grid_forget()
+        self.button4.grid_forget()
+        self.button5.grid_forget()
+        self.button6.grid_forget()
+        self.button7.grid_forget()
+        self.button8.grid_forget()
+        self.button9.grid_forget()
+        self.button10.grid_forget()
+        self.button_new.grid_forget()
+        self.button_exit.grid_forget()
 
     def retrieve_home(self):
         self.button1.grid(row=0, column=0, ipady=10, pady=10, padx=10)
@@ -147,6 +134,50 @@ class Case:
         self.generate_button.grid_forget()
         self.change_values_button.grid_forget()
         self.done_button.grid_forget()
+
+    def forget_testcase_take_input_screen(self):
+        try:
+            self.test_case_count_label.grid_forget()
+            self.test_case_count.grid_forget()
+        except AttributeError:
+            pass
+        try:
+            self.minimum_value_of_n.grid_forget()
+            self.min_max_values_of_n_label.grid_forget()
+            self.maximum_value_of_n.grid_forget()
+        except AttributeError:
+            pass
+        try:
+            self.minimum_value_of_ai.grid_forget()
+            self.min_max_values_of_ai_label.grid_forget()
+            self.maximum_value_of_ai.grid_forget()
+        except AttributeError:
+            pass
+        try:
+            self.minimum_value_of_bi.grid_forget()
+            self.min_max_values_of_bi_label.grid_forget()
+            self.maximum_value_of_bi.grid_forget()
+        except AttributeError:
+            pass
+        try:
+            self.minimum_value_of_m.grid_forget()
+            self.min_max_values_of_m_label.grid_forget()
+            self.maximum_value_of_m.grid_forget()
+        except AttributeError:
+            pass
+        try:
+            self.minimum_value_of_k.grid_forget()
+            self.min_max_values_of_k_label.grid_forget()
+            self.maximum_value_of_k.grid_forget()
+        except AttributeError:
+            pass
+        try:
+            self.char_list_label.grid_forget()
+            self.char_list.grid_forget()
+        except AttributeError:
+            pass
+        finally:
+            self.sub_btn.grid_forget()
 
 
 class Type1(Case):
@@ -195,17 +226,6 @@ class Type1(Case):
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
 
-    def forget_type1(self):                                     # Type 1
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.minimum_value_of_ai.grid_forget()
-        self.min_max_values_of_ai_label.grid_forget()
-        self.maximum_value_of_ai.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):                                          # Type 1
         self.t = int(self.test_case_count.get())
         self.n_min = int(self.minimum_value_of_n.get())
@@ -213,7 +233,7 @@ class Type1(Case):
         self.a_min = int(self.minimum_value_of_ai.get())
         self.a_max = int(self.maximum_value_of_ai.get())
 
-        self.forget_type1()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -273,20 +293,6 @@ class Type2(Case):
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
 
-    def forget_type2(self):                             # Type 2
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.minimum_value_of_m.grid_forget()
-        self.min_max_values_of_m_label.grid_forget()
-        self.maximum_value_of_m.grid_forget()
-        self.minimum_value_of_ai.grid_forget()
-        self.min_max_values_of_ai_label.grid_forget()
-        self.maximum_value_of_ai.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):                                 # Type 2
         self.t = int(self.test_case_count.get())
         self.n_min = int(self.minimum_value_of_n.get())
@@ -296,7 +302,7 @@ class Type2(Case):
         self.a_min = int(self.minimum_value_of_ai.get())
         self.a_max = int(self.maximum_value_of_ai.get())
 
-        self.forget_type2()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -344,17 +350,6 @@ class Type3(Case):
             self.output.insert(END, self.b)
             self.output.insert(END, '\n')
 
-    def forget_type3(self):                                         # Type 3
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.minimum_value_of_ai.grid_forget()
-        self.min_max_values_of_ai_label.grid_forget()
-        self.maximum_value_of_ai.grid_forget()
-        self.minimum_value_of_bi.grid_forget()
-        self.min_max_values_of_bi_label.grid_forget()
-        self.maximum_value_of_bi.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):                                              # Type 3
         self.t = int(self.test_case_count.get())
         self.a_min = int(self.minimum_value_of_ai.get())
@@ -362,7 +357,7 @@ class Type3(Case):
         self.b_min = int(self.minimum_value_of_bi.get())
         self.b_max = int(self.maximum_value_of_bi.get())
 
-        self.forget_type3()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -433,23 +428,6 @@ class Type4(Case):
             self.output.insert(END, self.b)
             self.output.insert(END, '\n')
 
-    def forget_type4(self):                                 # Type 4
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.minimum_value_of_m.grid_forget()
-        self.min_max_values_of_m_label.grid_forget()
-        self.maximum_value_of_m.grid_forget()
-        self.minimum_value_of_ai.grid_forget()
-        self.min_max_values_of_ai_label.grid_forget()
-        self.maximum_value_of_ai.grid_forget()
-        self.minimum_value_of_bi.grid_forget()
-        self.min_max_values_of_bi_label.grid_forget()
-        self.maximum_value_of_bi.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):                                           # Type 4
         self.t = int(self.test_case_count.get())
         self.n_min = int(self.minimum_value_of_n.get())
@@ -461,7 +439,7 @@ class Type4(Case):
         self.b_min = int(self.minimum_value_of_bi.get())
         self.b_max = int(self.maximum_value_of_bi.get())
 
-        self.forget_type4()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -526,20 +504,6 @@ class Type5(Case):
             self.output.insert(END, self.k)
             self.output.insert(END, '\n')
 
-    def forget_type5(self):                                 # Type 5
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.minimum_value_of_m.grid_forget()
-        self.min_max_values_of_m_label.grid_forget()
-        self.maximum_value_of_m.grid_forget()
-        self.minimum_value_of_k.grid_forget()
-        self.min_max_values_of_k_label.grid_forget()
-        self.maximum_value_of_k.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):                                       # Type 5
         self.t = int(self.test_case_count.get())
         self.n_min = int(self.minimum_value_of_n.get())
@@ -549,7 +513,7 @@ class Type5(Case):
         self.k_min = int(self.minimum_value_of_k.get())
         self.k_max = int(self.maximum_value_of_k.get())
 
-        self.forget_type5()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -603,18 +567,6 @@ class Type6(Case):
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
 
-    def forget_type6(self):                                     # Type 6
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.minimum_value_of_m.grid_forget()
-        self.min_max_values_of_m_label.grid_forget()
-        self.maximum_value_of_m.grid_forget()
-        self.minimum_value_of_ai.grid_forget()
-        self.min_max_values_of_ai_label.grid_forget()
-        self.maximum_value_of_ai.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):                                          # Type 6
         self.n_min = int(self.minimum_value_of_n.get())
         self.n_max = int(self.maximum_value_of_n.get())
@@ -623,7 +575,7 @@ class Type6(Case):
         self.a_min = int(self.minimum_value_of_ai.get())
         self.a_max = int(self.maximum_value_of_ai.get())
 
-        self.forget_type6()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -669,20 +621,9 @@ class Type7(Case):
             self.n = randint(self.n_min, self.n_max)
             self.output.insert(END, self.n)
             self.output.insert(END, '\n')
-            # self.a = list(input().split())
             self.a = choices(self.char_lis, k=self.n)
             self.output.insert(END, ''.join(self.a))
             self.output.insert(END, '\n')
-
-    def forget_type7(self):                                 # Type 7
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.char_list_label.grid_forget()
-        self.char_list.grid_forget()
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.sub_btn.grid_forget()
 
     def submit(self):                                       # Type 7
         self.t = int(self.test_case_count.get())
@@ -690,7 +631,7 @@ class Type7(Case):
         self.n_max = int(self.maximum_value_of_n.get())
         self.char_lis = list(self.char_list.get().split())
 
-        self.forget_type7()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -759,23 +700,6 @@ class Type8(Case):
                 self.output.insert(END, self.b)
                 self.output.insert(END, '\n')
 
-    def forget_type8(self):                                 # Type 8
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.minimum_value_of_m.grid_forget()
-        self.min_max_values_of_m_label.grid_forget()
-        self.maximum_value_of_m.grid_forget()
-        self.minimum_value_of_ai.grid_forget()
-        self.min_max_values_of_ai_label.grid_forget()
-        self.maximum_value_of_ai.grid_forget()
-        self.minimum_value_of_bi.grid_forget()
-        self.min_max_values_of_bi_label.grid_forget()
-        self.maximum_value_of_bi.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):                                          # Type 8
         self.t = int(self.test_case_count.get())
         self.n_min = int(self.minimum_value_of_n.get())
@@ -787,7 +711,7 @@ class Type8(Case):
         self.b_min = int(self.minimum_value_of_bi.get())
         self.b_max = int(self.maximum_value_of_bi.get())
 
-        self.forget_type8()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -834,23 +758,13 @@ class Type9(Case):
             self.output.insert(END, ''.join(self.a))
             self.output.insert(END, '\n')
 
-    def forget_type9(self):                                     # Type 9
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.char_list_label.grid_forget()
-        self.char_list.grid_forget()
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):                                           # Type 9
         self.t = int(self.test_case_count.get())
         self.n_min = int(self.minimum_value_of_n.get())
         self.n_max = int(self.maximum_value_of_n.get())
         self.char_lis = list(self.char_list.get().split())
 
-        self.forget_type9()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
@@ -920,23 +834,6 @@ class Type10(Case):
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
 
-    def forget_type10(self):
-        self.test_case_count_label.grid_forget()
-        self.test_case_count.grid_forget()
-        self.minimum_value_of_n.grid_forget()
-        self.min_max_values_of_n_label.grid_forget()
-        self.maximum_value_of_n.grid_forget()
-        self.minimum_value_of_k.grid_forget()
-        self.min_max_values_of_k_label.grid_forget()
-        self.maximum_value_of_k.grid_forget()
-        self.minimum_value_of_m.grid_forget()
-        self.min_max_values_of_m_label.grid_forget()
-        self.maximum_value_of_m.grid_forget()
-        self.minimum_value_of_ai.grid_forget()
-        self.min_max_values_of_ai_label.grid_forget()
-        self.maximum_value_of_ai.grid_forget()
-        self.sub_btn.grid_forget()
-
     def submit(self):
         self.t = int(self.test_case_count.get())
         self.n_min = int(self.minimum_value_of_n.get())
@@ -948,7 +845,7 @@ class Type10(Case):
         self.a_min = int(self.minimum_value_of_ai.get())
         self.a_max = int(self.maximum_value_of_ai.get())
 
-        self.forget_type10()
+        self.forget_testcase_take_input_screen()
         self.display()
         self.generate()
 
