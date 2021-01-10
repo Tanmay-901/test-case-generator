@@ -204,7 +204,7 @@ class Case:
             self.display()
             self.generate()
 
-    def forget_testcase_take_input_screen(self):
+    def forget_testcase_take_input_screen(self, check):
         try:
             self.test_case_count_label.grid_forget()
             self.test_case_count.grid_forget()
@@ -246,19 +246,26 @@ class Case:
             self.char_list.grid_forget()
         except AttributeError:
             pass
+        try:
+            self.back_btn.grid_forget()
+        except AttributeError:
+            pass
         finally:
             self.sub_btn.grid_forget()
+
+        if check:
+            self.retrieve_home()
 
 
 class Type1(Case):
     def __init__(self, master):
-        super(Type1, self).__init__(master)
+        super(Type1, self).__init__(master)             # Type 1
         self.forget_home()
         self.take_input()
 
     def take_input(self):
         try:
-            self.try_forget()
+            self.try_forget()                           # Type 1
         except AttributeError:
             pass
         self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))  # Type 1
@@ -270,6 +277,7 @@ class Type1(Case):
         self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, padx=10, pady=10, ipady=1)             # Type 1
         self.test_case_count.grid(row=0, column=1)
@@ -279,7 +287,8 @@ class Type1(Case):
         self.minimum_value_of_ai.grid(row=2, column=0, padx=10)
         self.min_max_values_of_ai_label.grid(row=2, column=1, ipadx=2, ipady=1)
         self.maximum_value_of_ai.grid(row=2, column=2)
-        self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
+        self.sub_btn.grid(row=3, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=3, column=2, pady=(20, 20), ipady=1)
 
     def generate(self):                                         # Type 1
         self.forget_testcase_take_input_screen()
@@ -321,6 +330,7 @@ class Type2(Case):                                      # Type 2
         self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, padx=10, pady=10, ipady=1)  # Type2
         self.test_case_count.grid(row=0, column=1)
@@ -333,7 +343,8 @@ class Type2(Case):                                      # Type 2
         self.minimum_value_of_ai.grid(row=3, column=0, padx=10, pady=10)
         self.min_max_values_of_ai_label.grid(row=3, column=1, ipadx=5, ipady=1)
         self.maximum_value_of_ai.grid(row=3, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=4, column=1, pady=(10, 20), ipady=1)
+        self.sub_btn.grid(row=4, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=4, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                                # Type 2
         self.output.delete('1.0', END)
@@ -373,6 +384,7 @@ class Type3(Case):
         self.min_max_values_of_bi_label = Label(gui, text='<= Bi <=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, pady=10, padx=10, ipadx=5, ipady=1)    # Type 3
         self.test_case_count.grid(row=0, column=1, padx=10)
@@ -382,7 +394,8 @@ class Type3(Case):
         self.minimum_value_of_bi.grid(row=2, column=0, pady=10)
         self.min_max_values_of_bi_label.grid(row=2, column=1, padx=10)
         self.maximum_value_of_bi.grid(row=2, column=2, padx=10)
-        self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
+        self.sub_btn.grid(row=3, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=3, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                                              # Type 3
         self.output.delete('1.0', END)
@@ -424,6 +437,7 @@ class Type4(Case):
         self.min_max_values_of_bi_label = Label(gui, text='<= Bi <=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, padx=10, ipady=1, pady=10)          # Type 4
         self.test_case_count.grid(row=0, column=1, padx=10)
@@ -439,7 +453,8 @@ class Type4(Case):
         self.minimum_value_of_bi.grid(row=4, column=0, pady=10)
         self.min_max_values_of_bi_label.grid(row=4, column=1)
         self.maximum_value_of_bi.grid(row=4, column=2)
-        self.sub_btn.grid(row=5, column=1, pady=(10, 20), ipady=1)
+        self.sub_btn.grid(row=5, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=5, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                                     # Type 4
         self.output.delete('1.0', END)
@@ -494,6 +509,7 @@ class Type5(Case):
         self.min_max_values_of_k_label = Label(gui, text='<= k <=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_k = Entry(gui, textvariable=k_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, padx=10, pady=10, ipady=1)         # Type 5
         self.test_case_count.grid(row=0, column=1, padx=10)
@@ -506,7 +522,8 @@ class Type5(Case):
         self.minimum_value_of_k.grid(row=3, column=0, pady=10)
         self.min_max_values_of_k_label.grid(row=3, column=1)
         self.maximum_value_of_k.grid(row=3, column=2)
-        self.sub_btn.grid(row=4, column=1, pady=(10, 20), ipady=1)
+        self.sub_btn.grid(row=4, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=4, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                             # Type 5
         self.output.delete('1.0', END)
@@ -546,6 +563,7 @@ class Type6(Case):
         self.min_max_values_of_ai_label = Label(gui, text='  <= Ai <=  ', font=('calibre', 10, 'bold'))
         self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.minimum_value_of_n.grid(row=0, column=0, padx=10, pady=20, ipady=1)               # Type 6
         self.min_max_values_of_n_label.grid(row=0, column=1)
@@ -556,7 +574,8 @@ class Type6(Case):
         self.minimum_value_of_ai.grid(row=2, column=0, pady=10)
         self.min_max_values_of_ai_label.grid(row=2, column=1)
         self.maximum_value_of_ai.grid(row=2, column=2)
-        self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
+        self.sub_btn.grid(row=3, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=3, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                                         # Type 6
         self.output.delete('1.0', END)
@@ -596,6 +615,7 @@ class Type7(Case):
         self.min_max_values_of_n_label = Label(gui, text='<=Length of string<=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, pady=10)               # Type 7
         self.test_case_count.grid(row=0, column=1, padx=10)
@@ -604,7 +624,8 @@ class Type7(Case):
         self.minimum_value_of_n.grid(row=2, column=0, pady=10, padx=10)
         self.min_max_values_of_n_label.grid(row=2, column=1)
         self.maximum_value_of_n.grid(row=2, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=3, column=1, pady=(10, 20), ipady=1)
+        self.sub_btn.grid(row=3, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=3, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                                 # Type 7
         self.output.delete('1.0', END)
@@ -646,6 +667,7 @@ class Type8(Case):
         self.min_max_values_of_bi_label = Label(gui, text=' <= Bi <= ', font=('calibre', 10, 'bold'))
         self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, pady=10)                   # Type 8
         self.test_case_count.grid(row=0, column=1, padx=10)
@@ -661,7 +683,8 @@ class Type8(Case):
         self.minimum_value_of_bi.grid(row=4, column=0, pady=10)
         self.min_max_values_of_bi_label.grid(row=4, column=1, ipady=1)
         self.maximum_value_of_bi.grid(row=4, column=2)
-        self.sub_btn.grid(row=5, column=1, pady=(10, 20), ipady=1)
+        self.sub_btn.grid(row=5, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=6, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                                 # Type 8
         self.output.delete('1.0', END)
@@ -705,6 +728,7 @@ class Type9(Case):
         self.min_max_values_of_n_label = Label(gui, text='<=length of string<=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, pady=10)
         self.test_case_count.grid(row=0, column=1, padx=10)
@@ -713,7 +737,8 @@ class Type9(Case):
         self.minimum_value_of_n.grid(row=2, column=0, padx=10, pady=10)
         self.min_max_values_of_n_label.grid(row=2, column=1)
         self.maximum_value_of_n.grid(row=2, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=3, column=1, pady=(10, 20))
+        self.sub_btn.grid(row=3, column=1, pady=(20, 20))
+        self.back_btn.grid(row=3, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                                         # Type 9
         self.output.delete('1.0', END)
@@ -753,6 +778,7 @@ class Type10(Case):
         self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
         self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
         self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
 
         self.test_case_count_label.grid(row=0, column=0, padx=10, pady=10)          # Type 10
         self.test_case_count.grid(row=0, column=1)
@@ -768,7 +794,8 @@ class Type10(Case):
         self.minimum_value_of_ai.grid(row=4, column=0, padx=10, pady=10)
         self.min_max_values_of_ai_label.grid(row=4, column=1, ipadx=5)
         self.maximum_value_of_ai.grid(row=4, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=5, column=1, pady=(10, 20))
+        self.sub_btn.grid(row=5, column=1, pady=(20, 20))
+        self.back_btn.grid(row=5, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                             # Type 10
         self.output.delete('1.0', END)
