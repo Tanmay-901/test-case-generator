@@ -20,6 +20,7 @@ class Case:
         gen_frame = Frame(master)
         gen_frame.grid()
         self.test_case_counter = None
+        # self.button = []
 
     def home(self):
         self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
@@ -145,8 +146,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.n_min = int(self.minimum_value_of_n.get())
-            self.n_max = int(self.maximum_value_of_n.get())
+            self.n_min = int(min(self.minimum_value_of_n.get(), self.maximum_value_of_n.get()))
+            self.n_max = int(max(self.minimum_value_of_n.get(), self.maximum_value_of_n.get()))
             if self.n_min > self.n_max or self.n_max == 0:
                 return
         except ValueError:
@@ -154,8 +155,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.m_min = int(self.minimum_value_of_m.get())
-            self.m_max = int(self.maximum_value_of_m.get())
+            self.m_min = int(min(self.minimum_value_of_m.get(), self.maximum_value_of_m.get()))
+            self.m_max = int(max(self.minimum_value_of_m.get(), self.maximum_value_of_m.get()))
             if self.m_min > self.m_max or self.m_max == 0:
                 return
         except ValueError:
@@ -163,8 +164,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.k_min = int(self.minimum_value_of_k.get())
-            self.k_max = int(self.maximum_value_of_k.get())
+            self.k_min = int(min(self.minimum_value_of_k.get(), self.maximum_value_of_k.get()))
+            self.k_max = int(max(self.minimum_value_of_k.get(), self.maximum_value_of_k.get()))
             if self.k_min > self.k_max or self.k_max == 0:
                 return
         except ValueError:
@@ -172,8 +173,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.a_min = int(self.minimum_value_of_ai.get())
-            self.a_max = int(self.maximum_value_of_ai.get())
+            self.a_min = int(min(self.minimum_value_of_ai.get(), self.maximum_value_of_ai.get()))
+            self.a_max = int(max(self.minimum_value_of_ai.get(), self.maximum_value_of_ai.get()))
             if self.a_min > self.a_max or self.a_max == 0:
                 return
         except ValueError:
@@ -181,8 +182,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.b_min = int(self.minimum_value_of_bi.get())
-            self.b_max = int(self.maximum_value_of_bi.get())
+            self.b_min = int(min(self.minimum_value_of_bi.get(), self.maximum_value_of_bi.get()))
+            self.b_max = int(max(self.minimum_value_of_bi.get(), self.maximum_value_of_bi.get()))
             if self.b_min > self.b_max or self.b_max == 0:
                 return
         except ValueError:
@@ -394,17 +395,6 @@ class Type3(Case):
             self.output.insert(END, ' ')
             self.output.insert(END, self.b)
             self.output.insert(END, '\n')
-
-    def submit(self):                                              # Type 3
-        self.t = int(self.test_case_count.get())
-        self.a_min = int(self.minimum_value_of_ai.get())
-        self.a_max = int(self.maximum_value_of_ai.get())
-        self.b_min = int(self.minimum_value_of_bi.get())
-        self.b_max = int(self.maximum_value_of_bi.get())
-
-        self.forget_testcase_take_input_screen()
-        self.display()
-        self.generate()
 
 
 class Type4(Case):
