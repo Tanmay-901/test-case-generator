@@ -20,55 +20,43 @@ class Case:
         gen_frame = Frame(master)
         gen_frame.grid()
         self.test_case_counter = None
-        # self.button = []
 
     def home(self):
         self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
         self.button1 = Button(gui, justify=LEFT, text='T\nn   \nA1 A2 A3...An\nn   \nA1 A2 A3...An',
                               fg='white', command=lambda: Type1(gui))
-        self.button1.grid(row=0, column=0, ipady=10, pady=10, padx=10)
         self.button1.configure(background='grey20')
         self.button2 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2 A3...An\nn  m\nA1 A2 A3...An', fg='white'
                          , command=lambda: Type2(gui), width=10)
-        self.button2.grid(row=0, column=1, ipady=10, pady=10, padx=10, ipadx=4)
         self.button2.configure(background='grey20')
         self.button3 = Button(gui, justify=LEFT, text='T\nA1  B1\nA2  B2\n(t rows of)\n(A, B pair)', fg='white'
                          , command=lambda: Type3(gui), width=10)
-        self.button3.grid(row=0, column=2, ipady=10, pady=10, padx=10, ipadx=4)
         self.button3.configure(background='grey20')
         self.button4 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2...An\nB1 B2...Bm\n...  ...', fg='white'
                               , command=lambda: Type4(gui), width=10)
-        self.button4.grid(row=0, column=3, ipady=10, pady=10, padx=10, ipadx=4)
         self.button4.configure(background='grey20')
         self.button5 = Button(gui, justify=LEFT, text='T\nn  m  k\nn  m  k\n(t rows of)\n(n m k  pair)', fg='white'
                               , command=lambda: Type5(gui), width=10)
-        self.button5.grid(row=0, column=4, ipady=10, pady=10, padx=10, ipadx=4)
         self.button5.configure(background='grey20')
         self.button6 = Button(gui, justify=LEFT, text='n * m (matrix)\nA1  A2...Am\nA1  A2...Am\n__   __ ... __\n'
                               'A1  A2...Am', fg='white', command=lambda: Type6(gui), width=11)
-        self.button6.grid(row=1, column=0, ipady=10, pady=10, padx=10)
         self.button6.configure(background='grey20')
         self.button7 = Button(gui, justify=LEFT, text='T\nn\nCustom string\n(ex: 0 1)\n(ex: + / -)'
                               , fg='white', command=lambda: Type7(gui), width=11)
-        self.button7.grid(row=1, column=1, ipady=10, pady=10, padx=10)
         self.button7.configure(background='grey20')
         self.button8 = Button(gui, justify=LEFT, text='T\nn  m\nA1  B1\n...   ...\nAm  Bm'
                               , fg='white', command=lambda: Type8(gui), width=11)
-        self.button8.grid(row=1, column=2, ipady=10, pady=10, padx=10)
         self.button8.configure(background='grey20')
         self.button9 = Button(gui, justify=LEFT, text='T\nCustom string\n(without "n")\n(ex: 0 1)\n(ex: + / -)'
                               , fg='white', command=lambda: Type9(gui), width=11)
-        self.button9.grid(row=1, column=3, ipady=10, pady=10, padx=10)
         self.button9.configure(background='grey20')
         self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\nA1 A2...An\nn  k  m\nA1 A2...An'
                               , fg='white', command=lambda: Type10(gui), width=11)
-        self.button10.grid(row=1, column=4, ipady=10, pady=10, padx=10)
         self.button10.configure(background='grey20')
         self.button_new = Button(gui, text='Another type', fg='black', width=11
                              , command=lambda: self.newformat(self=Case))
-        self.button_new.grid(row=2, column=1, ipady=10, pady=10, padx=10)
         self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11, command=lambda: gui.destroy())
-        self.button_exit.grid(row=2, column=3, ipady=10, pady=10, padx=10)
+        self.retrieve_home(self)
 
     def newformat(self):
         url = "https://forms.gle/UVdo6QMAwBNxa9Ln7"
@@ -684,7 +672,7 @@ class Type8(Case):
         self.min_max_values_of_bi_label.grid(row=4, column=1, ipady=1)
         self.maximum_value_of_bi.grid(row=4, column=2)
         self.sub_btn.grid(row=5, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=6, column=2, ipady=1, pady=(20, 20))
+        self.back_btn.grid(row=5, column=2, ipady=1, pady=(20, 20))
 
     def generate(self):                                 # Type 8
         self.output.delete('1.0', END)
