@@ -124,6 +124,66 @@ class Case:
         self.change_values_button.grid_forget()
         self.done_button.grid_forget()
 
+    def get_t(self, r):
+        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))  # Type 1
+        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
+        self.test_case_count_label.grid(row=r, column=0, padx=10, pady=20, ipady=1)  # Type 1
+        self.test_case_count.grid(row=r, column=1)
+
+    def get_n(self, r):
+        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
+        self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
+        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_n.grid(row=r, column=0, padx=10, pady=10)
+        self.min_max_values_of_n_label.grid(row=r, column=1, ipadx=5, ipady=1)
+        self.maximum_value_of_n.grid(row=r, column=2, padx=(10, 10))
+
+    def get_m(self, r):
+        self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
+        self.min_max_values_of_m_label = Label(gui, text='<= m <=', font=('calibre', 10, 'bold'))
+        self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_m.grid(row=r, column=0, padx=10, pady=10)
+        self.min_max_values_of_m_label.grid(row=r, column=1, padx=10, ipadx=5, ipady=1)
+        self.maximum_value_of_m.grid(row=r, column=2, padx=10)
+
+    def get_k(self, r):
+        self.minimum_value_of_k = Entry(gui, textvariable=k_min, font=('calibre', 10, 'normal'))
+        self.min_max_values_of_k_label = Label(gui, text='<= k <=', font=('calibre', 10, 'bold'))
+        self.maximum_value_of_k = Entry(gui, textvariable=k_max, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_k.grid(row=r, column=0, pady=10)
+        self.min_max_values_of_k_label.grid(row=r, column=1)
+        self.maximum_value_of_k.grid(row=r, column=2)
+
+    def get_a(self, r):
+        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
+        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
+        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_ai.grid(row=r, column=0, padx=10, pady=10)
+        self.min_max_values_of_ai_label.grid(row=r, column=1, ipadx=2, ipady=1)
+        self.maximum_value_of_ai.grid(row=r, column=2)
+
+    def get_b(self, r):
+        self.minimum_value_of_bi = Entry(gui, textvariable=b_min, font=('calibre', 10, 'normal'))
+        self.min_max_values_of_bi_label = Label(gui, text='<= Bi <=', font=('calibre', 10, 'bold'))
+        self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_bi.grid(row=r, column=0, pady=10)
+        self.min_max_values_of_bi_label.grid(row=r, column=1, padx=10)
+        self.maximum_value_of_bi.grid(row=r, column=2, padx=10)
+
+    def get_char_list(self, r):
+        self.char_list_label = Label(gui, text=' Characters: ', font=('calibre', 10, 'bold'))
+        self.char_list = Entry(gui, textvariable=char_lis, font=('calibre', 10, 'normal'), width=43)
+        self.char_list.insert(END, '(Space separated characters)')
+        self.char_list.bind("<FocusIn>", lambda args: self.char_list.delete('0', 'end'))
+        self.char_list_label.grid(row=r, column=0, pady=10)
+        self.char_list.grid(row=r, column=1, columnspan=2, padx=10)
+
+    def show_button(self, r):
+        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
+        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
+        self.sub_btn.grid(row=r, column=1, pady=(20, 20), ipady=1)
+        self.back_btn.grid(row=r, column=2, pady=(20, 20), ipady=1)
+
     def submit(self):
         try:
             self.t = int(self.test_case_count.get())
@@ -192,7 +252,7 @@ class Case:
             self.display()
             self.generate()
 
-    def forget_testcase_take_input_screen(self, check):
+    def forget_testcase_take_input_screen(self, check=0):
         try:
             self.test_case_count_label.grid_forget()
             self.test_case_count.grid_forget()
@@ -234,12 +294,9 @@ class Case:
             self.char_list.grid_forget()
         except AttributeError:
             pass
-        try:
-            self.back_btn.grid_forget()
-        except AttributeError:
-            pass
         finally:
             self.sub_btn.grid_forget()
+            self.back_btn.grid_forget()
 
         if check:
             self.retrieve_home()
@@ -256,27 +313,10 @@ class Type1(Case):
             self.try_forget()                           # Type 1
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))  # Type 1
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, padx=10, pady=10, ipady=1)             # Type 1
-        self.test_case_count.grid(row=0, column=1)
-        self.minimum_value_of_n.grid(row=1, column=0, padx=10, pady=10)
-        self.min_max_values_of_n_label.grid(row=1, column=1, ipadx=5, ipady=1)
-        self.maximum_value_of_n.grid(row=1, column=2, padx=(10, 10))
-        self.minimum_value_of_ai.grid(row=2, column=0, padx=10)
-        self.min_max_values_of_ai_label.grid(row=2, column=1, ipadx=2, ipady=1)
-        self.maximum_value_of_ai.grid(row=2, column=2)
-        self.sub_btn.grid(row=3, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=3, column=2, pady=(20, 20), ipady=1)
+        self.get_t(0)
+        self.get_n(1)
+        self.get_a(2)
+        self.show_button(3)
 
     def generate(self):                                         # Type 1
         self.forget_testcase_take_input_screen()
@@ -306,33 +346,11 @@ class Type2(Case):                                      # Type 2
             self.try_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))  # Type 2
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_m_label = Label(gui, text='<= m <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, padx=10, pady=10, ipady=1)  # Type2
-        self.test_case_count.grid(row=0, column=1)
-        self.minimum_value_of_n.grid(row=1, column=0, padx=10, pady=10)
-        self.min_max_values_of_n_label.grid(row=1, column=1, ipadx=7, ipady=1)
-        self.maximum_value_of_n.grid(row=1, column=2, padx=(10, 10))
-        self.minimum_value_of_m.grid(row=2, column=0, padx=10, pady=10)
-        self.min_max_values_of_m_label.grid(row=2, column=1, padx=10, ipadx=5, ipady=1)
-        self.maximum_value_of_m.grid(row=2, column=2, padx=10)
-        self.minimum_value_of_ai.grid(row=3, column=0, padx=10, pady=10)
-        self.min_max_values_of_ai_label.grid(row=3, column=1, ipadx=5, ipady=1)
-        self.maximum_value_of_ai.grid(row=3, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=4, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=4, column=2, ipady=1, pady=(20, 20))
+        self.get_t(0)
+        self.get_n(1)
+        self.get_m(2)
+        self.get_a(3)
+        self.show_button(4)
 
     def generate(self):                                # Type 2
         self.output.delete('1.0', END)
@@ -363,27 +381,10 @@ class Type3(Case):
             self.try_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))    # Type 3
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_bi = Entry(gui, textvariable=b_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_bi_label = Label(gui, text='<= Bi <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, pady=10, padx=10, ipadx=5, ipady=1)    # Type 3
-        self.test_case_count.grid(row=0, column=1, padx=10)
-        self.minimum_value_of_ai.grid(row=1, column=0, padx=10, pady=10)
-        self.min_max_values_of_ai_label.grid(row=1, column=1)
-        self.maximum_value_of_ai.grid(row=1, column=2)
-        self.minimum_value_of_bi.grid(row=2, column=0, pady=10)
-        self.min_max_values_of_bi_label.grid(row=2, column=1, padx=10)
-        self.maximum_value_of_bi.grid(row=2, column=2, padx=10)
-        self.sub_btn.grid(row=3, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=3, column=2, ipady=1, pady=(20, 20))
+        self.get_t(0)
+        self.get_a(1)
+        self.get_b(2)
+        self.show_button(3)
 
     def generate(self):                                              # Type 3
         self.output.delete('1.0', END)
@@ -410,39 +411,12 @@ class Type4(Case):
             self.try_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))     # Type 4
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_m_label = Label(gui, text='<= m <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_bi = Entry(gui, textvariable=b_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_bi_label = Label(gui, text='<= Bi <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, padx=10, ipady=1, pady=10)          # Type 4
-        self.test_case_count.grid(row=0, column=1, padx=10)
-        self.minimum_value_of_n.grid(row=1, column=0, pady=10, padx=10)
-        self.min_max_values_of_n_label.grid(row=1, column=1)
-        self.maximum_value_of_n.grid(row=1, column=2, padx=(10, 10))
-        self.minimum_value_of_m.grid(row=2, column=0, pady=10)
-        self.min_max_values_of_m_label.grid(row=2, column=1)
-        self.maximum_value_of_m.grid(row=2, column=2)
-        self.minimum_value_of_ai.grid(row=3, column=0, pady=10)
-        self.min_max_values_of_ai_label.grid(row=3, column=1)
-        self.maximum_value_of_ai.grid(row=3, column=2)
-        self.minimum_value_of_bi.grid(row=4, column=0, pady=10)
-        self.min_max_values_of_bi_label.grid(row=4, column=1)
-        self.maximum_value_of_bi.grid(row=4, column=2)
-        self.sub_btn.grid(row=5, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=5, column=2, ipady=1, pady=(20, 20))
+        self.get_t(0)
+        self.get_n(1)
+        self.get_m(2)
+        self.get_a(3)
+        self.get_b(4)
+        self.show_button(5)
 
     def generate(self):                                     # Type 4
         self.output.delete('1.0', END)
@@ -485,33 +459,11 @@ class Type5(Case):
             self.try_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))       # Type 5
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_m_label = Label(gui, text='<= m <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_k = Entry(gui, textvariable=k_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_k_label = Label(gui, text='<= k <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_k = Entry(gui, textvariable=k_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, padx=10, pady=10, ipady=1)         # Type 5
-        self.test_case_count.grid(row=0, column=1, padx=10)
-        self.minimum_value_of_n.grid(row=1, column=0, padx=10, pady=10)
-        self.min_max_values_of_n_label.grid(row=1, column=1, ipady=1, padx=10)
-        self.maximum_value_of_n.grid(row=1, column=2, padx=(10, 10))
-        self.minimum_value_of_m.grid(row=2, column=0, pady=10)
-        self.min_max_values_of_m_label.grid(row=2, column=1)
-        self.maximum_value_of_m.grid(row=2, column=2)
-        self.minimum_value_of_k.grid(row=3, column=0, pady=10)
-        self.min_max_values_of_k_label.grid(row=3, column=1)
-        self.maximum_value_of_k.grid(row=3, column=2)
-        self.sub_btn.grid(row=4, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=4, column=2, ipady=1, pady=(20, 20))
+        self.get_t(0)
+        self.get_n(1)
+        self.get_m(2)
+        self.get_k(3)
+        self.show_button(4)
 
     def generate(self):                             # Type 5
         self.output.delete('1.0', END)
@@ -541,29 +493,10 @@ class Type6(Case):
             self.try_forget()
         except AttributeError:
             pass                                # Type 6
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='   <= No. of rows <=  ', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_m_label = Label(gui, text='<= No. of columns <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text='  <= Ai <=  ', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.minimum_value_of_n.grid(row=0, column=0, padx=10, pady=20, ipady=1)               # Type 6
-        self.min_max_values_of_n_label.grid(row=0, column=1)
-        self.maximum_value_of_n.grid(row=0, column=2)
-        self.minimum_value_of_m.grid(row=1, column=0, pady=10)
-        self.min_max_values_of_m_label.grid(row=1, column=1, padx=10, ipady=1)
-        self.maximum_value_of_m.grid(row=1, column=2, padx=(10, 10))
-        self.minimum_value_of_ai.grid(row=2, column=0, pady=10)
-        self.min_max_values_of_ai_label.grid(row=2, column=1)
-        self.maximum_value_of_ai.grid(row=2, column=2)
-        self.sub_btn.grid(row=3, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=3, column=2, ipady=1, pady=(20, 20))
+        self.get_n(0)
+        self.get_m(1)
+        self.get_a(2)
+        self.show_button(3)
 
     def generate(self):                                         # Type 6
         self.output.delete('1.0', END)
@@ -593,27 +526,10 @@ class Type7(Case):
             self.try_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))      # Type 7
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.char_list_label = Label(gui, text=' Characters: ', font=('calibre', 10, 'bold'))
-        self.char_list = Entry(gui, textvariable=char_lis, font=('calibre', 10, 'normal'), width=43)
-        self.char_list.insert(END, '(Space separated characters)')
-        self.char_list.bind("<FocusIn>", lambda args: self.char_list.delete('0', 'end'))
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<=Length of string<=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, pady=10)               # Type 7
-        self.test_case_count.grid(row=0, column=1, padx=10)
-        self.char_list_label.grid(row=1, column=0, pady=10)
-        self.char_list.grid(row=1, column=1, columnspan=2, padx=10)
-        self.minimum_value_of_n.grid(row=2, column=0, pady=10, padx=10)
-        self.min_max_values_of_n_label.grid(row=2, column=1)
-        self.maximum_value_of_n.grid(row=2, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=3, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=3, column=2, ipady=1, pady=(20, 20))
+        self.get_t(0)
+        self.get_char_list(1)
+        self.get_n(2)
+        self.show_button(3)
 
     def generate(self):                                 # Type 7
         self.output.delete('1.0', END)
@@ -640,45 +556,17 @@ class Type8(Case):
             self.try_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))       # Type 8
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text=' <= n <= ', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_m_label = Label(gui, text=' <= m <= ', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text=' <= Ai <= ', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_bi = Entry(gui, textvariable=b_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_bi_label = Label(gui, text=' <= Bi <= ', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, pady=10)                   # Type 8
-        self.test_case_count.grid(row=0, column=1, padx=10)
-        self.minimum_value_of_n.grid(row=1, column=0, padx=10, pady=10, ipadx=1,ipady=1)
-        self.min_max_values_of_n_label.grid(row=1, column=1)
-        self.maximum_value_of_n.grid(row=1, column=2, padx=(10,10))
-        self.minimum_value_of_m.grid(row=2, column=0,pady=10)
-        self.min_max_values_of_m_label.grid(row=2, column=1, ipady=1)
-        self.maximum_value_of_m.grid(row=2, column=2)
-        self.minimum_value_of_ai.grid(row=3, column=0, pady=10)
-        self.min_max_values_of_ai_label.grid(row=3, column=1, ipady=1)
-        self.maximum_value_of_ai.grid(row=3, column=2)
-        self.minimum_value_of_bi.grid(row=4, column=0, pady=10)
-        self.min_max_values_of_bi_label.grid(row=4, column=1, ipady=1)
-        self.maximum_value_of_bi.grid(row=4, column=2)
-        self.sub_btn.grid(row=5, column=1, pady=(20, 20), ipady=1)
-        self.back_btn.grid(row=5, column=2, ipady=1, pady=(20, 20))
+        self.get_t(0)
+        self.get_n(1)
+        self.get_m(2)
+        self.get_a(3)
+        self.get_b(4)
+        self.show_button(5)
 
     def generate(self):                                 # Type 8
         self.output.delete('1.0', END)
         self.output.insert(END, self.t)
         self.output.insert(END, '\n')
-
         for i in range(self.t):
             self.n = randint(self.n_min, self.n_max)
             self.m = randint(self.m_min, self.m_max)
@@ -706,27 +594,10 @@ class Type9(Case):
             self.try_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))        # Type 9
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.char_list_label = Label(gui, text='Characters: ', font=('calibre', 10, 'bold'))
-        self.char_list = Entry(gui, textvariable=char_lis, font=('calibre', 10, 'normal'), width=43)
-        self.char_list.insert(END, '(Space separated characters)')
-        self.char_list.bind("<FocusIn>", lambda args: self.char_list.delete('0', 'end'))
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<=length of string<=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, pady=10)
-        self.test_case_count.grid(row=0, column=1, padx=10)
-        self.char_list_label.grid(row=1, column=0, padx=10, pady=10, ipadx=10)
-        self.char_list.grid(row=1, column=1, columnspan=2)
-        self.minimum_value_of_n.grid(row=2, column=0, padx=10, pady=10)
-        self.min_max_values_of_n_label.grid(row=2, column=1)
-        self.maximum_value_of_n.grid(row=2, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=3, column=1, pady=(20, 20))
-        self.back_btn.grid(row=3, column=2, ipady=1, pady=(20, 20))
+        self.get_t(0)
+        self.get_char_list(1)
+        self.get_n(2)
+        self.show_button(3)
 
     def generate(self):                                         # Type 9
         self.output.delete('1.0', END)
@@ -751,39 +622,12 @@ class Type10(Case):
             self.try_forget()
         except AttributeError:
             pass
-        self.test_case_count_label = Label(gui, text='  T  =   ', font=('calibre', 10, 'bold'))        # Type 10
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_n_label = Label(gui, text='<= n <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_k = Entry(gui, textvariable=k_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_k_label = Label(gui, text='<= k <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_k = Entry(gui, textvariable=k_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_m_label = Label(gui, text='<= m <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
-        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
-        self.min_max_values_of_ai_label = Label(gui, text='<= Ai <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
-        self.sub_btn = Button(gui, text='GENERATE', command=self.submit)
-        self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
-
-        self.test_case_count_label.grid(row=0, column=0, padx=10, pady=10)          # Type 10
-        self.test_case_count.grid(row=0, column=1)
-        self.minimum_value_of_n.grid(row=1, column=0, padx=10, pady=10)
-        self.min_max_values_of_n_label.grid(row=1, column=1, ipadx=5, ipady=1)
-        self.maximum_value_of_n.grid(row=1, column=2, padx=(10, 10))
-        self.minimum_value_of_k.grid(row=2, column=0, padx=10, pady=10)
-        self.min_max_values_of_k_label.grid(row=2, column=1, ipadx=5, ipady=1)
-        self.maximum_value_of_k.grid(row=2, column=2, padx=(10, 10))
-        self.minimum_value_of_m.grid(row=3, column=0, padx=10, pady=10)
-        self.min_max_values_of_m_label.grid(row=3, column=1, padx=10, ipadx=4)
-        self.maximum_value_of_m.grid(row=3, column=2, padx=10)
-        self.minimum_value_of_ai.grid(row=4, column=0, padx=10, pady=10)
-        self.min_max_values_of_ai_label.grid(row=4, column=1, ipadx=5)
-        self.maximum_value_of_ai.grid(row=4, column=2, padx=(10, 10))
-        self.sub_btn.grid(row=5, column=1, pady=(20, 20))
-        self.back_btn.grid(row=5, column=2, ipady=1, pady=(20, 20))
+        self.get_t(0)
+        self.get_n(1)
+        self.get_k(2)
+        self.get_m(3)
+        self.get_a(4)
+        self.show_button(5)
 
     def generate(self):                             # Type 10
         self.output.delete('1.0', END)
