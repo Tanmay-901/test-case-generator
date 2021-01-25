@@ -22,7 +22,7 @@ class Case:
         self.test_case_counter = None
 
     def home(self):
-        self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
+        # self.test_case_counter = Label(gui, text='T: ', font=('calibre', 10, 'bold'))
         self.button1 = Button(gui, justify=LEFT, text='T\nn   \nA1 A2 A3...An\nn   \nA1 A2 A3...An',
                               fg='white', command=lambda: Type1(gui))
         self.button1.configure(background='grey20')
@@ -56,6 +56,9 @@ class Case:
         self.button_new = Button(gui, text='Another type', fg='black', width=11
                              , command=lambda: self.newformat(self=Case))
         self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11, command=lambda: gui.destroy())
+        self.copyright_label = Button(gui, text='© Dude901', fg='white', width=4, height=1, font=('calibre',
+                                                                                                  6, 'normal'))
+        self.copyright_label.configure(bg=mycolor)
         self.retrieve_home(self)
 
     def newformat(self):
@@ -91,18 +94,19 @@ class Case:
         self.button_exit.grid_forget()
 
     def retrieve_home(self):
-        self.button1.grid(row=0, column=0, ipady=10, pady=10, padx=10)
-        self.button2.grid(row=0, column=1, ipady=10, pady=10, padx=10)
-        self.button3.grid(row=0, column=2, ipady=10, pady=10, padx=10)
-        self.button4.grid(row=0, column=3, ipady=10, pady=10, padx=10)
-        self.button5.grid(row=0, column=4, ipady=10, pady=10, padx=10)
-        self.button6.grid(row=1, column=0, ipady=10, pady=10, padx=10)
-        self.button7.grid(row=1, column=1, ipady=10, pady=10, padx=10)
-        self.button8.grid(row=1, column=2, ipady=10, pady=10, padx=10)
-        self.button9.grid(row=1, column=3, ipady=10, pady=10, padx=10)
-        self.button10.grid(row=1, column=4, ipady=10, pady=10, padx=10)
-        self.button_new.grid(row=2, column=1, ipady=10, pady=10, padx=10)
-        self.button_exit.grid(row=2, column=3, ipady=10, pady=10, padx=10)
+        self.button1.grid(row=0, column=0, ipady=10, pady=13, padx=10)
+        self.button2.grid(row=0, column=1, ipady=10, pady=13, padx=10)
+        self.button3.grid(row=0, column=2, ipady=10, pady=13, padx=10)
+        self.button4.grid(row=0, column=3, ipady=10, pady=13, padx=10)
+        self.button5.grid(row=0, column=4, ipady=10, pady=13, padx=10)
+        self.button6.grid(row=1, column=0, ipady=10, pady=13, padx=10)
+        self.button7.grid(row=1, column=1, ipady=10, pady=13, padx=10)
+        self.button8.grid(row=1, column=2, ipady=10, pady=13, padx=10)
+        self.button9.grid(row=1, column=3, ipady=10, pady=13, padx=10)
+        self.button10.grid(row=1, column=4, ipady=10, pady=13, padx=10)
+        self.button_new.grid(row=2, column=1, ipady=10, pady=13, padx=10)
+        self.button_exit.grid(row=2, column=3, ipady=10, pady=13, padx=10)
+        self.copyright_label.place(relx=0.92, y=0)
 
     def display(self):
         self.output = Text(gui, height=12, bg="light cyan", width=82)
@@ -116,6 +120,7 @@ class Case:
         self.change_values_button.grid(row=1, column=5, sticky='S', ipady=10, pady=(10, 18), padx=5)
         self.done_button = Button(gui, text='DONE', fg='black', command=lambda: self.done(self.output))
         self.done_button.grid(row=1, column=7, sticky='SE', ipady=10, pady=(10, 20), padx=5)
+        # self.copyright_label.place(relx=0.8, y=0)
 
     def try_forget(self):
         self.output.grid_forget()
@@ -183,6 +188,7 @@ class Case:
         self.back_btn = Button(gui, text='BACK', command=lambda: self.forget_testcase_take_input_screen(1))
         self.sub_btn.grid(row=r, column=1, pady=(20, 20), ipady=1)
         self.back_btn.grid(row=r, column=2, pady=(20, 20), ipady=1)
+        self.copyright_label.place(relx=0.9, y=0)
 
     def submit(self):
         try:
@@ -196,7 +202,7 @@ class Case:
         try:
             self.n_min = int(min(self.minimum_value_of_n.get(), self.maximum_value_of_n.get()))
             self.n_max = int(max(self.minimum_value_of_n.get(), self.maximum_value_of_n.get()))
-            if self.n_min > self.n_max or self.n_max == 0:
+            if self.n_min > self.n_max or self.n_max == 0 or self.n_max > 1000000:
                 return
         except ValueError:
             return
@@ -223,7 +229,7 @@ class Case:
         try:
             self.a_min = int(min(self.minimum_value_of_ai.get(), self.maximum_value_of_ai.get()))
             self.a_max = int(max(self.minimum_value_of_ai.get(), self.maximum_value_of_ai.get()))
-            if self.a_min > self.a_max or self.a_max == 0:
+            if self.a_min > self.a_max or self.a_max == 0 or self.a_max > 1000000:
                 return
         except ValueError:
             return
