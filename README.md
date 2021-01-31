@@ -19,7 +19,7 @@ probably due to an issue with **py2exe** and **pyinstaller** which are used to c
 allowing "insatallation from unknown sources" and setting it up as "Ask always" under the privacy settings.  
 
 ------------------------
-## About Project and the journey of its development  
+## About Project  
 * This project is a combined application of **Object Oriented Programming, Competitive coding and Tkinter toolkit**.  
 * I got the motivation to develop this project after I begun my competitive programming journey(not a great one yet though but working my way up gradually), 
 there were many times when I saw people(including me and my friends) stuck on trying to struggle in thinking test cases when their program 
@@ -27,18 +27,6 @@ fails the submission, especially the case with beginners and that is the main re
 * However it is not advised to directly use this tool everytime without trying and thinking test cases on your own, but 
 treat it like a hint to a problem, you should try to solve the problem first before looking up the hint and if you're unable to get ahead 
 then it is advisable to go for the hint instead of just wasting more time. Treat this tool similarly.  
-* I learned Tkinter a whole lot better while building this project compared to when I just learned and copy pasted code from tutorial.
-* Before this project, All I knew about OOPs was its definition, types and example and used them only for exam and interview purpose but with 
-this project I have used them a lot thoroghly now and now undderstand every bit of what I earlier used to mug up. while developing this 
-project I faced an unforeseen issue of working on a very very long code. In the starting phase when the program was all
-commands, functions and methods, **the code was more than 1500 lines for just 5 types of test cases** and that too without other additional features 
-(like copy, regenerate, change constraints and others).
-* It started to be really inconvinient for me to traverse in that program from top to bottom every 5 minutes and it took a lot of time just
-to find what i was searching for to work upon. Then I thought of trying OOPs- Inheritance and Abstraction, because there were things which 
-seemed like a little bit common for most of the test cases although it cost me a few more days just to get it done (change whole code in 
-classes and methods), the code started to **optimise and its length reduced drastically and within a week the program was less than 
-half(600 lines approx) of what it was** and that too with those additional buttons and features which currently are present.  
-
   
 ## Home Page: 
 Click on the desired type of Test Case.  
@@ -69,6 +57,21 @@ on single click.
 | 3.   | Working on big input values | split the test case in two or more parts and then concatenate them as strings to generate on large constraints | :x: |
 | 4.   | Windows defender/Antivirus/Chrome virus check treated the file as malicious and blocked download | Used py2exe instead of pyinstaller and uploaded zip of multiple files instead of `--onefile` | :heavy_check_mark: |
 | 5.   | Code became Surprisingly long| Converted whole program from simple functions and methods to OOPs | :heavy_check_mark: |
+
+------------------------
+## Journey of Development of this project:  
+* I learned Tkinter a whole lot better while building this project compared to when I just learned and copy pasted code from tutorial.
+* Before this project, All I knew about OOPs was its definition, types and example and used them only for exam and interview purpose but with 
+this project I have used them a lot thoroghly now and now undderstand every bit of what I earlier used to mug up. while developing this 
+project I faced an unforeseen issue of working on a very very long code. In the starting phase when the program was all
+commands, functions and methods, **the code was more than 1500 lines for just 5 types of test cases** and that too without other additional features 
+(like copy, regenerate, change constraints and others).
+* It started to be really inconvinient for me to traverse in that program from top to bottom every 5 minutes and it took a lot of time just
+to find what i was searching for to work upon. Then I thought of trying OOPs- Inheritance and Abstraction, because there were things which 
+seemed like a little bit common for most of the test cases although it cost me a few more days just to get it done (change whole code in 
+classes and methods), the code started to **optimise and its length reduced drastically and within a week the program was less than 
+half(600 lines approx) of what it was** and that too with those additional buttons and features which currently are present.  
+
 
 ------------------------
 ## Updates:
