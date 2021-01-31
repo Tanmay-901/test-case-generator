@@ -7,15 +7,19 @@ the file, open dist folder, and then run test_case.exe
 ## About Project  
 * This project is a combined application of Object Oriented Programming, Competitive coding and Tkinter toolkit.
 ## Home Page: 
-Click on the desired type of Test Case.
-![Home Page](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Screenshot%20from%202021-01-31%2011-50-36.png)
-## Input Screen
-Enter the constraints.
-![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Screenshot%20from%202021-01-31%2011-51-09.png)
-## Output Screen
-Output is shown.
-![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Screenshot%20from%202021-01-31%2011-51-18.png)
-
+Click on the desired type of Test Case.  
+![Home Page](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Home.png)
+## Input Screen  
+Enter the constraints here  
+_Make sure that none of the constraints is having **values more than 10<sup>7</sup> and T*maximum_value_of_n/m/k <=10<sup>7</sup>**   
+> This limit is applied because Outputs are in the form of arrays, and any array having size more than that would completely use up memory of
+> a standard PC and would cause it to hang. This issue is under consideration and would be removed soon.  
+  
+![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Input_screen.png)  
+## Output Screen  
+Finally Output is shown.  
+![Output Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Output_screen.png)  
+  
 ------------------------
 ## Pre-requisites:  
 * To use codes apart from first release, 'tkinter' must be installed.  
