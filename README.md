@@ -42,7 +42,7 @@ _Make sure that none of the constraints is having **values more than 10<sup>7</s
 Finally Output is shown.  
 ![Output Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Output_screen.png)  
   
-On the output screen you can use multiple handy features as well like copy, regenerate new test case, change constraints
+On the output screen you can use multiple handy features as well like **_copy, regenerate new test case, change constraints_**
 on single click.
 
 ------------------------
