@@ -279,21 +279,21 @@ class Case:
             return
         except AttributeError:
             pass
-        try:
-            if self.t * self.n_max > 10000000:
-                return
-        except AttributeError:
-            pass
-        try:
-            if self.m_max * self.n_max > 10000000:
-                return
-        except AttributeError:
-            pass
-        try:
-            if self.t * self.m_max > 10000000:
-                return
-        except AttributeError:
-            pass
+#         try:
+#             if self.t * self.n_max > 10000000:
+#                 return
+#         except AttributeError:
+#             pass
+#         try:
+#             if self.m_max * self.n_max > 10000000:
+#                 return
+#         except AttributeError:
+#             pass
+#         try:
+#             if self.t * self.m_max > 10000000:
+#                 return
+#         except AttributeError:
+#             pass
         finally:
             self.forget_testcase_take_input_screen()
             self.display()
@@ -705,19 +705,6 @@ class Type10(Case):
             self.output.insert(END, self.a)
             self.output.insert(END, '\n')
 
-
-t = IntVar()
-n_min = IntVar()
-n_max = IntVar()
-m_min = IntVar()
-m_max = IntVar()
-k_min = IntVar()
-k_max = IntVar()
-a_min = IntVar()
-a_max = IntVar()
-b_min = IntVar()
-b_max = IntVar()
-char_lis = StringVar()
 
 Case.home(self=Case)
 
