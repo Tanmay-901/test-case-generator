@@ -20,7 +20,7 @@ allowing "insatallation from unknown sources" and setting it up as "Ask always" 
 
 ------------------------
 ## About Project  
-* This project is a combined application of Object Oriented Programming, Competitive coding and Tkinter toolkit.  
+* This project is a combined application of **Object Oriented Programming, Competitive coding and Tkinter toolkit**.  
 * I got the motivation to develop this project after I begun my competitive programming journey(not a great one yet though but working my way up gradually), 
 there were many times when I saw people(including me and my friends) stuck on trying to struggle in thinking test cases when their program 
 fails the submission, especially the case with beginners and that is the main reason this project is developed.
