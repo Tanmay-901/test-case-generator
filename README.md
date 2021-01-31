@@ -30,6 +30,7 @@ then it is advisable to go for the hint instead of just wasting more time. Treat
   
 ## Home Page: 
 > Click on the desired type of Test Case.  
+  
 ![Home Page](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Home.png)
 ## Input Screen  
 > Enter the constraints here  
@@ -40,6 +41,7 @@ Make sure that none of the constraints is having **values more than 10<sup>7</su
 ![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Input_screen.png)  
 ## Output Screen  
 > Finally Output is shown.  
+  
 ![Output Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Output_screen.png)  
   
 On the output screen you can use multiple handy features as well like **_copy, regenerate new test case, change constraints_**
