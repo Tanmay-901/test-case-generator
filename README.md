@@ -24,7 +24,7 @@ allowing "insatallation from unknown sources" and setting it up as "Ask always" 
 * I got the motivation to develop this project after I begun my competitive programming journey(not a great one yet though but working my way up gradually), 
 there were many times when I saw people(including me and my friends) stuck on trying to struggle in thinking test cases when their program 
 fails the submission, especially the case with beginners and that is the main reason this project is developed.
-* However it is not advised to directly use this tool everytime without trying and thinking test cases on your own, but 
+* However, it is not advised to directly use this tool everytime without trying and thinking test cases on your own, but 
 treat it like a hint to a problem, you should try to solve the problem first before looking up the hint and if you're unable to get ahead 
 then it is advisable to go for the hint instead of just wasting more time. Treat this tool similarly.  
   
