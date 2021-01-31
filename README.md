@@ -56,7 +56,7 @@ on single click.
 |:-----| :----- | :--------------- | :------------- |
 | 1.   | Application window appeared different on windows and Linux based system  | Manually designed the GUI similar to the Linux one| :heavy_check_mark: |
 | 2.   | PC freezed when input constraints were too big | Set lower and upper limit for constraints | :heavy_check_mark: |
-| 3.   | Working on big input values | split the test case in two or more parts and then concatenate them as strings to generate on large constraints | :x: |
+| 3.   | Working on big input values | split the test case in two or more parts and then concatenate them as strings to generate on large constraints OR Use Heap memory| :x: |
 | 4.   | Windows defender/Antivirus/Chrome virus check treated the file as malicious and blocked download | Used py2exe instead of pyinstaller and uploaded zip of multiple files instead of `--onefile` | :heavy_check_mark: |
 | 5.   | Code became Surprisingly long| Converted whole program from simple functions and methods to OOPs | :heavy_check_mark: |
 
