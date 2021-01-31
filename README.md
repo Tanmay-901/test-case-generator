@@ -1,6 +1,6 @@
 # Test-case-generator  
 #### Generate test cases for Competitive Coding.  
-Download Zip file [here](https://github.com/Tanmay-901/Important-details/blob/master/test_case.zip) and then extract 
+Download Zip file [here](https://github.com/Tanmay-901/Important-details/raw/master/test_case.zip) and then extract 
 the file, open dist folder, and then run test_case.exe(keep all the files at same location)
 For more convinience,
 1. right click on 'test_case.exe' after extraction.
