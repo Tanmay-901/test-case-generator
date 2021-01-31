@@ -34,7 +34,7 @@ Click on the desired type of Test Case.
 Enter the constraints here  
 _Make sure that none of the constraints is having **values more than 10<sup>7</sup> and T*maximum_value_of_n/m/k <=10<sup>7</sup>**   
 > This limit is applied because Outputs are in the form of arrays, and any array having size more than that would completely use up memory of
-> a standard PC and would cause it to hang. This issue is under consideration and would be removed soon.  
+> a standard PC and would cause it to hang. This issue is under consideration and would be soon dealt with.  
   
 ![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Input_screen.png)  
 ## Output Screen  
