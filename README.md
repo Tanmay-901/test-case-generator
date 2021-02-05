@@ -16,7 +16,7 @@ detected and in that case, you would either have to pause your antivirus and/or 
 right after downloading completes).
 * If the pc shows a warning similar to this "Operation did not complete because the file contains a virus or unwanted file", it is 
 probably due to an issue with **py2exe** and **pyinstaller** which are used to convert the python program into an executable file. It can be overcome by 
-allowing "insatallation from unknown sources" and setting it up as "Ask always" under the privacy settings.  
+allowing "insatallation from unknown sources" and setting it up as _"Ask always"_ under the privacy settings.  
 
 ------------------------
 ## About Project  
