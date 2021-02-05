@@ -28,10 +28,10 @@ class Case:
                               fg='white', bd=3, command=lambda: Type1(gui), bg='red', font='calibre')
         self.button1.configure(background='grey20')
         self.button2 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2 A3...An\nn  m\nA1 A2 A3...An', fg='white'
-                         , command=lambda: Type2(gui), width=13, font='calibre', bd=3)
+                              , command=lambda: Type2(gui), width=13, font='calibre', bd=3)
         self.button2.configure(background='grey20')
         self.button3 = Button(gui, justify=LEFT, text='T\nA1  B1\nA2  B2\n(t rows of)\n(A, B pair)', fg='white'
-                         , command=lambda: Type3(gui), width=13, font='calibre', bd=3)
+                              , command=lambda: Type3(gui), width=13, font='calibre', bd=3)
         self.button3.configure(background='grey20')
         self.button4 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2...An\nB1 B2...Bm\n...  ...', fg='white'
                               , command=lambda: Type4(gui), width=13, font='calibre', bd=3)
@@ -52,11 +52,12 @@ class Case:
                               , fg='white', command=lambda: Type9(gui), width=13, font='calibre', bd=3)
         self.button9.configure(background='grey20')
         self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\nA1 A2...An\nn  k  m\nA1 A2...An'
-                              , fg='white', command=lambda: Type10(gui), width=13, font='calibre', bd=3)
+                               , fg='white', command=lambda: Type10(gui), width=13, font='calibre', bd=3)
         self.button10.configure(background='grey20')
         self.button_new = Button(gui, text=' ANOTHER TYPE ', fg='black', width=13, font='calibre', bd=3
-                             , command=lambda: self.newformat(self=Case))
-        self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11, font='calibre', bd=3, command=lambda: gui.destroy())
+                                , command=lambda: self.newformat(self=Case))
+        self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11, font='calibre',
+                                  bd=3, command=lambda: gui.destroy())
         self.copyright_label = Button(gui, text='© Dude901', fg='white', width=7, height=1, bd=3, command=lambda:
                                 webbrowser.open_new_tab("https://github.com/Tanmay-901"), font=('calibre', 6, 'normal'))
         self.copyright_label.configure(bg=mycolor)
