@@ -224,8 +224,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.n_min = int(min(self.minimum_value_of_n.get(), self.maximum_value_of_n.get()))
-            self.n_max = int(max(self.minimum_value_of_n.get(), self.maximum_value_of_n.get()))
+            self.n_min = min(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()))
+            self.n_max = max(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()))
             if self.n_min > self.n_max or self.n_max == 0 or self.n_max > 10000000:
                 return
         except ValueError:
@@ -233,8 +233,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.m_min = int(min(self.minimum_value_of_m.get(), self.maximum_value_of_m.get()))
-            self.m_max = int(max(self.minimum_value_of_m.get(), self.maximum_value_of_m.get()))
+            self.m_min = min(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()))
+            self.m_max = max(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()))
             if self.m_min > self.m_max or self.m_max == 0 or self.m_max > 10000000:
                 return
         except ValueError:
@@ -242,8 +242,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.k_min = int(min(self.minimum_value_of_k.get(), self.maximum_value_of_k.get()))
-            self.k_max = int(max(self.minimum_value_of_k.get(), self.maximum_value_of_k.get()))
+            self.k_min = min(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()))
+            self.k_max = max(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()))
             if self.k_min > self.k_max or self.k_max == 0 or self.k_max > 10000000:
                 return
         except ValueError:
@@ -251,8 +251,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.a_min = int(min(self.minimum_value_of_ai.get(), self.maximum_value_of_ai.get()))
-            self.a_max = int(max(self.minimum_value_of_ai.get(), self.maximum_value_of_ai.get()))
+            self.a_min = min(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()))
+            self.a_max = max(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()))
             if self.a_min > self.a_max or self.a_max == 0 or self.a_max > 10000000:
                 return
         except ValueError:
@@ -260,8 +260,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.b_min = int(min(self.minimum_value_of_bi.get(), self.maximum_value_of_bi.get()))
-            self.b_max = int(max(self.minimum_value_of_bi.get(), self.maximum_value_of_bi.get()))
+            self.b_min = min(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()))
+            self.b_max = max(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()))
             if self.b_min > self.b_max or self.b_max == 0 or self.b_max > 10000000:
                 return
         except ValueError:
@@ -270,7 +270,6 @@ class Case:
             pass
         try:
             self.char_lis = list(self.char_list.get().split())
-            # print(self.char_lis[0])
             if self.char_lis[0] == '(Space':
                 return
         except IndexError:
