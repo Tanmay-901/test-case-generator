@@ -1,5 +1,10 @@
 # Test-case-generator  
 #### Generate test cases for Competitive Coding.  
+
+### Pre-Requisites:  
+- Supports only python 3.2 and above.
+- Tkinter must be installed. 
+
 ### Instructions:  
 * Fork and Star this repo so that it may reach to more people to use.
 * Download Zip file [here](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip) and then extract 
