@@ -69,15 +69,13 @@ on single click.
 
 ------------------------
 ## Journey of Development of this project:  
-* I learned Tkinter a whole lot better while building this project compared to when I just learned and copy pasted code from tutorial.
-* Before this project, All I knew about OOPs was its definition, types and example and used them only for exam and interview purpose but with 
-this project I have used them a lot thoroghly now and now undderstand every bit of what I earlier used to mug up. while developing this 
-project I faced an unforeseen issue of working on a very very long code. In the starting phase when the program was all
+* I learned OOPs a whole lot better while building this project compared to when I used to learn from tutorials and beleive me applying is the best way to learn.
+* Before this project, All I knew about OOPs was its definition, types and example and used them only for exam and interview purpose and the knowledge revolved around only the theoritical concepts but with this project I have used them a lot thoroghly now and now undderstand every bit of what I earlier used to mug up.   * while developing this project I faced an unforeseen issue of working on a very very long code. In the starting phase when the program was all
 commands, functions and methods, **the code was more than 1500 lines for just 5 types of test cases** and that too without other additional features 
 (like copy, regenerate, change constraints and others).
 * It started to be really inconvinient for me to traverse in that program from top to bottom every 5 minutes and it took a lot of time just
-to find what i was searching for to work upon. Then I thought of trying OOPs- Inheritance and Abstraction, because there were things which 
-seemed like a little bit common for most of the test cases although it cost me a few more days just to get it done (change whole code in 
+to find what i was searching for to work upon. Then I thought of trying OOPs (Inheritance and Abstractionmostly), because there were things which 
+seemed like a little bit common for most of the test cases although it cost me a few more days just to get it done (converted whole code in 
 classes and methods), the code started to **optimise and its length reduced drastically and within a week the program was less than 
 half(600 lines approx) of what it was** and that too with those additional buttons and features which currently are present.  
 
