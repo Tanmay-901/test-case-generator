@@ -24,34 +24,34 @@ class Case:
     def home(self):
         self.statement = Label(gui, text='Select Test Case Type', fg='white', height=1, font=('calibre', 12, 'normal'))
         self.statement.configure(bg=mycolor)
-        self.button1 = Button(gui, justify=LEFT, text='T\nn   \nA1 A2 A3...An\nn   \nA1 A2 A3...An', width=13,
+        self.button1 = Button(gui, justify=LEFT, text='T\nn   \n[A1 A2 A3...An]\nn   \n[A1 A2 A3...An]', width=13,
                               fg='white', bd=3, command=lambda: Type1(gui), bg='red', font='calibre')
         self.button1.configure(background='grey20')
-        self.button2 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2 A3...An\nn  m\nA1 A2 A3...An', fg='white'
+        self.button2 = Button(gui, justify=LEFT, text='T\nn  m  \n[A1 A2 A3...An]\nn  m\n[A1 A2 A3...An]', fg='white'
                               , command=lambda: Type2(gui), width=13, font='calibre', bd=3)
         self.button2.configure(background='grey20')
-        self.button3 = Button(gui, justify=LEFT, text='T\nA1  B1\nA2  B2\n(t rows of)\n(A, B pair)', fg='white'
+        self.button3 = Button(gui, justify=LEFT, text='T\n[A1  B1]\n[A2  B2]\n(t rows of)\n(A, B pair)', fg='white'
                               , command=lambda: Type3(gui), width=13, font='calibre', bd=3)
         self.button3.configure(background='grey20')
-        self.button4 = Button(gui, justify=LEFT, text='T\nn  m  \nA1 A2...An\nB1 B2...Bm\n...  ...', fg='white'
+        self.button4 = Button(gui, justify=LEFT, text='T\nn  m  \n[A1 A2...An]\n[B1 B2...Bm]\n...  ...', fg='white'
                               , command=lambda: Type4(gui), width=13, font='calibre', bd=3)
         self.button4.configure(background='grey20')
-        self.button5 = Button(gui, justify=LEFT, text='T\nn  m  k\nn  m  k\n(t rows of)\n(n m k  pair)', fg='white'
+        self.button5 = Button(gui, justify=LEFT, text='T\n[n  m  k]\n[n  m  k]\n(t rows of)\n(n m k  pair)', fg='white'
                               , command=lambda: Type5(gui), width=13, font='calibre', bd=3)
         self.button5.configure(background='grey20')
-        self.button6 = Button(gui, justify=LEFT, text='n * m (matrix)\nA1  A2...Am\nA1  A2...Am\n__   __ ... __\n'
+        self.button6 = Button(gui, justify=LEFT, text='n * m (matrix)\n[A1  A2...Am]\n[A1  A2...Am]\n__   __ ... __\n'
                               'A1  A2...Am', fg='white', command=lambda: Type6(gui), width=13, font='calibre', bd=3)
         self.button6.configure(background='grey20')
         self.button7 = Button(gui, justify=LEFT, text='T\nn\nCustom string\n(ex: 0 1)\n(ex: + / -)'
                               , fg='white', command=lambda: Type7(gui), width=13, font='calibre', bd=3)
         self.button7.configure(background='grey20')
-        self.button8 = Button(gui, justify=LEFT, text='T\nn  m\nA1  B1\n...   ...\nAm  Bm'
+        self.button8 = Button(gui, justify=LEFT, text='T\nn  m\n[A1  B1]\n...   ...\n[Am  Bm]'
                               , fg='white', command=lambda: Type8(gui), width=13, font='calibre', bd=3)
         self.button8.configure(background='grey20')
         self.button9 = Button(gui, justify=LEFT, text='T\nCustom string\n(without "n")\n(ex: 0 1)\n(ex: + / -)'
                               , fg='white', command=lambda: Type9(gui), width=13, font='calibre', bd=3)
         self.button9.configure(background='grey20')
-        self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\nA1 A2...An\nn  k  m\nA1 A2...An'
+        self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\n[A1 A2...An]\nn  k  m\n[A1 A2...An]'
                                , fg='white', command=lambda: Type10(gui), width=13, font='calibre', bd=3)
         self.button10.configure(background='grey20')
         self.button_new = Button(gui, text=' ANOTHER TYPE ', fg='black', width=13, font='calibre', bd=3
@@ -206,13 +206,19 @@ class Case:
         self.char_list.grid(row=r, column=1, columnspan=2, padx=10)
 
     def show_button(self, r):
+        self.radio_type_space_separated = Radiobutton(gui, text='1 2 3 ... N', variable=radio_input, value=0,
+                                                      font='calibre', bd=3)
+        self.radio_type_comma_separated = Radiobutton(gui, text='[1,2,3,...,N]', variable=radio_input, value=1,
+                                                      font='calibre', bd=3)
         self.back_btn = Button(gui, text=' HOME ', command=lambda: self.forget_testcase_take_input_screen(1),
                                font='calibre', bd=3)
         self.sub_btn = Button(gui, text=' GENERATE ', command=self.submit, font='calibre', bd=3)
         self.exit_btn = Button(gui, text=' EXIT ', command=lambda: gui.destroy(), font='calibre', bd=3)
-        self.back_btn.grid(row=r, column=0, pady=(20, 20), ipady=1)
-        self.sub_btn.grid(row=r, column=1, pady=(20, 20), ipady=1)
-        self.exit_btn.grid(row=r, column=2, pady=(20, 20), ipady=1)
+        self.radio_type_space_separated.grid(row=r, column=0, pady=1, ipady=1)
+        self.radio_type_comma_separated.grid(row=r, column=2, pady=1, ipady=1)
+        self.back_btn.grid(row=r+1, column=0, pady=(20, 20), ipady=1)
+        self.sub_btn.grid(row=r+1, column=1, pady=(20, 20), ipady=1)
+        self.exit_btn.grid(row=r+1, column=2, pady=(20, 20), ipady=1)
         self.copyright_label.place(relx=0.9, y=0)
 
     def submit(self):
@@ -345,6 +351,11 @@ class Case:
             self.constraints.grid_forget()
         except AttributeError:
             pass
+        try:
+            self.radio_type_space_separated.grid_forget()
+            self.radio_type_comma_separated.grid_forget()
+        except AttributeError:
+            pass
         finally:
             self.sub_btn.grid_forget()
             self.back_btn.grid_forget()
@@ -381,8 +392,14 @@ class Type1(Case):
             self.output.insert(END, '\n')
             self.a = [0] * self.n
             for j in range(self.n):
-                self.a[j] = randint(self.a_min, self.a_max)
-            self.output.insert(END, self.a)
+                self.a[j] = str(randint(self.a_min, self.a_max))
+            if radio_input.get() == 0:
+                self.output.insert(END, self.a)
+            elif radio_input.get() == 1:
+                self.output.insert(END, "[")
+                self.a = ", ".join(self.a)
+                self.output.insert(END, self.a)
+                self.output.insert(END, "]")
             self.output.insert(END, '\n')
 
 
@@ -417,8 +434,14 @@ class Type2(Case):                                      # Type 2
             self.output.insert(END, '\n')
             self.a = [0] * self.n
             for j in range(self.n):
-                self.a[j] = randint(self.a_min, self.a_max)
-            self.output.insert(END, self.a)
+                self.a[j] = str(randint(self.a_min, self.a_max))
+            if radio_input.get() == 0:
+                self.output.insert(END, self.a)
+            elif radio_input.get() == 1:
+                self.output.insert(END, "[")
+                self.a = ", ".join(self.a)
+                self.output.insert(END, self.a)
+                self.output.insert(END, "]")
             self.output.insert(END, '\n')
 
 
@@ -443,11 +466,18 @@ class Type3(Case):
         self.output.insert(END, self.t)
         self.output.insert(END, '\n')
         for i in range(self.t):
-            self.a = randint(self.a_min, self.a_max)
-            self.b = randint(self.b_min, self.b_max)
-            self.output.insert(END, self.a)
-            self.output.insert(END, ' ')
-            self.output.insert(END, self.b)
+            self.a = str(randint(self.a_min, self.a_max))
+            self.b = str(randint(self.b_min, self.b_max))
+            if radio_input.get() == 0:
+                self.output.insert(END, self.a)
+                self.output.insert(END, ' ')
+                self.output.insert(END, self.b)
+            elif radio_input.get() == 1:
+                self.output.insert(END, "[")
+                self.output.insert(END, self.a)
+                self.output.insert(END, ', ')
+                self.output.insert(END, self.b)
+                self.output.insert(END, "]")
             self.output.insert(END, '\n')
 
 
@@ -484,14 +514,27 @@ class Type4(Case):
             self.output.insert(END, '\n')
             self.a = [0] * self.n
             self.b = [0] * self.m
+
             for j in range(self.n):
-                self.a[j] = randint(self.a_min, self.a_max)
-            self.output.insert(END, self.a)
-            self.output.insert(END, '\n')
+                self.a[j] = str(randint(self.a_min, self.a_max))
             for j in range(self.m):
-                self.b[j] = randint(self.b_min, self.b_max)
-            self.output.insert(END, self.b)
-            self.output.insert(END, '\n')
+                self.b[j] = str(randint(self.b_min, self.b_max))
+            if radio_input.get() == 0:
+                self.output.insert(END, self.a)
+                self.output.insert(END, '\n')
+                self.output.insert(END, self.b)
+                self.output.insert(END, '\n')
+            elif radio_input.get() == 1:
+                self.output.insert(END, "[")
+                self.a = ", ".join(self.a)
+                self.output.insert(END, self.a)
+                self.output.insert(END, "]")
+                self.output.insert(END, '\n')
+                self.output.insert(END, "[")
+                self.b = ", ".join(self.b)
+                self.output.insert(END, self.b)
+                self.output.insert(END, "]")
+                self.output.insert(END, '\n')
 
 #  ------------------------------------------------- ###
 #  ------------------------------------------------- ###
@@ -526,12 +569,22 @@ class Type5(Case):
             self.n = randint(self.n_min, self.n_max)
             self.m = randint(self.m_min, self.m_max)
             self.k = randint(self.k_min, self.k_max)
-            self.output.insert(END, self.n)
-            self.output.insert(END, ' ')
-            self.output.insert(END, self.m)
-            self.output.insert(END, ' ')
-            self.output.insert(END, self.k)
-            self.output.insert(END, '\n')
+            if radio_input.get() == 0:
+                self.output.insert(END, self.n)
+                self.output.insert(END, ' ')
+                self.output.insert(END, self.m)
+                self.output.insert(END, ' ')
+                self.output.insert(END, self.k)
+                self.output.insert(END, '\n')
+            elif radio_input.get() == 1:
+                self.output.insert(END, "[")
+                self.output.insert(END, self.n)
+                self.output.insert(END, ', ')
+                self.output.insert(END, self.m)
+                self.output.insert(END, ', ')
+                self.output.insert(END, self.k)
+                self.output.insert(END, "]")
+                self.output.insert(END, '\n')
 
 
 class Type6(Case):
@@ -565,8 +618,14 @@ class Type6(Case):
         for i in range(self.n):
             self.a = [0] * self.m
             for j in range(self.m):
-                self.a[j] = randint(self.a_min, self.a_max)
-            self.output.insert(END, self.a)
+                self.a[j] = str(randint(self.a_min, self.a_max))
+            if radio_input.get() == 0:
+                self.output.insert(END, self.a)
+            elif radio_input.get() == 1:
+                self.output.insert(END, "[")
+                self.a = ", ".join(self.a)
+                self.output.insert(END, self.a)
+                self.output.insert(END, "]")
             self.output.insert(END, '\n')
 
 
@@ -586,6 +645,8 @@ class Type7(Case):
         self.get_char_list(1)
         self.get_n(2)
         self.show_button(3)
+        self.radio_type_comma_separated.grid_forget()
+        self.radio_type_space_separated.grid_forget()
 
     def generate(self):                                 # Type 7
         self.output.delete('1.0', END)
@@ -596,7 +657,8 @@ class Type7(Case):
             self.output.insert(END, self.n)
             self.output.insert(END, '\n')
             self.a = choices(self.char_lis, k=self.n)
-            self.output.insert(END, ''.join(self.a))
+            self.a = ''.join(self.a)
+            self.output.insert(END, self.a)
             self.output.insert(END, '\n')
 
 
@@ -633,10 +695,18 @@ class Type8(Case):
             for j in range(self.m):
                 self.a = randint(self.a_min, self.a_max)
                 self.b = randint(self.b_min, self.b_max)
-                self.output.insert(END, self.a)
-                self.output.insert(END, ' ')
-                self.output.insert(END, self.b)
-                self.output.insert(END, '\n')
+                if radio_input.get() == 0:
+                    self.output.insert(END, self.a)
+                    self.output.insert(END, ' ')
+                    self.output.insert(END, self.b)
+                    self.output.insert(END, '\n')
+                elif radio_input.get() == 1:
+                    self.output.insert(END, '[')
+                    self.output.insert(END, self.a)
+                    self.output.insert(END, ', ')
+                    self.output.insert(END, self.b)
+                    self.output.insert(END, ']')
+                    self.output.insert(END, '\n')
 
 
 class Type9(Case):
@@ -654,6 +724,8 @@ class Type9(Case):
         self.get_char_list(1)
         self.get_n(2)
         self.show_button(3)
+        self.radio_type_comma_separated.grid_forget()
+        self.radio_type_space_separated.grid_forget()
 
     def generate(self):                                         # Type 9
         self.output.delete('1.0', END)
@@ -701,8 +773,14 @@ class Type10(Case):
             self.output.insert(END, '\n')
             self.a = [0] * self.n
             for j in range(self.n):
-                self.a[j] = randint(self.a_min, self.a_max)
-            self.output.insert(END, self.a)
+                self.a[j] = str(randint(self.a_min, self.a_max))
+            if radio_input.get() == 0:
+                self.output.insert(END, self.a)
+            if radio_input.get() == 1:
+                self.a = ", ".join(self.a)
+                self.output.insert(END, "[")
+                self.output.insert(END, self.a)
+                self.output.insert(END, "]")
             self.output.insert(END, '\n')
 
 
@@ -718,6 +796,7 @@ a_max = IntVar()
 b_min = IntVar()
 b_max = IntVar()
 char_lis = StringVar()
+radio_input = IntVar()
 
 Case.home(self=Case)
 
