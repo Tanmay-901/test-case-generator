@@ -48,7 +48,7 @@ Make sure that none of the constraints is having **values more than 10<sup>7</su
 > This limit is applied because Outputs are in the form of arrays, and any array having size more than that would completely use up memory of
 > a standard PC and would cause it to hang. This issue is under consideration and would be soon dealt with.  
   
-![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Input_screen.png)  
+![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/input_screen.png)  
 ## Output Screen  
 > Finally Output is shown.  
   
