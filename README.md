@@ -4,9 +4,10 @@
 ### Pre-Requisites:  
 - Supports only python 3.2 and above.
 - Tkinter must be installed. 
+* Fork and Star this repo so that it may reach to more people to use.  
+* In the end, please provide your valueable feedback to me at : tanmaykhandelwal2014@gmail.com  
 
 ### Instructions for Windows Users:  
-* Fork and Star this repo so that it may reach to more people to use.
 * Download Zip file [here](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip) and then extract 
 the file, open dist folder, and then run test_case.exe(keep all the files at same location)
 * For more convenience,
@@ -14,10 +15,9 @@ the file, open dist folder, and then run test_case.exe(keep all the files at sam
   2. click on `pin to start`.
   3. Now the tool's icon is pinned to your start menu and can be used directly from there which saves the hussle of going 
     inside the `dist` folder everytime you want to run the tool.
-* In the end, please provide your valueable feedback to me at : tanmaykhandelwal2014@gmail.com
 
 ## Linux Users:
-**The python code has been tested on Mint, Debian and Ubuntu and a native linux app is on its way!!**
+**The python code has been tested on Mint, Debian and Ubuntu and a native linux app is on its way!!**.  
 
 ## To be kept in mind:
 * This is a **plug'n'play** tool i.e. no installation is required
