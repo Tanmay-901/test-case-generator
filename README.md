@@ -17,7 +17,7 @@ the file, open dist folder, and then run test_case.exe(keep all the files at sam
 * In the end, please provide your valueable feedback to me at : tanmaykhandelwal2014@gmail.com
 
 ## Linux Users:
-**The python code has been tested on Mint, Debian and Ubuntu and a native linux app is still**
+**The python code has been tested on Mint, Debian and Ubuntu and a native linux app is on its way!!**
 
 ## To be kept in mind:
 * This is a **plug'n'play** tool i.e. no installation is required
