@@ -5,7 +5,7 @@
 - Supports only python 3.2 and above.
 - Tkinter must be installed. 
 * Fork and Star this repo so that it may reach to more people to use.  
-* In the end, please provide your valueable feedback to me at : tanmaykhandelwal2014@gmail.com  
+* In the end, please provide your valueable feedback at : tanmaykhandelwal2014@gmail.com  
 
 ### Instructions for Windows Users:  
 * Download Zip file [here](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip) and then extract 
@@ -21,12 +21,13 @@ the file, open dist folder, and then run test_case.exe(keep all the files at sam
 
 ## To be kept in mind:
 * This is a **plug'n'play** tool i.e. no installation is required
-* There could be a case when your web browser or windows defender shows a warning regarding security issue or virus
+* There could be a case when your web browser/windows defender shows a warning regarding security issue or virus
 detected and in that case, you would either have to pause your antivirus and/or windows defender for the time being before downloading(can be resumed
-right after downloading completes).
+right after download completes).
 * If the pc shows a warning similar to this "Operation did not complete because the file contains a virus or unwanted file", it is 
 probably due to an issue with **py2exe** and **pyinstaller** which are used to convert the python program into an executable file. It can be overcome by 
-allowing "insatallation from unknown sources" and setting it up as _"Ask always"_ under the privacy settings.  
+allowing "insatallation from unknown sources" and setting it up as _"Ask always"_ under the privacy settings in your pc settings or else you can directly use  
+the [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/test_case.py).  
 
 ------------------------
 ## About Project  
@@ -86,4 +87,4 @@ half(600 lines approx) of what it was** and that too with those additional butto
 ------------------------
 ## Updates:  
 * Support for Test cases for larger constraint values is being worked upon.
-* New test case types are being added continuously.
+* New test case types are being added on request.
