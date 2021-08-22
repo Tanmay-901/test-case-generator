@@ -11,7 +11,7 @@
 * Download Zip file [here](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip) and then extract 
 the file, open dist folder, and then run test_case.exe(keep all the files at same location)
 * For more convenience,
-  1. right click on 'test_case.exe' after extraction.
+  1. right click on 'test_case.exe' after extraction inside dist folder.
   2. click on `pin to start`.
   3. Now the tool's icon is pinned to your start menu and can be used directly from there which saves the hussle of going 
     inside the `dist` folder everytime you want to run the tool.
