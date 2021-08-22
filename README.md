@@ -3,7 +3,7 @@
 
 ### Pre-Requisites:  
 - Supports only python 3.2 and above.
-- Tkinter must be installed. 
+- Tkinter must be installed to use python code. 
 * Fork and Star this repo so that it may reach to more people to use.  
 * In the end, please provide your valueable feedback at : tanmaykhandelwal2014@gmail.com  
 
