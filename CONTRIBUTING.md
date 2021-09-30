@@ -8,6 +8,7 @@ Take them as more and more advanced version than the previous one in terms of:
 * tkinter application  
 * implementation of OOPs  
 * quality of code  
+* Add more legit Test case types  
 
 However, none of them are said to be perfect,_(hence the name beta release)_, but still PRs on the later versions would be thoroughly checked and 
 accepted only if they comply with the guidelines and help making the tool better.
