@@ -1,6 +1,34 @@
 # Test-case-generator  
 #### Generate test cases for Competitive Coding.  
-
+-------------------------------
+## About Project  
+* This project is a combined application of **Object Oriented Programming, Competitive coding and Tkinter toolkit**.  
+* I got the motivation to develop this project after I begun my competitive programming journey(not a great one yet though but working my way up gradually), 
+there were many times when I saw people(including me and my friends) stuck on trying to struggle in thinking test cases when their program 
+fails the submission, especially the case with beginners and that is the main reason this project is developed.
+* However, it is not advised to directly use this tool everytime without trying and thinking test cases on your own, but 
+treat it like a hint to a problem, you should try to solve the problem first before looking up the hint and if you're unable to get ahead 
+then it is advisable to go for the hint instead of just wasting more time. Treat this tool similarly.  
+  
+## Home Page: 
+> Click on the desired type of Test Case.  
+  
+![Home Page](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Home.png)
+## Input Screen  
+> Enter the constraints here  
+Make sure that none of the constraints is having **values more than 10<sup>7</sup> and T*maximum_value_of_n/m/k <=10<sup>7</sup>**   
+> This limit is applied because Outputs are in the form of arrays, and any array having size more than that would completely use up memory of
+> a standard PC and would cause it to hang. This issue is under consideration and would be soon dealt with.  
+  
+![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/input_screen.png)  
+## Output Screen  
+> Finally Output is shown.  
+  
+![Output Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Output_screen.png)  
+  
+On the output screen you can use multiple handy features as well like **_copy, regenerate new test case, change constraints_**
+on single click.  
+------------------------------  
 ### Pre-Requisites:  
 - Supports only python 3.2 and above.
 - Tkinter must be installed to use python code. 
@@ -29,38 +57,6 @@ probably due to an issue with **py2exe** and **pyinstaller** which are used to c
 allowing "insatallation from unknown sources" and setting it up as _"Ask always"_ under the privacy settings in your pc settings or else you can directly use  
 the [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/test_case.py).  
 
-------------------------
-## About Project  
-* This project is a combined application of **Object Oriented Programming, Competitive coding and Tkinter toolkit**.  
-* I got the motivation to develop this project after I begun my competitive programming journey(not a great one yet though but working my way up gradually), 
-there were many times when I saw people(including me and my friends) stuck on trying to struggle in thinking test cases when their program 
-fails the submission, especially the case with beginners and that is the main reason this project is developed.
-* However, it is not advised to directly use this tool everytime without trying and thinking test cases on your own, but 
-treat it like a hint to a problem, you should try to solve the problem first before looking up the hint and if you're unable to get ahead 
-then it is advisable to go for the hint instead of just wasting more time. Treat this tool similarly.  
-  
-## Home Page: 
-> Click on the desired type of Test Case.  
-  
-![Home Page](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Home.png)
-## Input Screen  
-> Enter the constraints here  
-Make sure that none of the constraints is having **values more than 10<sup>7</sup> and T*maximum_value_of_n/m/k <=10<sup>7</sup>**   
-> This limit is applied because Outputs are in the form of arrays, and any array having size more than that would completely use up memory of
-> a standard PC and would cause it to hang. This issue is under consideration and would be soon dealt with.  
-  
-![Input Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/input_screen.png)  
-## Output Screen  
-> Finally Output is shown.  
-  
-![Output Screen](https://github.com/Tanmay-901/test-case-generator/blob/master/Images/Output_screen.png)  
-  
-On the output screen you can use multiple handy features as well like **_copy, regenerate new test case, change constraints_**
-on single click.
-
-------------------------
-## Pre-requisites:  
-* To use codes apart from first release, 'tkinter' must be installed.  
 ------------------------
 ## Challenges faced:  
 | S.N. | Issue | Solution/proposed Solution |Resolved or not |
