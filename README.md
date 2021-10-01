@@ -1,5 +1,5 @@
 # Test-case-generator  
-#### Generate test cases for Competitive Coding.  
+#### Generate test cases for Competitive Coding ->  [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/test_case.py) / [Zip file](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip)
 -------------------------------
 ## About Project  
 * This project is a combined application of **Object Oriented Programming, Competitive coding and Tkinter toolkit**.  
@@ -32,7 +32,7 @@ on single click.
 * In the end, please provide your valueable feedback at : tanmaykhandelwal2014@gmail.com  
 
 ### Instructions for Windows Users:  
-* Download Zip file [here](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip) and then extract 
+* Directly use the [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/test_case.py) Download Zip file [here](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip) and then extract 
 the file, open dist folder, and then run test_case.exe(keep all the files at same location)
 * For more convenience,
   1. right click on 'test_case.exe' after extraction inside dist folder.
