@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-    <a href="#" target="https://github.com/Tanmay-901/test-case-generator/blob/master/public/README.md">Detailed Instructions</a>
+    <a href="https://github.com/Tanmay-901/test-case-generator/blob/master/public/README.md">Detailed Instructions</a>
     ·
     <a href="https://github.com/Tanmay-901/test-case-generator/issues/new/choose">Report Bug</a>
     ·
@@ -34,17 +34,21 @@
     </a>
 </p>
 
-`Test Case Generator` is an opensource tool to create Test cass of desired type using a simple, easy-to-use interface. You can create arrays, strings, char patterns and use a variety of handy features like copy, regenerate, change constraints.
+`Test Case Generator` is an opensource tool to create Test cass of desired type to use in Competitive coding using a simple, easy-to-use interface. You can create arrays, strings, char patterns and use a variety of handy features like copy, regenerate, change constraints.
 
 Liked it? Please give a ⭐️ to <b>Test Case Generator</b> to build its community stronger.
 
-### Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
+
+## 🙏 Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
 [![Stargazers repo roster for @Tanmay-901/test-case-generator](https://reporoster.com/stars/dark/Tanmay-901/test-case-generator)](https://github.com/Tanmay-901/test-case-generator/stargazers)
+
+---
 
 # 🔥 Features
 `Test Case Generator` comes with a bundle of features already. You can do the followings with it,
+## ✨ Select space separated / comma separated format
 <p align="center">
-        <img src="./public/readme/features.png" alt="landing" />
+        <img src="./public/readme/input_screen.png" alt="landing" />
 </p>
 
 ## 🎿 Copy
@@ -55,6 +59,10 @@ Liked it? Please give a ⭐️ to <b>Test Case Generator</b> to build its commun
 
 ## 🏗️ Change constraints
  - Directly go to the constraints screen to make a quick change in constraints
+<p align="center">
+        <img src="./public/readme/Output_screen.png" alt="landing" />
+</p>
+
 
 ## 📢 Suggest more test case formats
 - You can get more test cases added by creating a test case addition request.
@@ -62,15 +70,9 @@ Liked it? Please give a ⭐️ to <b>Test Case Generator</b> to build its commun
         <img src="./public/readme/suggest_test_case.png" alt="landing" />
 </p>
 
-## ✨ Select space separated / comma separated format
-<p align="center">
-        <img src="./public/readme/array_format.png" alt="landing" />
-</p>
-
-
 # 🍔 Built With
-- [Python](https://python.org/): The coolest React-based framework on the planet
-- [Tkinter](https://docs.python.org/3/library/tkinter.html): A flexible Data Store
+- [Python](https://python.org/): High-level general-purpose programming language
+- [Tkinter](https://docs.python.org/3/library/tkinter.html): Standard Python interface to the Tk GUI toolkit
 
 # 🛡️ License
 This project is licensed under the GNU GPLv3 License - see the [`LICENSE`](LICENSE) file for details.
