@@ -1,6 +1,41 @@
 # Test-case-generator  
 #### Generate test cases for Competitive Coding ->  [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/test_case.py) / [Zip file](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip)
 -------------------------------
+<p align="center">
+<a href="https://github.com/Tanmay-901/test-case-generator/blob/master/LICENSE" target="blank">
+<img src="https://img.shields.io/github/license/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape licence" />
+</a>
+<a href="https://github.com/Tanmay-901/test-case-generator/fork" target="blank">
+<img src="https://img.shields.io/github/forks/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape forks"/>
+</a>
+<a href="https://github.com/Tanmay-901/test-case-generatorstargazers" target="blank">
+<img src="https://img.shields.io/github/stars/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape stars"/>
+</a>
+<a href="https://github.com/Tanmay-901/test-case-generator/issues" target="blank">
+<img src="https://img.shields.io/github/issues/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape issues"/>
+</a>
+<a href="https://github.com/Tanmay-901/test-case-generator/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape pull-requests"/>
+</a>
+
+</p>
+
+<p align="center">
+    <a href="#" target="blank">View Demo</a>
+    ·
+    <a href="https://github.com/Tanmay-901/test-case-generator/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/TryShape/Tanmay-901/test-case-generator/new/choose">Request Feature</a>
+</p>
+
+# 👋 Introducing `Test Case Generator`
+<p align="center">
+    <a href="https://tryshape.vercel.app" target="blank"/>
+        <img src="./public/readme/home.png" alt="landing" />
+    </a>
+</p>
+
+
 ## About Project  
 * This project is a combined application of **Object Oriented Programming, Competitive coding and Tkinter toolkit**.  
 * It is advised to treat the tool like a hint to a problem, you should try to solve the problem first before looking up the hint and if you're unable to get ahead 
