@@ -7,18 +7,18 @@ then it is advisable to go for the hint instead of just wasting more time. Treat
 ## Home Page: 
 > Click on the desired type of Test Case.  
   
-![Home Page](./public/readme/Home.png)
+![Home Page](../public/readme/Home.png)
 ## Input Screen  
 > Enter the constraints here  
 Make sure that none of the constraints is having **values more than 10<sup>7</sup> and T*maximum_value_of_n/m/k <=10<sup>7</sup>**   
 > This limit is applied because Outputs are in the form of arrays, and any array having size more than that would completely use up memory of
 > a standard PC and would cause it to hang. This issue is under consideration and would be soon dealt with.  
   
-![Input Screen](./public/readme/input_screen.png)  
+![Input Screen](../public/readme/input_screen.png)  
 ## Output Screen  
 > Finally Output is shown.  
   
-![Output Screen](./public/readme/Output_screen.png)  
+![Output Screen](../public/readme/Output_screen.png)  
   
 On the output screen you can use multiple handy features as well like **_copy, regenerate new test case, change constraints_**
 on single click.  
