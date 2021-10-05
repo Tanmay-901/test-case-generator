@@ -1,5 +1,5 @@
 # Test-case-generator  
-#### Generate test cases for Competitive Coding ->  [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/test_case.py) / [Zip file](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip)
+#### Generate test cases for Competitive Coding ->  [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/final_release/test_case.py) / [Zip file](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip)
 -------------------------------
 <p align="center">
 <a href="https://github.com/Tanmay-901/test-case-generator/blob/master/LICENSE" target="blank">
