@@ -30,9 +30,9 @@
 
 # 👋 Introducing `Test Case Generator`
 <p align="center">
+<a href="github.com/Tanmay-901/test-case-generator">
         <img src="./public/readme/Home.png" alt="landing" />
-    </a>
-</p>
+    </a></p>
 
 `Test Case Generator` is an opensource tool to create Test cass of desired type to use in Competitive coding using a simple, easy-to-use interface. You can create arrays, strings, char patterns and use a variety of handy features like copy, regenerate, change constraints.
 
