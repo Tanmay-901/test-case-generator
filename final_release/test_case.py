@@ -1,6 +1,7 @@
 #  ------------------------------------------------- ###
 #  ------------------------------------------------- ###
 #  ### Developed by TANMAY KHANDELWAL (aka Dude901). ###
+#                github.com/Tanmay-901               ###
 #  _________________________________________________ ###
 #  _________________________________________________ ###
 
@@ -117,8 +118,6 @@ class Case:
         self.x_scroll.grid(row=1, sticky='EW', columnspan=10, padx=(20, 0), pady=(0, 30))
         self.output = Text(gui, height=12, bg="light cyan", width=82, yscrollcommand=self.y_scroll.set,
                            xscrollcommand=self.x_scroll.set, wrap='none')
-        # self.output = ScrolledText(gui, height=12, bg="light cyan", width=82, wrap='none',
-                                    # xscrollcommand=x_scroll.set)    # only for y scroll
         self.output.grid(row=0, column=0, columnspan=10, sticky='n', ipady=10, padx=(20, 0), pady=(22, 0))
         self.y_scroll.config(command=self.output.yview)
         self.x_scroll.config(command=self.output.xview)
@@ -224,7 +223,7 @@ class Case:
 
     def submit(self):
         try:
-            self.t = int(self.test_case_count.get())
+            self.t = min(int(self.test_case_count.get()), 10000)
             if self.t == 0 or self.t > 10000:
                 return
         except ValueError:
@@ -232,8 +231,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.n_min = min(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()))
-            self.n_max = max(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()))
+            self.n_min = min(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()), 10000)
+            self.n_max = max(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()), 10000)
             if self.n_min > self.n_max or self.n_max == 0 or self.n_max > 10000000:
                 return
         except ValueError:
@@ -241,8 +240,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.m_min = min(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()))
-            self.m_max = max(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()))
+            self.m_min = min(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()), 10000)
+            self.m_max = max(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()), 10000)
             if self.m_min > self.m_max or self.m_max == 0 or self.m_max > 10000000:
                 return
         except ValueError:
@@ -250,8 +249,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.k_min = min(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()))
-            self.k_max = max(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()))
+            self.k_min = min(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()), 10000)
+            self.k_max = max(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()), 10000)
             if self.k_min > self.k_max or self.k_max == 0 or self.k_max > 10000000:
                 return
         except ValueError:
@@ -259,8 +258,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.a_min = min(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()))
-            self.a_max = max(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()))
+            self.a_min = min(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()), 100000)
+            self.a_max = max(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()), 100000)
             if self.a_min > self.a_max or self.a_max == 0 or self.a_max > 10000000:
                 return
         except ValueError:
@@ -268,8 +267,8 @@ class Case:
         except AttributeError:
             pass
         try:
-            self.b_min = min(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()))
-            self.b_max = max(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()))
+            self.b_min = min(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()), 100000)
+            self.b_max = max(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()), 100000)
             if self.b_min > self.b_max or self.b_max == 0 or self.b_max > 10000000:
                 return
         except ValueError:
@@ -435,7 +434,7 @@ class Type2(Case):                                      # Type 2
             self.output.insert(END, '\n')
             self.a = [0] * self.n
             for j in range(self.n):
-                self.a[j] = str(randint(self.a_min, self.a_max))
+                self.a[j] = str(randint(self.a_min, self.a_max))     # Type 2
             if radio_input.get() == 0:
                 self.output.insert(END, self.a)
             elif radio_input.get() == 1:
@@ -446,7 +445,7 @@ class Type2(Case):                                      # Type 2
             self.output.insert(END, '\n')
 
 
-class Type3(Case):
+class Type3(Case):                    # Type 3
     def __init__(self, master):
         super(Type3, self).__init__(master)
         self.forget_home()
@@ -513,7 +512,7 @@ class Type4(Case):
             self.output.insert(END, ' ')
             self.output.insert(END, self.m)
             self.output.insert(END, '\n')
-            self.a = [0] * self.n
+            self.a = [0] * self.n                           # Type 4
             self.b = [0] * self.m
 
             for j in range(self.n):
@@ -526,7 +525,7 @@ class Type4(Case):
                 self.output.insert(END, self.b)
                 self.output.insert(END, '\n')
             elif radio_input.get() == 1:
-                self.output.insert(END, "[")
+                self.output.insert(END, "[")                   # Type 4
                 self.a = ", ".join(self.a)
                 self.output.insert(END, self.a)
                 self.output.insert(END, "]")
@@ -540,6 +539,7 @@ class Type4(Case):
 #  ------------------------------------------------- ###
 #  ------------------------------------------------- ###
 #  ### Developed by TANMAY KHANDELWAL (aka Dude901). ###
+#                github.com/Tanmay-901               ###
 #  _________________________________________________ ###
 #  _________________________________________________ ###
 
@@ -577,7 +577,7 @@ class Type5(Case):
                 self.output.insert(END, ' ')
                 self.output.insert(END, self.k)
                 self.output.insert(END, '\n')
-            elif radio_input.get() == 1:
+            elif radio_input.get() == 1:              # Type 5
                 self.output.insert(END, "[")
                 self.output.insert(END, self.n)
                 self.output.insert(END, ', ')
@@ -620,7 +620,7 @@ class Type6(Case):
             self.a = [0] * self.m
             for j in range(self.m):
                 self.a[j] = str(randint(self.a_min, self.a_max))
-            if radio_input.get() == 0:
+            if radio_input.get() == 0:                   # Type 6
                 self.output.insert(END, self.a)
             elif radio_input.get() == 1:
                 self.output.insert(END, "[")
@@ -695,7 +695,7 @@ class Type8(Case):
             self.output.insert(END, '\n')
             for j in range(self.m):
                 self.a = randint(self.a_min, self.a_max)
-                self.b = randint(self.b_min, self.b_max)
+                self.b = randint(self.b_min, self.b_max)     # Type 8
                 if radio_input.get() == 0:
                     self.output.insert(END, self.a)
                     self.output.insert(END, ' ')
@@ -807,5 +807,6 @@ gui.mainloop()
 #  ------------------------------------------------- ###
 #  ------------------------------------------------- ###
 #  ### Developed by TANMAY KHANDELWAL (aka Dude901). ###
+#                github.com/Tanmay-901               ###
 #  _________________________________________________ ###
 #  _________________________________________________ ###
