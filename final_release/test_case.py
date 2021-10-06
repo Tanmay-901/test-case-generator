@@ -64,7 +64,8 @@ class Case:
         self.retrieve_home(self)
 
     def newformat(self):
-        url = "https://forms.gle/UVdo6QMAwBNxa9Ln7"
+        url = "https://github.com/Tanmay-901/test-case-generator/issues/new?assignees=&labels=&" \
+              "template=suggest-test-case.md&title=Suggest+Test+Case"
         webbrowser.open_new_tab(url)
 
     def forget_home(self):
