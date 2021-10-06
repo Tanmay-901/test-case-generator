@@ -225,6 +225,7 @@ class Case:
         try:
             self.t = min(int(self.test_case_count.get()), 10000)
             if self.t == 0 or self.t > 10000:
+                print("self.t == 0 or self.t > 10000")
                 return
         except ValueError:
             return
@@ -232,8 +233,9 @@ class Case:
             pass
         try:
             self.n_min = min(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()), 10000)
-            self.n_max = max(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()), 10000)
+            self.n_max = min(max(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get())), 10000)
             if self.n_min > self.n_max or self.n_max == 0 or self.n_max > 10000000:
+                print("self.n_min > self.n_max or self.n_max == 0 or self.n_max > 10000000")
                 return
         except ValueError:
             return
@@ -241,8 +243,9 @@ class Case:
             pass
         try:
             self.m_min = min(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()), 10000)
-            self.m_max = max(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()), 10000)
+            self.m_max = min(max(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get())), 10000)
             if self.m_min > self.m_max or self.m_max == 0 or self.m_max > 10000000:
+                print("self.m_min > self.m_max or self.m_max == 0 or self.m_max > 10000000")
                 return
         except ValueError:
             return
@@ -250,8 +253,9 @@ class Case:
             pass
         try:
             self.k_min = min(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()), 10000)
-            self.k_max = max(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()), 10000)
+            self.k_max = min(max(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get())), 10000)
             if self.k_min > self.k_max or self.k_max == 0 or self.k_max > 10000000:
+                print("self.k_min > self.k_max or self.k_max == 0 or self.k_max > 10000000")
                 return
         except ValueError:
             return
@@ -259,8 +263,9 @@ class Case:
             pass
         try:
             self.a_min = min(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()), 100000)
-            self.a_max = max(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()), 100000)
+            self.a_max = min(max(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get())), 100000)
             if self.a_min > self.a_max or self.a_max == 0 or self.a_max > 10000000:
+                print("self.a_min > self.a_max or self.a_max == 0 or self.a_max > 10000000")
                 return
         except ValueError:
             return
@@ -268,8 +273,9 @@ class Case:
             pass
         try:
             self.b_min = min(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()), 100000)
-            self.b_max = max(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()), 100000)
+            self.b_max = min(max(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get())), 100000)
             if self.b_min > self.b_max or self.b_max == 0 or self.b_max > 10000000:
+                print("self.b_min > self.b_max or self.b_max == 0 or self.b_max > 10000000")
                 return
         except ValueError:
             return
@@ -278,6 +284,7 @@ class Case:
         try:
             self.char_lis = list(self.char_list.get().split())
             if self.char_lis[0] == '(Space':
+                print("self.char_lis[0] == '(Space'")
                 return
         except IndexError:
             return
@@ -287,16 +294,19 @@ class Case:
             pass
         try:
             if self.t * self.n_max > 10000000:
+                print("self.t * self.n_max > 10000000", self.t, self.n_max)
                 return
         except AttributeError:
             pass
         try:
             if self.m_max * self.n_max > 10000000:
+                print("self.m_max * self.n_max > 10000000")
                 return
         except AttributeError:
             pass
         try:
             if self.t * self.m_max > 10000000:
+                print("self.t * self.m_max > 10000000")
                 return
         except AttributeError:
             pass
