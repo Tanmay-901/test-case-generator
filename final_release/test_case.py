@@ -161,46 +161,46 @@ class Case:
 
     def get_t(self, r):
         self.test_case_count_label = Label(gui, text='T  = ', font=('calibre', 10, 'bold'), width=17)  # Type 1
-        self.test_case_count = Entry(gui, textvariable=t, font=('calibre', 10, 'normal'))
+        self.test_case_count = Entry(gui, text=t, textvariable=t, font=('calibre', 10, 'normal'))
         self.test_case_count_label.grid(row=r, column=0, pady=20, ipady=1)  # Type 1
         self.test_case_count.grid(row=r, column=1)
 
     def get_n(self, r):
-        self.minimum_value_of_n = Entry(gui, textvariable=n_min, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_n = Entry(gui, text=n_min, textvariable=n_min, font=('calibre', 10, 'normal'))
         self.min_max_values_of_n_label = Label(gui, text=' <= n <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_n = Entry(gui, textvariable=n_max, font=('calibre', 10, 'normal'))
+        self.maximum_value_of_n = Entry(gui, text=n_max, textvariable=n_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_n.grid(row=r, column=0, padx=10, pady=10)
         self.min_max_values_of_n_label.grid(row=r, column=1, ipadx=5, ipady=1)
         self.maximum_value_of_n.grid(row=r, column=2, padx=(10, 10))
 
     def get_m(self, r):
-        self.minimum_value_of_m = Entry(gui, textvariable=m_min, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_m = Entry(gui, text=m_min, textvariable=m_min, font=('calibre', 10, 'normal'))
         self.min_max_values_of_m_label = Label(gui, text='<= m <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_m = Entry(gui, textvariable=m_max, font=('calibre', 10, 'normal'))
+        self.maximum_value_of_m = Entry(gui, text=m_max, textvariable=m_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_m.grid(row=r, column=0, padx=10, pady=10)
         self.min_max_values_of_m_label.grid(row=r, column=1, padx=10, ipadx=5, ipady=1)
         self.maximum_value_of_m.grid(row=r, column=2, padx=10)
 
     def get_k(self, r):
-        self.minimum_value_of_k = Entry(gui, textvariable=k_min, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_k = Entry(gui, text=k_min, textvariable=k_min, font=('calibre', 10, 'normal'))
         self.min_max_values_of_k_label = Label(gui, text=' <= k <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_k = Entry(gui, textvariable=k_max, font=('calibre', 10, 'normal'))
+        self.maximum_value_of_k = Entry(gui, text=k_max, textvariable=k_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_k.grid(row=r, column=0, pady=10)
         self.min_max_values_of_k_label.grid(row=r, column=1)
         self.maximum_value_of_k.grid(row=r, column=2)
 
     def get_a(self, r):
-        self.minimum_value_of_ai = Entry(gui, textvariable=a_min, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_ai = Entry(gui, text=a_min, textvariable=a_min, font=('calibre', 10, 'normal'))
         self.min_max_values_of_ai_label = Label(gui, text=' <= Ai <=', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_ai = Entry(gui, textvariable=a_max, font=('calibre', 10, 'normal'))
+        self.maximum_value_of_ai = Entry(gui, text=a_max, textvariable=a_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_ai.grid(row=r, column=0, padx=10, pady=10)
         self.min_max_values_of_ai_label.grid(row=r, column=1, ipadx=2, ipady=1)
         self.maximum_value_of_ai.grid(row=r, column=2)
 
     def get_b(self, r):
-        self.minimum_value_of_bi = Entry(gui, textvariable=b_min, font=('calibre', 10, 'normal'))
+        self.minimum_value_of_bi = Entry(gui, text=b_min, textvariable=b_min, font=('calibre', 10, 'normal'))
         self.min_max_values_of_bi_label = Label(gui, text=' <= Bi <= ', font=('calibre', 10, 'bold'))
-        self.maximum_value_of_bi = Entry(gui, textvariable=b_max, font=('calibre', 10, 'normal'))
+        self.maximum_value_of_bi = Entry(gui, text=b_max, textvariable=b_max, font=('calibre', 10, 'normal'))
         self.minimum_value_of_bi.grid(row=r, column=0, pady=10)
         self.min_max_values_of_bi_label.grid(row=r, column=1, padx=10)
         self.maximum_value_of_bi.grid(row=r, column=2, padx=10)
@@ -786,16 +786,27 @@ class Type10(Case):
 
 
 t = IntVar()
+t.set(5)
 n_min = IntVar()
+n_min.set(1)
 n_max = IntVar()
+n_max.set(10)
 m_min = IntVar()
+m_min.set(1)
 m_max = IntVar()
+m_max.set(10)
 k_min = IntVar()
+k_min.set(1)
 k_max = IntVar()
+k_max.set(10)
 a_min = IntVar()
+a_min.set(0)
 a_max = IntVar()
+a_max.set(20)
 b_min = IntVar()
+b_min.set(0)
 b_max = IntVar()
+b_max.set(20)
 char_lis = StringVar()
 radio_input = IntVar()
 
