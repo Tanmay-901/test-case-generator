@@ -55,8 +55,10 @@ class Case:
         self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\n[A1 A2...An]\nn  k  m\n[A1 A2...An]'
                                , fg='white', command=lambda: Type10(gui), width=13, font='calibre', bd=3)
         self.button10.configure(background='grey20')
-        self.button_new = Button(gui, text=' ANOTHER TYPE ', fg='black', width=13, font='calibre', bd=3
-                                , command=lambda: self.newformat(self=Case))
+        self.button_new_test_case = Button(gui, text=' ANOTHER TYPE ', fg='black', width=13, font='calibre', bd=3
+                                           , command=lambda: self.newformat(self=Case))
+        self.button_feedback = Button(gui, text='FEEDBACK', fg='black', width=13, font='calibre', bd=3
+                                           , command=lambda: self.feedback(self=Case))
         self.button_exit = Button(gui, text=' EXIT ', fg='black', width=11, font='calibre',
                                   bd=3, command=lambda: gui.destroy())
         self.copyright_label = Button(gui, text='© Dude901', fg='white', width=7, height=1, bd=3, command=lambda:
@@ -67,6 +69,10 @@ class Case:
     def newformat(self):
         url = "https://github.com/Tanmay-901/test-case-generator/issues/new?assignees=&labels=&" \
               "template=suggest-test-case.md&title=Suggest+Test+Case"
+        webbrowser.open_new_tab(url)
+
+    def feedback(self):
+        url = "https://github.com/Tanmay-901/test-case-generator/issues/new/choose"
         webbrowser.open_new_tab(url)
 
     def forget_home(self):
@@ -81,7 +87,8 @@ class Case:
         self.button8.grid_forget()
         self.button9.grid_forget()
         self.button10.grid_forget()
-        self.button_new.grid_forget()
+        self.button_new_test_case.grid_forget()
+        self.button_feedback.grid_forget()
         self.button_exit.grid_forget()
 
     def retrieve_home(self):
@@ -96,7 +103,8 @@ class Case:
         self.button8.grid(row=2, column=2, ipady=10, pady=13, padx=10)
         self.button9.grid(row=2, column=3, ipady=10, pady=13, padx=10)
         self.button10.grid(row=2, column=4, ipady=10, pady=13, padx=10)
-        self.button_new.grid(row=3, column=1, ipady=10, pady=13, padx=10)
+        self.button_new_test_case.grid(row=3, column=1, ipady=10, pady=13, padx=10)
+        self.button_feedback.grid(row=3, column=2, ipady=10, pady=13, padx=10)
         self.button_exit.grid(row=3, column=3, ipady=10, pady=13, padx=10)
         self.copyright_label.place(relx=0.92, rely=0.005)
 
@@ -223,59 +231,59 @@ class Case:
 
     def submit(self):
         try:
-            self.t = min(int(self.test_case_count.get()), 10000)
-            if self.t == 0 or self.t > 10000:
-                print("self.t == 0 or self.t > 10000")
+            self.t = min(int(self.test_case_count.get()), 1000)
+            if self.t == 0:
+                print("self.t == 0")
                 return
         except ValueError:
             return
         except AttributeError:
             pass
         try:
-            self.n_min = min(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()), 10000)
-            self.n_max = min(max(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get())), 10000)
-            if self.n_min > self.n_max or self.n_max == 0 or self.n_max > 10000000:
-                print("self.n_min > self.n_max or self.n_max == 0 or self.n_max > 10000000")
+            self.n_min = min(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get()), 1000)
+            self.n_max = min(max(int(self.minimum_value_of_n.get()), int(self.maximum_value_of_n.get())), 1000)
+            if self.n_max == 0:
+                print("self.n_max == 0")
                 return
         except ValueError:
             return
         except AttributeError:
             pass
         try:
-            self.m_min = min(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()), 10000)
-            self.m_max = min(max(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get())), 10000)
-            if self.m_min > self.m_max or self.m_max == 0 or self.m_max > 10000000:
-                print("self.m_min > self.m_max or self.m_max == 0 or self.m_max > 10000000")
+            self.m_min = min(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get()), 1000)
+            self.m_max = min(max(int(self.minimum_value_of_m.get()), int(self.maximum_value_of_m.get())), 1000)
+            if self.m_max == 0:
+                print("self.m_max == 0")
                 return
         except ValueError:
             return
         except AttributeError:
             pass
         try:
-            self.k_min = min(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()), 10000)
-            self.k_max = min(max(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get())), 10000)
-            if self.k_min > self.k_max or self.k_max == 0 or self.k_max > 10000000:
-                print("self.k_min > self.k_max or self.k_max == 0 or self.k_max > 10000000")
+            self.k_min = min(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get()), 1000)
+            self.k_max = min(max(int(self.minimum_value_of_k.get()), int(self.maximum_value_of_k.get())), 1000)
+            if self.k_max == 0:
+                print("self.k_max == 0")
                 return
         except ValueError:
             return
         except AttributeError:
             pass
         try:
-            self.a_min = min(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()), 100000)
-            self.a_max = min(max(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get())), 100000)
-            if self.a_min > self.a_max or self.a_max == 0 or self.a_max > 10000000:
-                print("self.a_min > self.a_max or self.a_max == 0 or self.a_max > 10000000")
+            self.a_min = min(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get()), 10000)
+            self.a_max = min(max(int(self.minimum_value_of_ai.get()), int(self.maximum_value_of_ai.get())), 10000)
+            if self.a_max == 0:
+                print("self.a_max == 0")
                 return
         except ValueError:
             return
         except AttributeError:
             pass
         try:
-            self.b_min = min(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()), 100000)
-            self.b_max = min(max(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get())), 100000)
-            if self.b_min > self.b_max or self.b_max == 0 or self.b_max > 10000000:
-                print("self.b_min > self.b_max or self.b_max == 0 or self.b_max > 10000000")
+            self.b_min = min(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get()), 10000)
+            self.b_max = min(max(int(self.minimum_value_of_bi.get()), int(self.maximum_value_of_bi.get())), 10000)
+            if self.b_max == 0:
+                print("self.b_max == 0")
                 return
         except ValueError:
             return
@@ -290,24 +298,6 @@ class Case:
             return
         except ValueError:
             return
-        except AttributeError:
-            pass
-        try:
-            if self.t * self.n_max > 10000000:
-                print("self.t * self.n_max > 10000000", self.t, self.n_max)
-                return
-        except AttributeError:
-            pass
-        try:
-            if self.m_max * self.n_max > 10000000:
-                print("self.m_max * self.n_max > 10000000")
-                return
-        except AttributeError:
-            pass
-        try:
-            if self.t * self.m_max > 10000000:
-                print("self.t * self.m_max > 10000000")
-                return
         except AttributeError:
             pass
         finally:
