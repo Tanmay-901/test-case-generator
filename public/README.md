@@ -30,7 +30,7 @@ on single click.
 * In the end, please provide your valueable feedback at : tanmaykhandelwal2014@gmail.com  
 
 ### Instructions for Windows Users:  
-* Directly use the [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/test_case.py) Download Zip file [here](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip) and then extract 
+* Directly use the [python code](https://github.com/Tanmay-901/test-case-generator/final_release/blob/master/test_case.py) Download Zip file [here](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip) and then extract 
 the file, open dist folder, and then run test_case.exe(keep all the files at same location)
 * For more convenience,
   1. right click on 'test_case.exe' after extraction inside dist folder.
@@ -49,7 +49,7 @@ right after download completes).
 * If the pc shows a warning similar to this "Operation did not complete because the file contains a virus or unwanted file", it is 
 probably due to an issue with **py2exe** and **pyinstaller** which are used to convert the python program into an executable file. It can be overcome by 
 allowing "insatallation from unknown sources" and setting it up as _"Ask always"_ under the privacy settings in your pc settings or else you can directly use  
-the [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/test_case.py).  
+the [python code](https://github.com/Tanmay-901/test-case-generator/final_release/blob/master/test_case.py).  
 
 ------------------------
 ## Challenges faced:  
