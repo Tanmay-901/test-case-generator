@@ -2,20 +2,24 @@
 #### Generate test cases for Competitive Coding -> [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/final_release/test_case.py) / [Zip file](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip)
 -------------------------------
 <p align="center">
+<a href="https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip" target="blank">
+<img src="https://img.shields.io/github/downloads/Tanmay-901/test-case-generator/total?color=white&label=download-zip" alt="Download" />
 <a href="https://github.com/Tanmay-901/test-case-generator/blob/master/LICENSE" target="blank">
-<img src="https://img.shields.io/github/license/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape licence" />
+<img src="https://img.shields.io/github/license/Tanmay-901/test-case-generator?color=green&style=flat-square" alt="Test Case Generator licence" />
 </a>
 <a href="https://github.com/Tanmay-901/test-case-generator/fork" target="blank">
-<img src="https://img.shields.io/github/forks/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape forks"/>
+<img src="https://img.shields.io/github/forks/Tanmay-901/test-case-generator?style=flat-square" alt="Test Case Generator forks"/>
 </a>
 <a href="https://github.com/Tanmay-901/test-case-generatorstargazers" target="blank">
-<img src="https://img.shields.io/github/stars/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape stars"/>
+<img src="https://img.shields.io/github/stars/Tanmay-901/test-case-generator?style=flat-square" alt="Test Case Generator stars"/>
 </a>
 <a href="https://github.com/Tanmay-901/test-case-generator/issues" target="blank">
-<img src="https://img.shields.io/github/issues/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape issues"/>
+<img src="https://img.shields.io/github/issues/Tanmay-901/test-case-generator?style=flat-square" alt="Test Case Generator issues"/>
 </a>
-<a href="https://github.com/Tanmay-901/test-case-generator/pulls" target="blank">
-<img src="https://img.shields.io/github/issues-pr/Tanmay-901/test-case-generator?style=flat-square" alt="tryshape pull-requests"/>
+<a href="https://github.com/Tanmay-901/test-case-generator/pulls?q=is%3Apr+is%3Aclosed" target="blank">
+<img src="https://img.shields.io/github/issues-pr-closed/Tanmay-901/test-case-generator?color=red&style=flat-square" alt="Test Case Generator pull-requests"/>
+<a href="https://github.com/Tanmay-901?tab=followers" target="blank">
+<img src="https://img.shields.io/github/followers/Tanmay-901?style=social" alt="Followers"/>
 </a>
 
 </p>
