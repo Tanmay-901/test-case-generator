@@ -14,7 +14,7 @@
 <img src="https://img.shields.io/github/stars/Tanmay-901/test-case-generator?style=flat-square" alt="Test Case Generator stars"/>
 </a>
 <a href="https://github.com/Tanmay-901/test-case-generator/issues" target="blank">
-<img src="https://img.shields.io/github/issues/Tanmay-901/test-case-generator?style=flat-square" alt="Test Case Generator issues"/>
+<img src="https://img.shields.io/github/issues/Tanmay-901/test-case-generator?color=white&style=flat-square" alt="Test Case Generator issues"/>
 </a>
 <a href="https://github.com/Tanmay-901/test-case-generator/pulls?q=is%3Apr+is%3Aclosed" target="blank">
 <img src="https://img.shields.io/github/issues-pr-closed/Tanmay-901/test-case-generator?color=red&style=flat-square" alt="Test Case Generator pull-requests"/>
