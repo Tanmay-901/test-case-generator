@@ -1,2 +1,7 @@
 theme: jekyll-theme-architect
 show_downloads: true
+title: [Test Case Generator]
+description: [Generate Test cases for competitive coding]
+github:
+  zip_url: https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip
+  another_url: https://github.com/Tanmay-901/test-case-generator/blob/master/final_release/test_case.py
