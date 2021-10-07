@@ -1,4 +1,4 @@
-# [Test-case-generator](github.com/Tanmay-901/test-case-generator) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Generate%20over%2010%20types%20of%20Test%20cases%20for%20competitive%20coding&url=github.com/Tanmay-901/test-case-generator)
+# [Test-case-generator](https://tanmay-901.github.io/test-case-generator/) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Generate%20different%20types%20of%20test%20cases%20using%20Test%20Case%20Generator,%20an%20Open-source%20tool%20to%20create%20test%20cases%20of%20the%20desired%20type%20to%20use%20in%20Competitive%20coding,%20using%20a%20simple,%20easy-to-use%20interface.&url=https://tanmay-901.github.io/test-case-generator/)
 #### Generate test cases for Competitive Coding -> [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/final_release/test_case.py) / [Zip file](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip)
 -------------------------------
 <p align="center">
@@ -23,9 +23,9 @@
 <p align="center">
     <a href="https://github.com/Tanmay-901/test-case-generator/blob/master/public/README.md">Detailed Instructions</a>
     ·
-    <a href="https://github.com/Tanmay-901/test-case-generator/issues/new/choose">Report Bug</a>
+    <a href="https://github.com/Tanmay-901/test-case-generator/issues/new?assignees=&labels=&template=bug_report.md&title=BUG">Report Bug</a>
     ·
-    <a href="https://github.com/TryShape/Tanmay-901/test-case-generator/new/choose">Request Feature</a>
+    <a href="https://github.com/Tanmay-901/test-case-generator/issues/new?assignees=&labels=&template=feature_request.md&title=Feature+request">Request Feature</a>
 </p>
 
 # 👋 Introducing `Test Case Generator`
@@ -58,7 +58,7 @@ Liked it? Please give a ⭐️ to <b>Test Case Generator</b> to build its commun
  - Generate test cases again and again for the given constraints with single click.
 
 ## 🏗️ Change constraints
- - Directly go to the constraints screen to make a quick change in constraints
+ - Directly go to the constraints screen to make a quick change in constraints or leave them with default values / recommended constraints for better evaluation
 <p align="center">
         <img src="./public/readme/Output_screen.png" alt="landing" />
 </p>
