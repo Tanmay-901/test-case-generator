@@ -32,7 +32,7 @@
     <a href="https://github.com/Tanmay-901/test-case-generator/issues/new?assignees=&labels=&template=feature_request.md&title=Feature+request">Request Feature</a>
 </p>
 
-# 👋 Introducing `Test Case Generator`
+# 👋 Introducing `Test Case Generator`  [![Open Source Helpers](https://www.codetriage.com/tanmay-901/test-case-generator/badges/users.svg)](https://www.codetriage.com/tanmay-901/test-case-generator)
 <p align="center">
 <a href="github.com/Tanmay-901/test-case-generator">
         <img src="./public/readme/Home.png" alt="landing" />
