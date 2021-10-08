@@ -10,7 +10,7 @@
 <a href="https://github.com/Tanmay-901/test-case-generator/fork" target="blank">
 <img src="https://img.shields.io/github/forks/Tanmay-901/test-case-generator?style=flat-square" alt="Test Case Generator forks"/>
 </a>
-<a href="https://github.com/Tanmay-901/test-case-generatorstargazers" target="blank">
+<a href="https://github.com/Tanmay-901/test-case-generator/stargazers" target="blank">
 <img src="https://img.shields.io/github/stars/Tanmay-901/test-case-generator?style=flat-square" alt="Test Case Generator stars"/>
 </a>
 <a href="https://github.com/Tanmay-901/test-case-generator/issues" target="blank">
