@@ -55,6 +55,12 @@ class Case:
         self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\n[A1 A2...An]\nn  k  m\n[A1 A2...An]'
                                , fg='white', command=lambda: Type10(gui), width=13, font='calibre', bd=3)
         self.button10.configure(background='grey20')
+        self.button11 = Button(gui, justify=LEFT, text='n e\n[s1  d1]\n[s2  d2]\n(e rows of edges)\n(s, d pair)\nv\n[undirected graph]', fg='white'
+                              , command=lambda: Type11(gui), width=13, font='calibre', bd=3)
+        self.button11.configure(background='grey20')
+        self.button12 = Button(gui, justify=LEFT, text='n e\n[s1  d1]\n[s2  d2]\n(e rows of edges)\n(s, d pair)\nv\n[directed graph]', fg='white'
+                              , command=lambda: Type12(gui), width=13, font='calibre', bd=3)
+        self.button12.configure(background='grey20')
         self.button_new_test_case = Button(gui, text=' ANOTHER TYPE ', fg='black', width=13, font='calibre', bd=3
                                            , command=lambda: self.newformat(self=Case))
         self.button_feedback = Button(gui, text='FEEDBACK', fg='black', width=13, font='calibre', bd=3
@@ -87,6 +93,8 @@ class Case:
         self.button8.grid_forget()
         self.button9.grid_forget()
         self.button10.grid_forget()
+        self.button11.grid_forget()
+        self.button12.grid_forget()
         self.button_new_test_case.grid_forget()
         self.button_feedback.grid_forget()
         self.button_exit.grid_forget()
@@ -103,9 +111,11 @@ class Case:
         self.button8.grid(row=2, column=2, ipady=10, pady=13, padx=10)
         self.button9.grid(row=2, column=3, ipady=10, pady=13, padx=10)
         self.button10.grid(row=2, column=4, ipady=10, pady=13, padx=10)
-        self.button_new_test_case.grid(row=3, column=1, ipady=10, pady=13, padx=10)
-        self.button_feedback.grid(row=3, column=2, ipady=10, pady=13, padx=10)
-        self.button_exit.grid(row=3, column=3, ipady=10, pady=13, padx=10)
+        self.button11.grid(row=3, column=0, ipady=10, pady=13, padx=10)
+        self.button12.grid(row=3, column=1, ipady=10, pady=13, padx=10)
+        self.button_new_test_case.grid(row=4, column=1, ipady=10, pady=13, padx=10)
+        self.button_feedback.grid(row=4, column=2, ipady=10, pady=13, padx=10)
+        self.button_exit.grid(row=4, column=3, ipady=10, pady=13, padx=10)
         self.copyright_label.place(relx=0.92, rely=0.005)
 
     def cpy(self):
@@ -784,7 +794,86 @@ class Type10(Case):
                 self.output.insert(END, "]")
             self.output.insert(END, '\n')
 
+class Type11(Case):                    # Type 11
+    def __init__(self, master):
+        super(Type11, self).__init__(master)
+        self.forget_home()
+        self.take_input()
 
+    def take_input(self):                   # Type 11
+        try:
+            self.try_forget()
+        except AttributeError:
+            pass
+        self.get_n(0)
+        self.show_button(1)
+
+    def generate(self):                                              # Type 11
+        self.output.delete('1.0', END)
+        self.n = randint(self.n_min, self.n_max)
+        self.e = randint(0, self.n*(self.n-1)//2)
+        self.output.insert(END, self.n)
+        self.output.insert(END, ' ')
+        self.output.insert(END, self.e)
+        self.output.insert(END, '\n')
+        for i in range(self.e):
+            self.s = str(randint(self.n_min, self.n_max))
+            self.d = str(randint(self.n_min, self.n_max))
+            if radio_input.get() == 0:
+                self.output.insert(END, self.s)
+                self.output.insert(END, ' ')
+                self.output.insert(END, self.d)
+            elif radio_input.get() == 1:
+                self.output.insert(END, "[")
+                self.output.insert(END, self.s)
+                self.output.insert(END, ', ')
+                self.output.insert(END, self.d)
+                self.output.insert(END, "]")
+            self.output.insert(END, '\n')
+        self.v = randint(self.n_min, self.n_max)
+        self.output.insert(END, self.v)
+        self.output.insert(END, '\n')
+    
+class Type12(Case):                    # Type 12
+    def __init__(self, master):
+        super(Type12, self).__init__(master)
+        self.forget_home()
+        self.take_input()
+
+    def take_input(self):                   # Type 12
+        try:
+            self.try_forget()
+        except AttributeError:
+            pass
+        self.get_n(0)
+        self.show_button(1)
+
+    def generate(self):                                              # Type 12
+        self.output.delete('1.0', END)
+        self.n = randint(self.n_min, self.n_max)
+        self.e = randint(0, self.n*(self.n-1))
+        self.output.insert(END, self.n)
+        self.output.insert(END, ' ')
+        self.output.insert(END, self.e)
+        self.output.insert(END, '\n')
+        for i in range(self.e):
+            self.s = str(randint(self.n_min, self.n_max))
+            self.d = str(randint(self.n_min, self.n_max))
+            if radio_input.get() == 0:
+                self.output.insert(END, self.s)
+                self.output.insert(END, ' ')
+                self.output.insert(END, self.d)
+            elif radio_input.get() == 1:
+                self.output.insert(END, "[")
+                self.output.insert(END, self.s)
+                self.output.insert(END, ', ')
+                self.output.insert(END, self.d)
+                self.output.insert(END, "]")
+            self.output.insert(END, '\n')
+        self.v = randint(self.n_min, self.n_max)
+        self.output.insert(END, self.v)
+        self.output.insert(END, '\n')
+    
 t = IntVar()
 t.set(5)
 n_min = IntVar()
