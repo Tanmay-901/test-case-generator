@@ -23,6 +23,7 @@ class Case:
         self.test_case_counter = None
 
     def home(self):
+        self.y_scroll = Scrollbar(gui)
         self.statement = Label(gui, text='Select Test Case Type', fg='white', height=1, font=('calibre', 12, 'normal'))
         self.statement.configure(bg=mycolor)
         self.button1 = Button(gui, justify=LEFT, text='T\nn   \n[A1 A2 A3...An]\nn   \n[A1 A2 A3...An]', width=13,
@@ -55,10 +56,10 @@ class Case:
         self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\n[A1 A2...An]\nn  k  m\n[A1 A2...An]'
                                , fg='white', command=lambda: Type10(gui), width=13, font='calibre', bd=3)
         self.button10.configure(background='grey20')
-        self.button11 = Button(gui, justify=LEFT, text='n e\n[s1  d1]\n[s2  d2]\n(e rows of edges)\n(s, d pair)\nv\n[undirected graph]', fg='white'
+        self.button11 = Button(gui, justify=LEFT, text='undirected graph\nn e\n[s1  d1]\n[s2  d2]\nv', fg='white'
                               , command=lambda: Type11(gui), width=13, font='calibre', bd=3)
         self.button11.configure(background='grey20')
-        self.button12 = Button(gui, justify=LEFT, text='n e\n[s1  d1]\n[s2  d2]\n(e rows of edges)\n(s, d pair)\nv\n[directed graph]', fg='white'
+        self.button12 = Button(gui, justify=LEFT, text='directed graph\nn e\n[s1  d1]\n[s2  d2]\nv', fg='white'
                               , command=lambda: Type12(gui), width=13, font='calibre', bd=3)
         self.button12.configure(background='grey20')
         self.button_new_test_case = Button(gui, text=' ANOTHER TYPE ', fg='black', width=13, font='calibre', bd=3
@@ -794,6 +795,7 @@ class Type10(Case):
                 self.output.insert(END, "]")
             self.output.insert(END, '\n')
 
+
 class Type11(Case):                    # Type 11
     def __init__(self, master):
         super(Type11, self).__init__(master)
@@ -833,7 +835,8 @@ class Type11(Case):                    # Type 11
         self.v = randint(self.n_min, self.n_max)
         self.output.insert(END, self.v)
         self.output.insert(END, '\n')
-    
+
+
 class Type12(Case):                    # Type 12
     def __init__(self, master):
         super(Type12, self).__init__(master)
