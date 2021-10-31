@@ -12,6 +12,7 @@ Please delete options that are not relevant.
 
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
+- [ ] Handled warnings/Improvised code(actual code updates not just comments)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] This change requires a documentation update
 
@@ -19,8 +20,9 @@ Please delete options that are not relevant.
 please add a screenshot if you've made visual changes/added test cases
 
 ## Checklist:
-
-- [ ] My code follows the style guidelines of this project
+**Compulsory in case of code change**  
+- [ ] I have attached the updated .exe & zip files(refer to [setup.py](https://github.com/Tanmay-901/test-case-generator/blob/master/setup.py))
+------------
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
