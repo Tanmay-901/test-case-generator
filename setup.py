@@ -1,3 +1,4 @@
+# run following command using cmd/powershell/terminal
 # python setup.py install
 # python setup.py py2exe
 from distutils.core import setup
