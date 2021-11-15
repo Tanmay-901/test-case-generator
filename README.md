@@ -1,5 +1,5 @@
 # [Test-case-generator](https://tanmay-901.github.io/test-case-generator/) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Generate%20different%20types%20of%20test%20cases%20using%20Test%20Case%20Generator,%20an%20Open-source%20tool%20to%20create%20test%20cases%20of%20the%20desired%20type%20to%20use%20in%20Competitive%20coding,%20using%20a%20simple,%20easy-to-use%20interface.&url=https://tanmay-901.github.io/test-case-generator/)
-#### Generate test cases for Competitive Coding -> [python code](https://github.com/Tanmay-901/test-case-generator/blob/master/final_release/test_case.py) / [Zip file](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip)
+#### Generate test cases for Competitive Coding -> [Zip file](https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip)
 -------------------------------
 <p align="center">
 <a href="https://github.com/Tanmay-901/test-case-generator/raw/master/test_case.zip" target="blank">
