@@ -42,7 +42,8 @@
         <img src="./public/readme/Home.png" alt="landing" />
     </a></p>
 
-`Test Case Generator` is an opensource tool to create Test cass of desired type to use in Competitive coding using a simple, easy-to-use interface. You can create arrays, strings, char patterns and use a variety of handy features like copy, regenerate, change constraints.
+
+`Test Case Generator` is an open-source tool to create Test cases of the desired type to use in Competitive coding using a simple, easy-to-use interface. You can create arrays, strings, and char patterns and use a variety of handy features like copy, regenerate, and change constraints.
 
 Liked it? Please give a ⭐️ to <b>Test Case Generator</b> to build its community stronger.
 
