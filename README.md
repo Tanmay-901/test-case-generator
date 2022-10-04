@@ -45,12 +45,6 @@
 
 `Test Case Generator` is an open-source tool to create Test cases of the desired type to use in Competitive coding using a simple, easy-to-use interface. You can create arrays, strings, and char patterns and use a variety of handy features like copy, regenerate, and change constraints.
 
-Liked it? Please give a ⭐️ to <b>Test Case Generator</b> to build its community stronger.
-
-
-## 🙏 Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
-[![Stargazers repo roster for @Tanmay-901/test-case-generator](https://reporoster.com/stars/dark/Tanmay-901/test-case-generator)](https://github.com/Tanmay-901/test-case-generator/stargazers)
-
 ---
 
 # 🔥 Features
@@ -104,6 +98,12 @@ If you wish to contribute, you can work on any features [listed here](https://gi
 
 ## 💘 Support project
 - Currently we are not taking financial support but you can support us by sharing the project with your collleagues if you liked the project.
+
+Liked it? Please give a ⭐️ to <b>Test Case Generator</b> to build its community stronger.
+
+
+## 🙏 Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
+[![Stargazers repo roster for @Tanmay-901/test-case-generator](https://reporoster.com/stars/dark/Tanmay-901/test-case-generator)](https://github.com/Tanmay-901/test-case-generator/stargazers)
 
 We all need support and motivation. `Test Case Generator` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
 
