@@ -23,8 +23,5 @@ A1 A2 A3... An
   
 ### Reference link to the question(URL):-  
 `(It'll help us in analyzing the Test case better)`
-
-### Email:-  
-`(please provide your primary email id so that we can contact you for more details if required and we can inform you when the test case is successfully added).`  
   
 ### Additional details/comments:-
