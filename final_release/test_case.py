@@ -5,8 +5,11 @@
 #  _________________________________________________ ###
 #  _________________________________________________ ###
 
+from email.policy import default
+from multiprocessing.sharedctypes import Value
 from tkinter import *
 from random import randint, choices
+import tkinter
 import webbrowser
 
 mycolor = '#262626'
@@ -43,15 +46,15 @@ class Case:
         self.button6 = Button(gui, justify=LEFT, text='n * m (matrix)\n[A1  A2...Am]\n[A1  A2...Am]\n__   __ ... __\n'
                               'A1  A2...Am', fg='white', command=lambda: Type6(gui), width=13, font='calibre', bd=3)
         self.button6.configure(background='grey20')
-        self.button7 = Button(gui, justify=LEFT, text='T\nn\nCustom string\n(ex: 0 1)\n(ex: + / -)'
+        self.button7 = Button(gui, justify=LEFT, text='T\nn\nCustom string\n(ex: 0 1)\n(n or not)'
                               , fg='white', command=lambda: Type7(gui), width=13, font='calibre', bd=3)
         self.button7.configure(background='grey20')
         self.button8 = Button(gui, justify=LEFT, text='T\nn  m\n[A1  B1]\n...   ...\n[Am  Bm]'
                               , fg='white', command=lambda: Type8(gui), width=13, font='calibre', bd=3)
         self.button8.configure(background='grey20')
-        self.button9 = Button(gui, justify=LEFT, text='T\nCustom string\n(without "n")\n(ex: 0 1)\n(ex: + / -)'
-                              , fg='white', command=lambda: Type9(gui), width=13, font='calibre', bd=3)
-        self.button9.configure(background='grey20')
+        # self.button9 = Button(gui, justify=LEFT, text='T\nCustom string\n(without "n")\n(ex: 0 1)\n(ex: + / -)'
+        #                       , fg='white', command=lambda: Type9(gui), width=13, font='calibre', bd=3)
+        # self.button9.configure(background='grey20')
         self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\n[A1 A2...An]\nn  k  m\n[A1 A2...An]'
                                , fg='white', command=lambda: Type10(gui), width=13, font='calibre', bd=3)
         self.button10.configure(background='grey20')
@@ -85,7 +88,7 @@ class Case:
         self.button6.grid_forget()
         self.button7.grid_forget()
         self.button8.grid_forget()
-        self.button9.grid_forget()
+        # self.button9.grid_forget()
         self.button10.grid_forget()
         self.button_new_test_case.grid_forget()
         self.button_feedback.grid_forget()
@@ -101,8 +104,8 @@ class Case:
         self.button6.grid(row=2, column=0, ipady=10, pady=13, padx=10)
         self.button7.grid(row=2, column=1, ipady=10, pady=13, padx=10)
         self.button8.grid(row=2, column=2, ipady=10, pady=13, padx=10)
-        self.button9.grid(row=2, column=3, ipady=10, pady=13, padx=10)
-        self.button10.grid(row=2, column=4, ipady=10, pady=13, padx=10)
+        # self.button9.grid(row=2, column=3, ipady=10, pady=13, padx=10)
+        self.button10.grid(row=2, column=3, ipady=10, pady=13, padx=10)
         self.button_new_test_case.grid(row=3, column=1, ipady=10, pady=13, padx=10)
         self.button_feedback.grid(row=3, column=2, ipady=10, pady=13, padx=10)
         self.button_exit.grid(row=3, column=3, ipady=10, pady=13, padx=10)
@@ -172,7 +175,7 @@ class Case:
         self.minimum_value_of_n.grid(row=r, column=0, padx=10, pady=10)
         self.min_max_values_of_n_label.grid(row=r, column=1, ipadx=5, ipady=1)
         self.maximum_value_of_n.grid(row=r, column=2, padx=(10, 10))
-
+        
     def get_m(self, r):
         self.minimum_value_of_m = Entry(gui, text=m_min, textvariable=m_min, font=('calibre', 10, 'normal'))
         self.min_max_values_of_m_label = Label(gui, text='<= m <=', font=('calibre', 10, 'bold'))
@@ -228,6 +231,15 @@ class Case:
         self.sub_btn.grid(row=r+1, column=1, pady=(20, 20), ipady=1)
         self.exit_btn.grid(row=r+1, column=2, pady=(20, 20), ipady=1)
         self.copyright_label.place(relx=0.9, y=0)
+        self.radio_type_take_n = Radiobutton(gui, text='N', variable=radio_input, value=1,
+                                                      font='calibre', bd=3)
+
+        self.radio_type_take_without_n = Radiobutton(gui, text='Without N', variable=radio_input, value=0,
+                                                      font='calibre', bd=3)                                      
+        self.radio_type_take_n.grid(row=r, column=0, pady=1, ipady=1)
+        self.radio_type_take_without_n.grid(row=r, column=2, pady=1, ipady=1)
+        
+
 
     def submit(self):
         try:
@@ -354,6 +366,8 @@ class Case:
         try:
             self.radio_type_space_separated.grid_forget()
             self.radio_type_comma_separated.grid_forget()
+            self.radio_type_take_n.grid_forget()
+            self.radio_type_take_without_n.grid_forget()
         except AttributeError:
             pass
         finally:
@@ -380,6 +394,8 @@ class Type1(Case):
         self.get_n(1)
         self.get_a(2)
         self.show_button(3)
+        self.radio_type_take_n.grid_forget()
+        self.radio_type_take_without_n.grid_forget()
 
     def generate(self):                                         # Type 1
         self.forget_testcase_take_input_screen()
@@ -420,6 +436,8 @@ class Type2(Case):                                      # Type 2
         self.get_m(2)
         self.get_a(3)
         self.show_button(4)
+        self.radio_type_take_n.grid_forget()
+        self.radio_type_take_without_n.grid_forget()
 
     def generate(self):                                # Type 2
         self.output.delete('1.0', END)
@@ -460,6 +478,8 @@ class Type3(Case):                    # Type 3
         self.get_a(1)
         self.get_b(2)
         self.show_button(3)
+        self.radio_type_take_n.grid_forget()
+        self.radio_type_take_without_n.grid_forget()
 
     def generate(self):                                              # Type 3
         self.output.delete('1.0', END)
@@ -500,6 +520,8 @@ class Type4(Case):
         self.get_a(3)
         self.get_b(4)
         self.show_button(5)
+        self.radio_type_take_n.grid_forget()
+        self.radio_type_take_without_n.grid_forget()
 
     def generate(self):                                     # Type 4
         self.output.delete('1.0', END)
@@ -561,6 +583,8 @@ class Type5(Case):
         self.get_m(2)
         self.get_k(3)
         self.show_button(4)
+        self.radio_type_take_n.grid_forget()
+        self.radio_type_take_without_n.grid_forget()
 
     def generate(self):                             # Type 5
         self.output.delete('1.0', END)
@@ -607,6 +631,8 @@ class Type6(Case):
         self.get_m(2)
         self.get_a(3)
         self.show_button(4)
+        self.radio_type_take_n.grid_forget()
+        self.radio_type_take_without_n.grid_forget()
 
     def generate(self):                                         # Type 6
         self.output.delete('1.0', END)
@@ -645,22 +671,34 @@ class Type7(Case):
         self.get_t(0)
         self.get_char_list(1)
         self.get_n(2)
-        self.show_button(3)
+        self.show_button(4)
         self.radio_type_comma_separated.grid_forget()
         self.radio_type_space_separated.grid_forget()
 
-    def generate(self):                                 # Type 7
-        self.output.delete('1.0', END)
-        self.output.insert(END, self.t)
-        self.output.insert(END, '\n')
-        for i in range(self.t):
-            self.n = randint(self.n_min, self.n_max)
-            self.output.insert(END, self.n)
+
+    def generate(self):
+        print('Value: ',radio_input.get())      
+        if(radio_input.get() == 1):                           # Type 7
+            self.output.delete('1.0', END)
+            self.output.insert(END, self.t)
             self.output.insert(END, '\n')
-            self.a = choices(self.char_lis, k=self.n)
-            self.a = ''.join(self.a)
-            self.output.insert(END, self.a)
+            for i in range(self.t):
+                self.n = randint(self.n_min, self.n_max)
+                self.output.insert(END, self.n)
+                self.output.insert(END, '\n')
+                self.a = choices(self.char_lis, k=self.n)
+                self.a = ''.join(self.a)
+                self.output.insert(END, self.a)
+                self.output.insert(END, '\n')
+        else:
+            self.output.delete('1.0', END)
+            self.output.insert(END, self.t)
             self.output.insert(END, '\n')
+            for i in range(self.t):
+                self.n = randint(self.n_min, self.n_max)
+                self.a = choices(self.char_lis, k=self.n)
+                self.output.insert(END, ''.join(self.a))
+                self.output.insert(END, '\n')
 
 
 class Type8(Case):
@@ -681,6 +719,8 @@ class Type8(Case):
         self.get_a(3)
         self.get_b(4)
         self.show_button(5)
+        self.radio_type_take_n.grid_forget()
+        self.radio_type_take_without_n.grid_forget()
 
     def generate(self):                                 # Type 8
         self.output.delete('1.0', END)
@@ -710,33 +750,33 @@ class Type8(Case):
                     self.output.insert(END, '\n')
 
 
-class Type9(Case):
-    def __init__(self, master):
-        super(Type9, self).__init__(master)
-        self.forget_home()
-        self.take_input()
+# class Type9(Case):
+#     def __init__(self, master):
+#         super(Type9, self).__init__(master)
+#         self.forget_home()
+#         self.take_input()
 
-    def take_input(self):                       # Type 9
-        try:
-            self.try_forget()
-        except AttributeError:
-            pass
-        self.get_t(0)
-        self.get_char_list(1)
-        self.get_n(2)
-        self.show_button(3)
-        self.radio_type_comma_separated.grid_forget()
-        self.radio_type_space_separated.grid_forget()
+#     def take_input(self):                       # Type 9
+#         try:
+#             self.try_forget()
+#         except AttributeError:
+#             pass
+#         self.get_t(0)
+#         self.get_char_list(1)
+#         self.get_n(2)
+#         self.show_button(3)
+#         self.radio_type_comma_separated.grid_forget()
+#         self.radio_type_space_separated.grid_forget()
 
-    def generate(self):                                         # Type 9
-        self.output.delete('1.0', END)
-        self.output.insert(END, self.t)
-        self.output.insert(END, '\n')
-        for i in range(self.t):
-            self.n = randint(self.n_min, self.n_max)
-            self.a = choices(self.char_lis, k=self.n)
-            self.output.insert(END, ''.join(self.a))
-            self.output.insert(END, '\n')
+#     def generate(self):                                         # Type 9
+#         self.output.delete('1.0', END)
+#         self.output.insert(END, self.t)
+#         self.output.insert(END, '\n')
+#         for i in range(self.t):
+#             self.n = randint(self.n_min, self.n_max)
+#             self.a = choices(self.char_lis, k=self.n)
+#             self.output.insert(END, ''.join(self.a))
+#             self.output.insert(END, '\n')
 
 
 class Type10(Case):
@@ -757,6 +797,8 @@ class Type10(Case):
         self.get_m(3)
         self.get_a(4)
         self.show_button(5)
+        self.radio_type_take_n.grid_forget()
+        self.radio_type_take_without_n.grid_forget()
 
     def generate(self):                             # Type 10
         self.output.delete('1.0', END)
