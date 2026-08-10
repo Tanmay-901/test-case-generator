@@ -78,6 +78,18 @@ Liked it? Please give a ⭐️ to <b>Test Case Generator</b> to build its commun
         <img src="./public/readme/suggest_test_case.png" alt="landing" />
 </p>
 
+## 🌳 Tree Test Cases
+ - Generate random tree structures with `n` nodes and `n-1` edges
+ - Uses the [Prüfer sequence](https://en.wikipedia.org/wiki/Pr%C3%BCfer_sequence) algorithm to guarantee valid, connected, acyclic trees
+ - Output format:
+ ```
+ T
+ n
+ u1 v1
+ u2 v2
+ ...
+ ```
+
 # 🍔 Built With
 - [Python](https://python.org/): High-level general-purpose programming language
 - [Tkinter](https://docs.python.org/3/library/tkinter.html): Standard Python interface to the Tk GUI toolkit
@@ -90,7 +102,8 @@ This project is licensed under the GNU GPLv3 License - see the [`LICENSE`](LICEN
 
 - ✔️ Support for Test cases for larger constraint values is being worked upon.
 - ✔️ New test case types are being added on request.
-- ✔️ Graphs, Trees, Linked-list are on open for contributions
+- ✅ Trees - Implemented! Random tree generation using Prüfer sequence algorithm
+- ✔️ Graphs, Linked-list are open for contributions
 
 If you find something is missing, `Test Case Generator` is listening. Please create a feature request [from here](https://github.com/Tanmay-901/test-case-generator/issues/new/choose).
 
