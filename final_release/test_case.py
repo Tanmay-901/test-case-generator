@@ -55,6 +55,9 @@ class Case:
         self.button10 = Button(gui, justify=LEFT, text='T\nn  k  m\n[A1 A2...An]\nn  k  m\n[A1 A2...An]'
                                , fg='white', command=lambda: Type10(gui), width=13, font='calibre', bd=3)
         self.button10.configure(background='grey20')
+        self.button11 = Button(gui, justify=LEFT, text='T\nn\nu1 v1\nu2 v2\n... (tree)'
+                               , fg='white', command=lambda: Type11(gui), width=13, font='calibre', bd=3)
+        self.button11.configure(background='grey20')
         self.button_new_test_case = Button(gui, text=' ANOTHER TYPE ', fg='black', width=13, font='calibre', bd=3
                                            , command=lambda: self.newformat(self=Case))
         self.button_feedback = Button(gui, text='FEEDBACK', fg='black', width=13, font='calibre', bd=3
@@ -87,6 +90,7 @@ class Case:
         self.button8.grid_forget()
         self.button9.grid_forget()
         self.button10.grid_forget()
+        self.button11.grid_forget()
         self.button_new_test_case.grid_forget()
         self.button_feedback.grid_forget()
         self.button_exit.grid_forget()
@@ -103,6 +107,7 @@ class Case:
         self.button8.grid(row=2, column=2, ipady=10, pady=13, padx=10)
         self.button9.grid(row=2, column=3, ipady=10, pady=13, padx=10)
         self.button10.grid(row=2, column=4, ipady=10, pady=13, padx=10)
+        self.button11.grid(row=3, column=0, ipady=10, pady=13, padx=10)
         self.button_new_test_case.grid(row=3, column=1, ipady=10, pady=13, padx=10)
         self.button_feedback.grid(row=3, column=2, ipady=10, pady=13, padx=10)
         self.button_exit.grid(row=3, column=3, ipady=10, pady=13, padx=10)
@@ -785,6 +790,75 @@ class Type10(Case):
             self.output.insert(END, '\n')
 
 
+class Type11(Case):
+
+    def __init__(self, master):                             # Type 11 - Tree
+        super(Type11, self).__init__(master)
+        self.forget_home()
+        self.take_input()
+
+    def take_input(self):                                   # Type 11
+        try:
+            self.try_forget()
+        except AttributeError:
+            pass
+        self.get_t(0)
+        self.get_n(1)
+        self.show_button(2)
+
+    def generate_tree_edges(self, n):                        # Type 11
+        """Generate a random tree with n nodes (1-indexed) using Prufer sequence."""
+        if n == 1:
+            return []
+        if n == 2:
+            return [(1, 2)]
+
+        # Random Prufer sequence of length n-2
+        prufer = [randint(1, n) for _ in range(n - 2)]
+
+        # Decode Prufer sequence to edges
+        degree = [1] * (n + 1)  # 1-indexed, index 0 unused
+        for node in prufer:
+            degree[node] += 1
+
+        edges = []
+        for node in prufer:
+            for leaf in range(1, n + 1):
+                if degree[leaf] == 1:
+                    edges.append((leaf, node))
+                    degree[leaf] -= 1
+                    degree[node] -= 1
+                    break
+
+        # Connect last two nodes with degree 1
+        last_two = [v for v in range(1, n + 1) if degree[v] == 1]
+        edges.append((last_two[0], last_two[1]))
+
+        return edges
+
+    def generate(self):                                     # Type 11
+        self.output.delete('1.0', END)
+        self.output.insert(END, self.t)
+        self.output.insert(END, '\n')
+        for i in range(self.t):
+            self.n = randint(self.n_min, self.n_max)
+            self.output.insert(END, self.n)
+            self.output.insert(END, '\n')
+            edges = self.generate_tree_edges(self.n)
+            for u, v in edges:
+                if radio_input.get() == 0:
+                    self.output.insert(END, str(u))
+                    self.output.insert(END, ' ')
+                    self.output.insert(END, str(v))
+                elif radio_input.get() == 1:
+                    self.output.insert(END, '[')
+                    self.output.insert(END, str(u))
+                    self.output.insert(END, ', ')
+                    self.output.insert(END, str(v))
+                    self.output.insert(END, ']')
+                self.output.insert(END, '\n')
+
+
 t = IntVar()
 t.set(5)
 n_min = IntVar()
@@ -812,7 +886,6 @@ radio_input = IntVar()
 
 Case.home(self=Case)
 
-gui.mainloop()
 gui.mainloop()
 
 #  ------------------------------------------------- ###
